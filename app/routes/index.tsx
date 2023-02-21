@@ -9,9 +9,8 @@ export default function Index() {
           </small>
         </div>
         <div className="flex flex-col gap-2">
-          <p className="text-sm ">
-            Hi, thanks for visiting! This website is under construction.
-          </p>
+          <p className="text-sm ">Hi, thanks for visiting!</p>
+          <p className="text-sm ">This website is under construction.</p>
           <p className="text-sm ">
             In the meantime, email me at{" "}
             <a
