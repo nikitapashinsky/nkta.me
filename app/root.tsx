@@ -10,10 +10,12 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import Inter from "@fontsource/inter/variable.css";
 import stylesheet from "./styles/tailwind.css";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
+  { rel: "stylesheet", href: Inter },
 ];
 
 export const meta: MetaFunction = () => ({
@@ -24,12 +26,12 @@ export const meta: MetaFunction = () => ({
 
 export default function App() {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <head>
         <Meta />
         <Links />
       </head>
-      <body className="bg-neutral-50 p-6 text-neutral-800 dark:bg-neutral-900 dark:text-neutral-200">
+      <body className="h-full bg-neutral-50 p-6 text-neutral-800 dark:bg-neutral-900 dark:text-neutral-200">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
