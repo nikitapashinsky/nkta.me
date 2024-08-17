@@ -1,4 +1,8 @@
 ---
+import "../styles/global.css";
+import "../components/Breakpoint.astro";
+import Breakpoint from "../components/Breakpoint.astro";
+
 interface Props {
   title: string;
 }
@@ -11,19 +15,21 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
     <title>{title}</title>
   </head>
-  <body>
-    <slot />
+  <body
+    class="bg-stone-100 px-6 pt-16 text-gray-800 antialiased dark:bg-neutral-900 dark:text-neutral-50"
+  >
+    <main
+      class="grid auto-rows-fr grid-cols-2 gap-6 sm:grid-cols-6 md:grid-cols-8 md:gap-6"
+    >
+      <slot />
+    </main>
   </body>
 </html>
 <style is:global></style>
