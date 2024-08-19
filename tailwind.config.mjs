@@ -5,6 +5,9 @@ export default {
     hoverOnlyWhenSupported: true,
   },
   theme: {
+    fontFamily: {
+      mono: ["JetBrains Mono Variable", "monospace"],
+    },
     extend: {},
   },
   plugins: ["prettier-plugin-tailwindcss"],
