@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-import "../components/Breakpoint.astro";
 import Breakpoint from "../components/Breakpoint.astro";
 import "@fontsource-variable/jetbrains-mono";
 
@@ -10,7 +9,7 @@ interface Props {
 
 const { title } = Astro.props;
 
-const isProd = import.meta.env.PROD;
+const isDev = import.meta.env.DEV;
 
 const version = __APP_VERSION__;
 ---
@@ -28,18 +27,22 @@ const version = __APP_VERSION__;
     <title>{title}</title>
   </head>
   <body
-    class="flex max-w-sm flex-col gap-16 bg-[#F5F3F2] px-6 pt-16 font-medium text-stone-800 antialiased selection:bg-lime-300 sm:max-w-md sm:px-12"
+    class="flex flex-col gap-16 bg-[#F5F3F2] px-6 pt-16 font-medium text-stone-800 antialiased selection:bg-lime-300 sm:max-w-md sm:px-12"
   >
     <main class="">
       <slot />
     </main>
     <footer class="border-t border-stone-200 py-8">
-      <span
-        class="rounded-lg border border-stone-300 px-2 py-1 font-mono text-sm font-semibold text-stone-400"
-        >{version}</span
+      <a
+        href="https://github.com/nikitapashinsky/nkta.me/releases"
+        target="_blank"
+        title="View releases on GitHub"
+        class="rounded-lg bg-stone-200 px-2 py-1 font-mono text-sm font-semibold text-stone-400 hover:bg-stone-300 hover:text-stone-800"
+        >v&thinsp;{version}
+        <span class="font-sans">&UpperRightArrow;</span></a
       >
     </footer>
-    {!isProd && <Breakpoint />}
+    {isDev && <Breakpoint />}
   </body>
 </html>
 <style is:global></style>
