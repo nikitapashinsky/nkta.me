@@ -29,6 +29,9 @@ const version = __APP_VERSION__;
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <script>
+      document.addEventListener("touchstart", function () {}, false);
+    </script>
   </head>
   <body
     class="flex flex-col gap-16 bg-[#F5F3F2] px-6 pt-16 font-medium text-stone-800 antialiased selection:bg-lime-300 sm:max-w-md sm:px-12"
