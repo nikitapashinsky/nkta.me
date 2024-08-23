@@ -45,7 +45,7 @@
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="fill-stone-400 group-hover:fill-stone-600"
+      class="fill-stone-400 group-hover:fill-stone-600 group-active:fill-stone-600"
     >
       <path d="M4 4H14V8H8V14H4V4Z" />
       <path d="M20 10H10V20H20V10Z" />
