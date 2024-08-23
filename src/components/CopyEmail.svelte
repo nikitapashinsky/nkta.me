@@ -22,8 +22,8 @@
   {#if isCopied}
     <div
       in:fly={{
-        y: 8,
-        duration: 200,
+        y: 12,
+        duration: 400,
         easing: quintOut,
       }}
       out:fly={{
