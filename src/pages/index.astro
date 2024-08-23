@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
-import { socials } from "../data/contact";
+import { socials, email } from "../data/contact";
 import Layout from "../layouts/Layout.astro";
 import SocialLink from "../components/SocialLink.astro";
 import CopyEmail from "../components/CopyEmail.svelte";
@@ -19,12 +19,13 @@ import CopyEmail from "../components/CopyEmail.svelte";
         </p>
       </div>
       <div class="flex flex-col gap-4">
-        <div class="flex items-stretch gap-2">
+        <div class="flex items-center gap-2">
           <a
             href="mailto:nikitapashinsky@gmail.com"
-            class="inline-block w-fit rounded-lg bg-lime-300 px-4 py-2 text-base font-semibold"
-            >Send me an email</a
+            class="flex items-center rounded-lg bg-lime-300 px-4 py-2 text-base font-medium"
           >
+            {email}
+          </a>
           <CopyEmail client:load />
         </div>
         <small class="max-w-[16rem] text-sm leading-normal text-stone-500"

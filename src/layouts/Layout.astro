@@ -39,7 +39,9 @@ const version = __APP_VERSION__;
     <main class="">
       <slot />
     </main>
-    <footer class="border-t border-stone-200 py-8">
+    <footer
+      class="flex flex-col items-baseline justify-start gap-4 border-t border-stone-200 py-8"
+    >
       <a
         href="https://github.com/nikitapashinsky/nkta.me/releases"
         target="_blank"
@@ -48,6 +50,7 @@ const version = __APP_VERSION__;
       >
         <span class="mr-[1.5px]">v</span>{version}
       </a>
+      <p class="text-sm text-stone-500">The only way out is through.</p>
     </footer>
     {isDev && <Breakpoint />}
   </body>
