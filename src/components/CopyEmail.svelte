@@ -13,7 +13,10 @@
         isCopied = false;
       }, 1500);
     } catch (error) {
-      console.error(error.message);
+      // Fix annoying red squiggle: https://kentcdodds.com/blog/get-a-catch-block-error-message-with-typescript
+      let message;
+      if (error instanceof Error) message = error.message;
+      console.error(message);
     }
   }
 </script>
