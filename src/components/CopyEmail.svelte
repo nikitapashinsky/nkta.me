@@ -40,7 +40,7 @@
     </div>
   {/if}
   <button
-    class="group relative flex aspect-square w-10 items-center justify-center rounded-lg bg-stone-200 text-sm transition-transform hover:bg-stone-300 active:scale-90 active:bg-stone-300 dark:bg-neutral-800 dark:hover:bg-neutral-700"
+    class="group relative flex aspect-square w-10 items-center justify-center rounded-lg bg-stone-200 text-sm transition-transform hover:bg-stone-300 active:scale-90 active:bg-stone-300 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:active:bg-neutral-700"
     on:click={() => handleCopy(email)}
     ><svg
       width="24"
