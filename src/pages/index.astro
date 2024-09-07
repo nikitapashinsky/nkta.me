@@ -22,18 +22,21 @@ import CopyEmail from "../components/CopyEmail.svelte";
         <div class="flex items-center gap-2">
           <a
             href="mailto:nikitapashinsky@gmail.com"
-            class="flex items-center rounded-lg bg-lime-300 px-4 py-2 text-base font-medium"
+            class="flex items-center rounded-lg bg-lime-300 px-4 py-2 text-base font-medium dark:bg-lime-500 dark:text-neutral-900"
           >
             {email}
           </a>
           <CopyEmail client:load />
         </div>
-        <small class="max-w-[16rem] text-sm leading-normal text-stone-500"
+        <small
+          class="max-w-[16rem] text-sm leading-normal text-stone-500 dark:text-neutral-500"
           >Reach out if you need help with a&nbsp;project, or just want to chat.</small
         >
       </div>
     </div>
-    <div class="flex flex-col gap-2 border-t border-stone-200 pt-8">
+    <div
+      class="flex flex-col gap-2 border-t border-stone-200 pt-8 dark:border-neutral-800"
+    >
       {
         socials.map(({ link, title, subtitle }) => (
           <span class="-ml-2">
@@ -41,7 +44,7 @@ import CopyEmail from "../components/CopyEmail.svelte";
               <Icon
                 name={title}
                 size="24"
-                class="text-stone-500 group-hover:text-stone-800"
+                class="text-stone-500 group-hover:text-stone-800 dark:text-neutral-500 dark:group-hover:text-neutral-200"
               />
             </SocialLink>
           </span>

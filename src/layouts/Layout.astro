@@ -34,25 +34,27 @@ const version = __APP_VERSION__;
     </script>
   </head>
   <body
-    class="flex flex-col gap-16 bg-[#F5F3F2] px-6 pt-16 font-medium text-stone-800 antialiased selection:bg-lime-300 sm:max-w-md sm:px-12"
+    class="flex flex-col gap-16 bg-[#F5F3F2] px-6 pt-16 font-medium text-stone-800 antialiased selection:bg-lime-300 dark:bg-neutral-900 dark:text-neutral-200 dark:selection:bg-lime-900 dark:selection:text-neutral-200 sm:max-w-md sm:px-12"
   >
     <main class="">
       <slot />
     </main>
     <footer
-      class="flex flex-col items-baseline justify-start gap-4 border-t border-stone-200 py-8"
+      class="flex flex-col items-baseline justify-start gap-4 border-t border-stone-200 py-8 dark:border-neutral-800"
     >
       <a
         href="https://github.com/nikitapashinsky/nkta.me/releases"
         target="_blank"
         title="View releases on GitHub"
-        class="rounded-lg bg-stone-200 px-2 py-1 font-mono text-sm font-semibold text-stone-400 hover:bg-stone-300 hover:text-stone-800"
+        class="rounded-lg bg-stone-200 px-2 py-1 font-mono text-sm font-semibold text-stone-400 hover:bg-stone-300 hover:text-stone-800 dark:bg-neutral-800 dark:text-neutral-500 dark:hover:bg-neutral-700 dark:hover:text-neutral-200"
       >
         <span class="mr-[1.5px]">v</span>{version}
       </a>
-      <p class="text-sm text-stone-500">The only way out is through.</p>
+      <p class="text-sm text-stone-500 dark:text-neutral-600">
+        The only way out is through.
+      </p>
     </footer>
-    {isDev && <Breakpoint />}
+    <!-- {isDev && <Breakpoint />} -->
   </body>
 </html>
 <style is:global></style>

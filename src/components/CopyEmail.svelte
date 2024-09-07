@@ -34,13 +34,13 @@
         duration: 200,
         easing: quintIn,
       }}
-      class="absolute -top-8 left-1/2 z-10 flex -translate-x-1/2 rounded-md bg-stone-600 px-2 py-1 text-center text-xs font-medium text-white shadow-xl shadow-stone-950/10"
+      class="absolute -top-8 left-1/2 z-10 flex -translate-x-1/2 rounded-md bg-stone-600 px-2 py-1 text-center text-xs font-medium text-white shadow-xl shadow-stone-950/10 dark:bg-neutral-700 dark:shadow-neutral-950/50"
     >
       <span class="text-shadow">&check;&nbsp;Copied</span>
     </div>
   {/if}
   <button
-    class="group relative flex aspect-square w-10 items-center justify-center rounded-lg bg-stone-200 text-sm transition-transform hover:bg-stone-300 active:scale-90 active:bg-stone-300"
+    class="group relative flex aspect-square w-10 items-center justify-center rounded-lg bg-stone-200 text-sm transition-transform hover:bg-stone-300 active:scale-90 active:bg-stone-300 dark:bg-neutral-800 dark:hover:bg-neutral-700"
     on:click={() => handleCopy(email)}
     ><svg
       width="24"
@@ -48,7 +48,7 @@
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="fill-stone-400 group-hover:fill-stone-600 group-active:fill-stone-600"
+      class="fill-stone-400 group-hover:fill-stone-600 group-active:fill-stone-600 dark:fill-neutral-500 dark:group-hover:fill-neutral-200 dark:group-active:fill-neutral-200"
     >
       <path d="M4 4H14V8H8V14H4V4Z" />
       <path d="M20 10H10V20H20V10Z" />
