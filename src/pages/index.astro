@@ -1,57 +1,51 @@
 ---
-import { Icon } from "astro-icon/components";
-import { socials, email } from "../data/contact";
-import Layout from "../layouts/Layout.astro";
-import SocialLink from "../components/SocialLink.astro";
-import CopyEmail from "../components/CopyEmail.svelte";
+import { Icon } from 'astro-icon/components';
+import { socials, email } from '../data/contact';
+import Layout from '../layouts/Layout.astro';
+import SocialLink from '../components/SocialLink.astro';
 ---
 
 <Layout title="Nikita Pashinsky">
-  <div class="flex flex-col gap-16">
-    <div class="flex flex-col gap-12">
-      <div class="flex max-w-sm flex-col gap-4">
-        <h1 class="text-2xl leading-snug tracking-tight">
-          Hi&thinsp;—&thinsp;thanks for stopping by.
-        </h1>
-        <p class="text-2xl leading-snug tracking-tight">
-          I'm Nikita, a designer focused on crafting beautiful and functional
-          software.
-        </p>
-      </div>
-      <div class="flex flex-col gap-4">
-        <div class="flex items-center gap-2">
-          <a
-            href="mailto:nikitapashinsky@gmail.com"
-            class="flex items-center rounded-lg bg-lime-300 px-4 py-2 text-base font-medium dark:bg-lime-500 dark:text-neutral-900"
-          >
-            {email}
-          </a>
-          <CopyEmail client:load />
-        </div>
-        <small
-          class="max-w-[16rem] text-sm leading-normal text-stone-500 dark:text-neutral-500"
-          >Reach out if you need help with a&nbsp;project, or just want to chat.</small
-        >
-      </div>
-    </div>
-    <div
-      class="flex flex-col gap-2 border-t border-stone-200 pt-8 dark:border-neutral-800"
-    >
-      {
-        socials.map(({ link, title, subtitle }) => (
-          <span class="-ml-2">
-            <SocialLink {link} {title} {subtitle}>
-              <Icon
-                name={title}
-                size="24"
-                class="text-stone-500 group-hover:text-stone-800 dark:text-neutral-500 dark:group-hover:text-neutral-200"
-              />
-            </SocialLink>
-          </span>
-        ))
-      }
-    </div>
-  </div>
+	<div class="flex max-w-sm flex-col gap-16">
+		<div class="flex flex-col gap-8">
+			<div
+				class="flex flex-col gap-4 text-2xl font-medium leading-snug tracking-tight"
+			>
+				<h1>Hi&thinsp;—&thinsp;thanks for stopping by.</h1>
+				<p>I'm Nikita, a designer focused on crafting beautiful software.</p>
+				<p>
+					Based in <Icon
+						name="Location"
+						class="-mr-1 -mt-1 inline text-blue-600 dark:text-blue-500"
+					/> Amsterdam and working as a
+					<Icon
+						name="WorkBadge"
+						class="-mr-1 inline text-cyan-500 dark:text-cyan-400"
+					/> product designer at
+
+					<a href="https://piano.io" target="_blank" class="decoration-2"
+						>Piano</a
+					>.
+				</p>
+			</div>
+			<!-- <p></p> -->
+		</div>
+		<div class="flex flex-col gap-2">
+			{
+				socials.map(({ link, title, subtitle }) => (
+					<span class="-ml-2">
+						<SocialLink {link} {title} {subtitle}>
+							<Icon
+								name={title}
+								size="24"
+								class="text-neutral-500 group-hover:text-neutral-900 dark:text-neutral-600 dark:group-hover:text-neutral-100"
+							/>
+						</SocialLink>
+					</span>
+				))
+			}
+		</div>
+	</div>
 </Layout>
 
 <style></style>

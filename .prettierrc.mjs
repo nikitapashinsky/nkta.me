@@ -1,22 +1,24 @@
 /** @type {import("prettier").Config} */
 export default {
-  plugins: [
-    "prettier-plugin-astro",
-    "prettier-plugin-svelte",
-    "prettier-plugin-tailwindcss",
-  ],
-  overrides: [
-    {
-      files: "*.astro",
-      options: {
-        parser: "astro",
-      },
-    },
-    {
-      files: "*.svelte",
-      options: {
-        parser: "svelte",
-      }
-    }
-  ],
+	printWidth: 80,
+	semi: true,
+	singleQuote: true,
+	tabWidth: 2,
+	trailingComma: 'all',
+	useTabs: true,
+	plugins: ['prettier-plugin-astro', 'prettier-plugin-svelte', 'prettier-plugin-tailwindcss'],
+	overrides: [
+		{
+			files: '*.astro',
+			options: {
+				parser: 'astro',
+			},
+		},
+		{
+			files: '*.svelte',
+			options: {
+				parser: 'svelte',
+			},
+		},
+	],
 };

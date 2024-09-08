@@ -3,16 +3,20 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, sans-serif;
-  font-feature-settings:
-    "ss07",
-    "ss08",
-    "liga" 1,
-    "calt" 1;
+	font-family: Inter, sans-serif;
+	font-feature-settings:
+		'ss07',
+		'ss08',
+		'liga' 1,
+		'calt' 1;
 }
 
 @supports (font-variation-settings: normal) {
-  :root {
-    font-family: InterVariable, sans-serif;
-  }
+	:root {
+		font-family: InterVariable, sans-serif;
+	}
+}
+
+p > a {
+	@apply underline decoration-neutral-300 decoration-1 underline-offset-[3px] hover:decoration-inherit dark:decoration-neutral-600;
 }
