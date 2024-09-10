@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
-import { socials, email } from '../data/contact';
+import { socials } from '../data/contact';
+import me from '../images/me.jpeg';
 import Layout from '../layouts/Layout.astro';
 import SocialLink from '../components/SocialLink.astro';
 ---
@@ -12,11 +14,20 @@ import SocialLink from '../components/SocialLink.astro';
 				class="flex flex-col gap-4 text-2xl font-medium leading-snug tracking-tight"
 			>
 				<h1>Hi&thinsp;—&thinsp;thanks for stopping by.</h1>
-				<p>I'm Nikita, a designer focused on crafting beautiful software.</p>
+				<p>
+					I'm <Image
+						src={me}
+						alt="That's me"
+						width="24"
+						densities={[1.5, 2]}
+						class="-mt-1 ml-[2px] inline-block rounded-full"
+					/>
+					 Nikita, a designer focused on crafting beautiful software.
+				</p>
 				<p>
 					Currently <Icon
 						name="WorkBadge"
-						class="-mr-[2px] -mt-1 inline text-cyan-500 dark:text-cyan-400"
+						class="-ml-[2px] -mr-[2px] -mt-1 inline text-cyan-500 dark:text-cyan-400"
 					/> Product Designer at&nbsp;<a
 						href="https://piano.io"
 						target="_blank"
