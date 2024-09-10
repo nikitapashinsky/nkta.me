@@ -5,6 +5,9 @@ import { socials } from '../data/contact';
 import me from '../images/me.jpeg';
 import Layout from '../layouts/Layout.astro';
 import SocialLink from '../components/SocialLink.astro';
+import ProfilePicture from '../components/ProfilePicture.svelte';
+
+const isDev = import.meta.env.DEV;
 ---
 
 <Layout title="Nikita Pashinsky">
@@ -13,6 +16,7 @@ import SocialLink from '../components/SocialLink.astro';
 			<div
 				class="flex flex-col gap-4 text-2xl font-medium leading-snug tracking-tight"
 			>
+				{isDev && <ProfilePicture client:only="svelte" />}
 				<h1>Hi&thinsp;—&thinsp;thanks for stopping by.</h1>
 				<p>
 					I'm <Image
