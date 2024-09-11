@@ -6,18 +6,12 @@ export default {
 	tabWidth: 2,
 	trailingComma: 'all',
 	useTabs: true,
-	plugins: ['prettier-plugin-astro', 'prettier-plugin-svelte', 'prettier-plugin-tailwindcss'],
+	plugins: ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
 	overrides: [
 		{
 			files: '*.astro',
 			options: {
 				parser: 'astro',
-			},
-		},
-		{
-			files: '*.svelte',
-			options: {
-				parser: 'svelte',
 			},
 		},
 	],
