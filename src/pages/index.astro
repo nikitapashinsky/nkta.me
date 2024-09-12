@@ -24,35 +24,25 @@ const isDev = import.meta.env.DEV;
 				<p>
 					Currently <Icon
 						name="WorkBadge"
-						class="-ml-[2px] -mr-[2px] -mt-1 inline text-cyan-500 dark:text-cyan-400"
+						class="-ml-[2px] -mr-[3px] -mt-[5px] inline text-cyan-500 dark:text-cyan-400"
 					/> Product Designer at&nbsp;<a
 						href="https://piano.io"
 						target="_blank"
-						class="decoration-2">Piano</a
+						class="decoration-2 underline-offset-[4px]">Piano</a
 					>, based in <Icon
-						name="Umbrella"
+						name="Location"
 						class="-mr-1 -mt-1 inline text-blue-600 dark:text-blue-500"
 					/> Amsterdam.
 				</p>
 			</div>
 			<!-- <p></p> -->
 		</div>
-		<div class="flex flex-col gap-2">
+		<div class="-ml-2 flex flex-col">
 			{
 				socials.map(({ link, title, subtitle }) => (
-					<span class="-ml-2">
-						<SocialLink {link} {title} {subtitle}>
-							<Icon
-								name={title}
-								size="24"
-								class="text-neutral-500 group-hover:text-neutral-900 dark:text-neutral-600 dark:group-hover:text-neutral-100"
-							/>
-						</SocialLink>
-					</span>
+					<SocialLink {link} {title} {subtitle} />
 				))
 			}
 		</div>
 	</div>
 </Layout>
-
-<style></style>

@@ -1,21 +1,26 @@
 ---
+import { Icon } from 'astro-icon/components';
 const { link, title, subtitle } = Astro.props;
 ---
 
 <a
 	href={link}
 	target="_blank"
-	class="group flex select-none gap-3 rounded-lg pb-3 pl-2 pr-3 pt-2 text-sm hover:bg-neutral-100 dark:hover:bg-neutral-900"
+	class="group relative flex select-none gap-3 pb-4 pl-2 pr-3 pt-3 text-sm transition-all duration-150 after:absolute after:left-0 after:top-1 after:-z-10 after:h-[calc(100%-8px)] after:w-full after:rounded-lg after:bg-neutral-100 after:opacity-0 after:transition-all after:duration-150 first:pt-2 first:after:top-0 hover:after:scale-100 hover:after:opacity-100 active:scale-[0.975] active:after:scale-[1] active:after:opacity-100 dark:after:bg-neutral-900 sm:after:scale-95"
 >
-	<slot />
+	<Icon
+		name={title}
+		size="24"
+		class="text-neutral-500 transition-colors duration-150 group-hover:text-neutral-900 group-active:text-neutral-900 dark:text-neutral-600 dark:group-hover:text-neutral-100 dark:group-active:text-neutral-100"
+	/>
 	<div class="flex flex-col">
 		<span
-			class="font-medium leading-[24px] text-neutral-700 group-hover:text-neutral-900 dark:text-neutral-300 dark:group-hover:text-neutral-100"
+			class="font-medium leading-[24px] text-neutral-700 transition-colors duration-150 group-hover:text-neutral-900 group-active:text-neutral-900 dark:text-neutral-300 dark:group-hover:text-neutral-100 dark:group-active:text-neutral-100"
 		>
 			{title}
 		</span>
 		<span
-			class="text-neutral-500 group-hover:text-neutral-700 dark:text-neutral-500 dark:group-hover:text-neutral-400"
+			class="text-neutral-500 transition-colors duration-150 group-hover:text-neutral-700 group-active:text-neutral-700 dark:text-neutral-500 dark:group-hover:text-neutral-400 dark:group-active:text-neutral-400"
 		>
 			{subtitle}
 		</span>
