@@ -1,20 +1,18 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { socials } from '../data/contact';
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/BaseLayout.astro';
 import SocialLink from '../components/SocialLink.astro';
 import ProfilePicture from '../components/ProfilePicture';
 ---
 
 <Layout title="Nikita Pashinsky">
 	<div class="flex flex-col gap-16">
-		<div
-			class="flex flex-col gap-4 text-2xl font-medium leading-snug tracking-tight"
-		>
+		<div class="flex flex-col gap-4 text-2xl font-medium leading-snug tracking-tight">
 			<h1>Hi&thinsp;—&thinsp;thanks for stopping by.</h1>
 			<p>
-				I'm <ProfilePicture client:load />&nbsp;Nikita, a designer focused on
-				crafting beautiful software.
+				I'm <ProfilePicture client:load />&nbsp;Nikita, a designer focused on crafting beautiful
+				software.
 			</p>
 			<p>
 				Currently <Icon name="WorkBadge" />&nbsp;Product Designer at&nbsp;<a
@@ -25,11 +23,7 @@ import ProfilePicture from '../components/ProfilePicture';
 			</p>
 		</div>
 		<div class="-ml-2 flex flex-col">
-			{
-				socials.map(({ link, title, subtitle }) => (
-					<SocialLink {link} {title} {subtitle} />
-				))
-			}
+			{socials.map(({ link, title, subtitle }) => <SocialLink {link} {title} {subtitle} />)}
 		</div>
 	</div>
 </Layout>
