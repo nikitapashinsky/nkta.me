@@ -4,11 +4,9 @@ interface SocialLink {
 	subtitle: string;
 }
 
-export const email: string = 'nikitapashinsky@gmail.com';
-
 export const socials: SocialLink[] = [
 	{
-		link: `mailto:${email}`,
+		link: `mailto:nikitapashinsky@gmail.com`,
 		title: 'Email',
 		subtitle: 'Send me an email',
 	},

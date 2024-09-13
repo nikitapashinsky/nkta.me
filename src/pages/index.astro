@@ -4,38 +4,25 @@ import { socials } from '../data/contact';
 import Layout from '../layouts/Layout.astro';
 import SocialLink from '../components/SocialLink.astro';
 import ProfilePicture from '../components/ProfilePicture';
-
-const isDev = import.meta.env.DEV;
 ---
 
 <Layout title="Nikita Pashinsky">
-	<div class="flex max-w-sm flex-col gap-16">
-		<div class="flex flex-col gap-8">
-			<div
-				class="flex flex-col gap-4 text-2xl font-medium leading-snug tracking-tight"
-			>
-				<h1>Hi&thinsp;—&thinsp;thanks for stopping by.</h1>
-				<p>
-					I'm <span
-						class="relative top-[3px] ml-[2px] inline-flex h-6 w-6 items-center justify-center"
-						><ProfilePicture client:only="react" /></span
-					> Nikita, a designer focused on crafting beautiful software.
-				</p>
-				<p>
-					Currently <Icon
-						name="WorkBadge"
-						class="-ml-[2px] -mr-[3px] -mt-[5px] inline text-cyan-500 dark:text-cyan-400"
-					/> Product Designer at&nbsp;<a
-						href="https://piano.io"
-						target="_blank"
-						class="decoration-2 underline-offset-[4px]">Piano</a
-					>, based in <Icon
-						name="Location"
-						class="-mr-1 -mt-1 inline text-blue-600 dark:text-blue-500"
-					/> Amsterdam.
-				</p>
-			</div>
-			<!-- <p></p> -->
+	<div class="flex flex-col gap-16">
+		<div
+			class="flex flex-col gap-4 text-2xl font-medium leading-snug tracking-tight"
+		>
+			<h1>Hi&thinsp;—&thinsp;thanks for stopping by.</h1>
+			<p>
+				I'm <ProfilePicture client:load /> Nikita, a designer focused on
+				crafting beautiful software.
+			</p>
+			<p>
+				Currently <Icon name="WorkBadge" /> Product Designer at&nbsp;<a
+					href="https://piano.io"
+					target="_blank"
+					class="decoration-2 underline-offset-[4px]">Piano</a
+				>, based in <Icon name="Location" /> Amsterdam.
+			</p>
 		</div>
 		<div class="-ml-2 flex flex-col">
 			{
@@ -46,3 +33,13 @@ const isDev = import.meta.env.DEV;
 		</div>
 	</div>
 </Layout>
+
+<style>
+	[data-icon='WorkBadge'] {
+		@apply -ml-[2px] -mr-[3px] -mt-[5px] inline text-cyan-500 dark:text-cyan-400;
+	}
+
+	[data-icon='Location'] {
+		@apply -mr-1 -mt-1 inline text-blue-600 dark:text-blue-500;
+	}
+</style>

@@ -1,0 +1,37 @@
+---
+const version = __APP_VERSION__;
+---
+
+<footer
+	class="group flex flex-col items-baseline justify-start gap-6 border-t border-neutral-100 py-8 dark:border-neutral-900"
+>
+	<a
+		href="https://github.com/nikitapashinsky/nkta.me/releases"
+		target="_blank"
+		title="View releases on GitHub"
+		class="select-none rounded-lg bg-neutral-100 px-2 py-1 font-mono text-xs font-medium text-neutral-500 transition-all duration-150 hover:bg-neutral-200 hover:text-neutral-900 active:scale-90 active:bg-neutral-200 active:text-neutral-900 dark:bg-neutral-900 dark:text-neutral-500 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:active:bg-neutral-800 dark:active:text-neutral-100"
+	>
+		<span class="mr-[1.5px]">v</span>{version}
+	</a>
+	<div
+		class="flex flex-col gap-4 text-neutral-500 transition-opacity duration-150 group-hover:opacity-100 sm:opacity-60"
+	>
+		<p class="text-xs leading-normal">
+			Built with <a href="https://astro.build" target="_blank">Astro</a> and
+
+			<a href="https://tailwindcss.com" target="_blank">Tailwind CSS</a>.
+			Typeface is
+			<a href="https://rsms.me/inter" target="_blank">Inter</a> by <a
+				href="https://rsms.me"
+				target="_blank">Rasmus Andersson</a
+			>. Icon set is <a
+				href="https://www.figma.com/community/file/1327310800295849271/chunk-icons"
+				target="_blank">Chunk Icons</a
+			> by <a href="https://noahjacob.us/" target="_blank">Noah Jacobus</a>.
+		</p>
+		<p class="text-xs leading-normal">
+			This website doesn't use analytics or track you in any way. I&nbsp;hope
+			you're having a good day, wherever you are!
+		</p>
+	</div>
+</footer>
