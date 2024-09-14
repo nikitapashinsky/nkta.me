@@ -1,16 +1,43 @@
 ---
 import { Icon } from 'astro-icon/components';
-const { link, title, subtitle } = Astro.props;
+import { twMerge } from 'tw-merge';
+import clsx from 'clsx';
+const { link, title, subtitle, classNames } = Astro.props;
+
+const baseStyles = clsx(
+	'group relative flex select-none gap-3 pb-4 pl-2 pr-3 pt-3 text-sm transition-all duration-150',
+);
+
+const afterBaseStyles = clsx(
+	'after:absolute after:left-0 after:top-1 after:-z-10 after:h-[calc(100%-8px)] after:w-full after:rounded-xl after:bg-gradient-to-b after:from-neutral-200/25 after:to-neutral-200/[0.45]  after:opacity-0 after:transition-all after:ease-in',
+);
+
+const activeStyles = clsx('active:scale-[0.975] active:after:scale-[1] active:after:opacity-100');
+
+const hoverStyles = clsx(
+	'hover:z-50 hover:-translate-y-[2px] hover:after:scale-100 hover:after:opacity-100 hover:after:blur-0 hover:after:duration-150 hover:after:ease-out',
+);
+
+const darkStyles = clsx(
+	'dark:after:bg-gradient-to-b dark:after:from-neutral-900/90 dark:after:to-neutral-900/50',
+);
+
+const smStyles = clsx(
+	'sm:duration-300 sm:after:scale-[0.9] sm:after:shadow-2xl sm:after:shadow-black/[0.04] sm:after:blur-md sm:after:duration-500 sm:active:translate-y-[2px] sm:active:after:to-neutral-200/[0.35] sm:active:after:shadow-black/[0.001] sm:active:after:blur-[1px] sm:dark:after:shadow-black sm:dark:active:after:to-neutral-900/50',
+);
 ---
 
 <a
 	href={link}
 	target="_blank"
-	class="group relative flex select-none gap-3 pb-4 pl-2 pr-3 pt-3 text-sm transition-all duration-150 after:absolute after:left-0 after:top-1 after:-z-10 after:h-[calc(100%-8px)] after:w-full after:rounded-xl after:bg-neutral-100 after:opacity-0 after:transition-all after:duration-150 first:pt-2 first:after:top-0 hover:after:scale-100 hover:after:opacity-100 active:scale-[0.975] active:after:scale-[1] active:after:opacity-100 dark:after:bg-neutral-900 sm:after:scale-95"
+	class={twMerge(
+		clsx(baseStyles, afterBaseStyles, activeStyles, hoverStyles, darkStyles, smStyles, classNames),
+	)}
 >
 	<Icon
 		name={title}
 		size="24"
+		fill="transparent"
 		class="text-neutral-500 transition-colors duration-150 group-hover:text-neutral-900 group-active:text-neutral-900 dark:text-neutral-600 dark:group-hover:text-neutral-100 dark:group-active:text-neutral-100"
 	/>
 	<div class="flex flex-col">

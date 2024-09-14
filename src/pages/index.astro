@@ -23,7 +23,12 @@ import ProfilePicture from '../components/ProfilePicture';
 			</p>
 		</div>
 		<div class="-ml-2 flex flex-col">
-			{socials.map(({ link, title, subtitle }) => <SocialLink {link} {title} {subtitle} />)}
+			{
+				socials.map(({ link, title, subtitle }, index) => {
+					const zIndex = `z-${socials.length - 1 - index}0`;
+					return <SocialLink {link} {title} {subtitle} classNames={zIndex} />;
+				})
+			}
 		</div>
 	</div>
 </Layout>
