@@ -22,5 +22,5 @@ html {
 }
 
 p a {
-	@apply underline decoration-neutral-200 decoration-1 underline-offset-[3px] transition-colors duration-150 hover:text-neutral-900 hover:decoration-neutral-500 active:text-neutral-900 active:decoration-neutral-500 dark:decoration-neutral-800 dark:hover:text-neutral-100 dark:hover:decoration-neutral-500 dark:active:text-neutral-100 dark:active:decoration-neutral-500;
+	@apply underline decoration-neutral-200 decoration-1 hover:text-neutral-900 hover:decoration-neutral-500 active:text-neutral-900 active:decoration-neutral-500 dark:decoration-neutral-800 dark:hover:text-neutral-100 dark:hover:decoration-neutral-500 dark:active:text-neutral-100 dark:active:decoration-neutral-500;
 }

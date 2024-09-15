@@ -3,7 +3,8 @@ import { Icon } from 'astro-icon/components';
 import { socials } from '../data/contact';
 import Layout from '../layouts/BaseLayout.astro';
 import SocialLink from '../components/SocialLink.astro';
-import ProfilePicture from '../components/ProfilePicture';
+import { Image } from 'astro:assets';
+import pfp from '../images/me-288px.webp';
 ---
 
 <Layout title="Nikita Pashinsky">
@@ -11,8 +12,13 @@ import ProfilePicture from '../components/ProfilePicture';
 		<div class="flex flex-col gap-4 text-2xl font-medium leading-snug tracking-tight">
 			<h1>Hi&thinsp;—&thinsp;thanks for stopping by.</h1>
 			<p>
-				I'm <ProfilePicture client:load />&nbsp;Nikita, a designer focused on crafting beautiful
-				software.
+				I'm <Image
+					src={pfp}
+					width={24}
+					densities={[1.5, 2]}
+					class="-mt-1 ml-1 inline rounded-full"
+					alt="That's me!"
+				/>&nbsp;Nikita, a designer focused on crafting beautiful software.
 			</p>
 			<p>
 				Currently <Icon name="WorkBadge" />&nbsp;Product Designer at&nbsp;<a
@@ -24,9 +30,8 @@ import ProfilePicture from '../components/ProfilePicture';
 		</div>
 		<div class="-ml-2 flex flex-col">
 			{
-				socials.map(({ link, title, subtitle }, index) => {
-					const zIndex = `z-${socials.length - 1 - index}0`;
-					return <SocialLink {link} {title} {subtitle} classNames={zIndex} />;
+				socials.map(({ link, title, subtitle }) => {
+					return <SocialLink {link} {title} {subtitle} />;
 				})
 			}
 		</div>
