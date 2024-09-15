@@ -5,7 +5,7 @@ import clsx from 'clsx';
 const { link, title, subtitle, classNames } = Astro.props;
 
 const baseStyles = clsx(
-	'group relative flex select-none gap-3 pb-4 pl-2 pr-3 pt-3 text-sm transition-all duration-150',
+	'group relative flex select-none gap-3 rounded-lg pb-4 pl-2 pr-3 pt-3 text-sm transition-all duration-150 focus-visible:outline-none',
 );
 
 const afterBaseStyles = clsx(
@@ -19,7 +19,7 @@ const hoverStyles = clsx(
 );
 
 const darkStyles = clsx(
-	'dark:after:bg-gradient-to-b dark:after:from-neutral-900/90 dark:after:to-neutral-900/50',
+	'dark:after:bg-gradient-to-b dark:after:from-neutral-900/90 dark:after:to-neutral-900/50 dark:after:ring-1 dark:after:ring-inset dark:after:ring-white/[0.03]',
 );
 
 const smStyles = clsx(
