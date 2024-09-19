@@ -1,12 +1,13 @@
 ---
-const version = __APP_VERSION__;
+import { getLatestTag } from '../../utils/getGithubTags';
+const version = getLatestTag();
 ---
 
 <footer
 	class="group mt-16 flex flex-col items-baseline justify-start gap-6 border-t border-neutral-100 py-8 dark:border-neutral-900"
 >
 	<a
-		href="https://github.com/nikitapashinsky/nkta.me/releases"
+		href="https://github.com/nikitapashinsky/nkta.me/commits/main"
 		target="_blank"
 		title="View releases on GitHub"
 		class="select-none rounded-lg bg-neutral-100 px-2 py-1 font-mono text-xs font-medium text-neutral-500 transition-shadow hover:bg-neutral-200 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-[3px] active:bg-neutral-200 active:text-neutral-900 dark:bg-neutral-900 dark:text-neutral-500 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:active:bg-neutral-800 dark:active:text-neutral-100"
