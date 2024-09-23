@@ -4,6 +4,10 @@ import '../styles/global.css';
 import Breakpoint from '../components/dev/Breakpoint.astro';
 import Footer from '../components/layout/Footer.astro';
 
+interface Props {
+	pageTitle: string;
+}
+
 const { pageTitle } = Astro.props;
 
 const isDev = import.meta.env.DEV;

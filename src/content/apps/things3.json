@@ -1,0 +1,10 @@
+{
+	"$schema": "../../../.astro/collections/apps.schema.json",
+	"name": "Things 3",
+	"description": "My favorite to-do list app.",
+	"icon": {
+		"src": "../../../images/apps/things3.png",
+		"alt": "Things 3 app icon"
+	},
+	"url": "https://culturedcode.com/things/"
+}
