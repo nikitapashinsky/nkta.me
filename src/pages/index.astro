@@ -10,7 +10,7 @@ import Layout from '../layouts/BaseLayout.astro';
 <Layout pageTitle="Nikita Pashinsky">
 	<div class="flex flex-col gap-16">
 		<div
-			class="flex flex-col gap-4 text-2xl font-medium leading-snug tracking-tight"
+			class="flex max-w-sm flex-col gap-4 text-2xl font-medium leading-snug tracking-tight"
 		>
 			<h1>Hi&thinsp;—&thinsp;thanks for stopping by.</h1>
 			<p>
@@ -30,7 +30,7 @@ import Layout from '../layouts/BaseLayout.astro';
 				>, based in <Icon name="Location" />&nbsp;Amsterdam.
 			</p>
 		</div>
-		<div class="-ml-2 flex flex-col">
+		<div class="-ml-2 flex max-w-sm flex-col">
 			{
 				socials.map(({ link, title, subtitle }) => {
 					return <SocialLink {link} {title} {subtitle} />;

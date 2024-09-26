@@ -16,6 +16,7 @@ const appsCollection = defineCollection({
 		name: z.string(),
 		description: z.string(),
 		url: z.string(),
+		displayUrl: z.string(),
 		icon: z.object({
 			src: z.string(),
 			alt: z.string(),

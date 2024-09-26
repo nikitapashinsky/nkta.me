@@ -2,6 +2,7 @@
 import '@fontsource-variable/jetbrains-mono';
 import '../styles/global.css';
 import Breakpoint from '../components/dev/Breakpoint.astro';
+import Sitemap from '../components/dev/Sitemap.astro';
 import Footer from '../components/layout/Footer.astro';
 
 interface Props {
@@ -32,9 +33,10 @@ const isDev = import.meta.env.DEV;
 		</script>
 	</head>
 	<body
-		class="flex max-w-md flex-col gap-16 px-6 pt-16 text-neutral-900 antialiased dark:bg-neutral-950 dark:text-neutral-100 sm:px-12"
+		class="flex flex-col gap-16 px-6 pt-16 text-neutral-900 antialiased dark:bg-neutral-950 dark:text-neutral-100 sm:px-12"
 	>
-		<!-- {isDev && <Breakpoint />} -->
+		{isDev && <Sitemap />}
+		{isDev && <Breakpoint />}
 		<main>
 			<slot />
 		</main>

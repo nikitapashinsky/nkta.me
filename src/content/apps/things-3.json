@@ -6,5 +6,6 @@
 		"src": "../../../images/apps/things3.png",
 		"alt": "Things 3 app icon"
 	},
-	"url": "https://culturedcode.com/things/"
+	"url": "https://culturedcode.com/things/",
+	"displayUrl": "culturedcode.com"
 }
