@@ -35,7 +35,7 @@ const allApps = await getCollection('apps');
 	>
 		{
 			allApps.map(({ data }) => (
-				<div class="flex rounded-2xl bg-neutral-50 sm:aspect-square sm:flex-col">
+				<div class="flex rounded-2xl bg-neutral-50 dark:bg-neutral-900 sm:aspect-square sm:flex-col">
 					<div class="flex aspect-square items-center justify-center px-5 sm:aspect-auto sm:grow">
 						<img
 							src={data.icon.src}
@@ -48,10 +48,10 @@ const allApps = await getCollection('apps');
 						<a
 							href={data.url}
 							target="_blank"
-							class="text-sm font-medium text-blue-600"
+							class="text-sm font-medium text-blue-600 dark:text-blue-500"
 						>
 							<Icon name="Link" class="-mt-[1px] mr-[1px] inline" />
-							<span class="underline decoration-blue-100 decoration-1 underline-offset-2">
+							<span class="underline decoration-blue-100 dark:decoration-blue-500/30 decoration-1 underline-offset-2">
 								{data.displayUrl}
 							</span>
 						</a>
