@@ -11,19 +11,19 @@ export const socials: SocialLink[] = [
 		subtitle: 'Send me an email',
 	},
 	{
+		link: 'https://bsky.app/profile/nkta.me',
+		title: 'Bluesky',
+		subtitle: 'My only social media',
+	},
+	{
 		link: 'https://read.cv/nkta',
 		title: 'CV',
 		subtitle: 'My work experience',
 	},
 	{
-		link: 'https://bsky.app/profile/nkta.me',
-		title: 'Bluesky',
-		subtitle: 'Social media that feels good',
-	},
-	{
-		link: 'https://layers.to/nkta',
-		title: 'Layers',
-		subtitle: 'Design community',
+		link: 'https://www.figma.com/@nkta',
+		title: 'Figma',
+		subtitle: 'Sharing free resources',
 	},
 	{
 		link: 'https://github.com/nikitapashinsky',
