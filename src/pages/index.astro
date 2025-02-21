@@ -8,7 +8,6 @@ import Layout from '../layouts/BaseLayout.astro';
 ---
 
 <Layout pageTitle="Nikita Pashinsky">
-	<!-- <Drawer client:load /> -->
 	<div class="flex flex-col gap-16">
 		<div
 			class="flex max-w-sm flex-col gap-4 text-2xl font-medium leading-snug tracking-tight"
@@ -33,13 +32,53 @@ import Layout from '../layouts/BaseLayout.astro';
 		</div>
 		<div class="-ml-2 flex max-w-sm flex-col">
 			{
-				socials.map(({ link, title, subtitle }) => {
-					return <SocialLink {link} {title} {subtitle} />;
+				socials.map(({ icon, link, title, subtitle }) => {
+					if (icon === 'Email') {
+						return (
+							<div class="flex grow  gap-4">
+								<SocialLink {icon} {link} {title} {subtitle} />
+								<div class="pt-[14px]">
+									<button
+										id="CopyEmailButton"
+										aria-label="Copy email address"
+										class="h-fit grow-0 rounded-lg bg-neutral-100 px-4 py-1 text-sm font-medium text-neutral-700 hover:bg-neutral-200 hover:text-neutral-900"
+									>
+										Copy
+									</button>
+								</div>
+							</div>
+						);
+					}
+					return <SocialLink {icon} {link} {title} {subtitle} />;
 				})
 			}
 		</div>
 	</div>
 </Layout>
+
+<script>
+	const copyEmailButton = document.querySelector('#CopyEmailButton');
+	const successStyles = [
+		'bg-lime-500/20',
+		'text-lime-800',
+		'hover:bg-lime-500/20',
+		'hover:text-lime-800',
+	];
+
+	function copyEmail() {
+		navigator.clipboard.writeText('nikitapashinsky@gmail.com');
+		copyEmailButton!.textContent = 'Copied!';
+		copyEmailButton!.classList.add(...successStyles);
+		setTimeout(() => {
+			copyEmailButton!.classList.remove(...successStyles);
+			copyEmailButton!.textContent = 'Copy';
+		}, 2000);
+	}
+
+	if (copyEmailButton) {
+		copyEmailButton.addEventListener('click', copyEmail);
+	}
+</script>
 
 <style>
 	[data-icon='WorkBadge'] {
