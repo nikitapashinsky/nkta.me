@@ -41,7 +41,7 @@ import Layout from '../layouts/BaseLayout.astro';
 									<button
 										id="CopyEmailButton"
 										aria-label="Copy email address"
-										class="h-fit grow-0 rounded-lg bg-neutral-100 px-4 py-1 text-sm font-medium text-neutral-700 hover:bg-neutral-200 hover:text-neutral-900"
+										class="h-fit grow-0 rounded-lg bg-neutral-100 px-4 py-1 text-sm font-medium text-neutral-700 hover:bg-neutral-200 hover:text-neutral-900 active:bg-neutral-200 active:text-neutral-900 dark:bg-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:active:bg-neutral-800 dark:active:text-neutral-100"
 									>
 										Copy
 									</button>
@@ -58,19 +58,11 @@ import Layout from '../layouts/BaseLayout.astro';
 
 <script>
 	const copyEmailButton = document.querySelector('#CopyEmailButton');
-	const successStyles = [
-		'bg-lime-500/20',
-		'text-lime-800',
-		'hover:bg-lime-500/20',
-		'hover:text-lime-800',
-	];
 
 	function copyEmail() {
 		navigator.clipboard.writeText('nikitapashinsky@gmail.com');
 		copyEmailButton!.textContent = 'Copied!';
-		copyEmailButton!.classList.add(...successStyles);
 		setTimeout(() => {
-			copyEmailButton!.classList.remove(...successStyles);
 			copyEmailButton!.textContent = 'Copy';
 		}, 2000);
 	}
