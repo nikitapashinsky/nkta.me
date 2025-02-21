@@ -34,6 +34,6 @@ export const socials: SocialLink[] = [
 		icon: 'Github',
 		link: 'https://github.com/nikitapashinsky',
 		title: 'Github',
-		subtitle: 'Learning to code in public',
+		subtitle: 'Code for this site and other stuff',
 	},
 ];
