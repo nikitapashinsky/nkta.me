@@ -1,0 +1,33 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<button
+	id="CopyEmailButton"
+	aria-label="Copy email address"
+	class="text-textTertiary hover:text-textPrimary active:text-textPrimary focus-visible:ring-3 focus-visible:ring-accent focus-visible:text-textPrimary group flex h-12 grow-0 items-center gap-[2px] rounded-lg pl-3 pr-4 text-sm hover:bg-neutral-100 focus-visible:outline-none active:bg-neutral-100 dark:hover:bg-neutral-900 dark:active:bg-neutral-900"
+>
+	<Icon
+		name="Copy"
+		size={24}
+		class="text-iconSecondary group-hover:text-iconPrimary group-focus-visible:text-iconPrimary"
+	/>
+	<span id="CopyEmailText">Copy</span>
+</button>
+
+<script>
+	const copyEmailButton = document.querySelector('#CopyEmailButton');
+	const copyEmailText = document.querySelector('#CopyEmailText');
+
+	function copyEmail() {
+		navigator.clipboard.writeText('nikitapashinsky@gmail.com');
+		copyEmailText!.textContent = 'Copied!';
+		setTimeout(() => {
+			copyEmailText!.textContent = 'Copy';
+		}, 2000);
+	}
+
+	if (copyEmailButton) {
+		copyEmailButton.addEventListener('click', copyEmail);
+	}
+</script>
