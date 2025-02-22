@@ -12,16 +12,16 @@ const { icon, link, title, subtitle } = Astro.props;
 		name={icon}
 		size="24"
 		fill="transparent"
-		class="text-neutral-500 group-hover:text-neutral-900 group-active:text-neutral-900 dark:text-neutral-600 dark:group-hover:text-neutral-100 dark:group-active:text-neutral-100"
+		class="text-textTertiary group-hover:text-textPrimary group-active:text-textPrimary"
 	/>
 	<div class="flex flex-col">
 		<span
-			class="font-medium leading-[24px] text-neutral-700 group-hover:text-neutral-900 group-active:text-neutral-900 dark:text-neutral-300 dark:group-hover:text-neutral-100 dark:group-active:text-neutral-100"
+			class="text-textSecondary group-hover:text-textPrimary group-active:text-textPrimary font-medium leading-[24px]"
 		>
 			{title}
 		</span>
 		<span
-			class="text-neutral-500 group-hover:text-neutral-700 group-active:text-neutral-700 dark:text-neutral-500 dark:group-hover:text-neutral-400 dark:group-active:text-neutral-400"
+			class="text-textTertiary group-hover:text-textSecondary group-active:text-textSecondary"
 		>
 			{subtitle}
 		</span>

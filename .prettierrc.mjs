@@ -1,5 +1,6 @@
 /** @type {import("prettier").Config} */
 export default {
+  "tailwindEntryPoint": "./src/styles/global.css",
 	semi: true,
 	singleQuote: true,
 	tabWidth: 2,

@@ -1,8 +1,26 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+	--color-textPrimary: light-dark(
+		var(--color-neutral-950),
+		var(--color-neutral-100)
+	);
+
+	--color-textSecondary: light-dark(
+		var(--color-neutral-700),
+		var(--color-neutral-300)
+	);
+
+	--color-textTertiary: light-dark(
+		var(--color-neutral-500),
+		var(--color-neutral-500)
+	);
+
+	--color-bgPrimary: light-dark(var(--color-white), var(--color-neutral-950));
+}
 
 :root {
+	color-scheme: light dark;
 	font-family: Inter, sans-serif;
 	font-feature-settings:
 		'ss07',
@@ -22,5 +40,5 @@ html {
 }
 
 p a {
-	@apply underline decoration-neutral-200 decoration-1 hover:text-neutral-900 hover:decoration-neutral-500 active:text-neutral-900 active:decoration-neutral-500 dark:decoration-neutral-800 dark:hover:text-neutral-100 dark:hover:decoration-neutral-500 dark:active:text-neutral-100 dark:active:decoration-neutral-500;
+	@apply underline decoration-neutral-200 decoration-2 hover:text-neutral-900 hover:decoration-neutral-500 active:text-neutral-900 active:decoration-neutral-500 dark:decoration-neutral-800 dark:hover:text-neutral-100 dark:hover:decoration-neutral-500 dark:active:text-neutral-100 dark:active:decoration-neutral-500;
 }

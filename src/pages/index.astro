@@ -41,7 +41,7 @@ import Layout from '../layouts/BaseLayout.astro';
 									<button
 										id="CopyEmailButton"
 										aria-label="Copy email address"
-										class="h-fit grow-0 rounded-lg bg-neutral-100 px-4 py-1 text-sm font-medium text-neutral-700 hover:bg-neutral-200 hover:text-neutral-900 active:bg-neutral-200 active:text-neutral-900 dark:bg-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:active:bg-neutral-800 dark:active:text-neutral-100"
+										class="text-textSecondary hover:text-textPrimary active:text-textPrimary h-fit grow-0 rounded-lg bg-neutral-100 px-4 py-1 text-sm font-medium hover:bg-neutral-200 active:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:active:bg-neutral-800"
 									>
 										Copy
 									</button>
@@ -73,6 +73,8 @@ import Layout from '../layouts/BaseLayout.astro';
 </script>
 
 <style>
+	@reference "tailwindcss";
+
 	[data-icon='WorkBadge'] {
 		@apply -ml-[2px] -mr-[3px] -mt-[5px] inline text-cyan-500 dark:text-cyan-400;
 	}
