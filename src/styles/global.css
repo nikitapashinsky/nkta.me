@@ -1,57 +1,32 @@
 @import 'tailwindcss';
+@import './colors';
+@import './inter.css';
 
 @theme {
-	/* Background colors */
-	--color-bgPrimary: light-dark(var(--color-white), var(--color-neutral-950));
-
-	/* Text colors */
-	--color-textPrimary: light-dark(
-		var(--color-neutral-950),
-		var(--color-neutral-100)
-	);
-
-	--color-textSecondary: light-dark(
-		var(--color-neutral-700),
-		var(--color-neutral-400)
-	);
-
-	--color-textTertiary: light-dark(
-		var(--color-neutral-500),
-		var(--color-neutral-600)
-	);
-
-	/* Icon colors */
-	--color-iconPrimary: light-dark(
-		var(--color-neutral-950),
-		var(--color-neutral-100)
-	);
-
-	--color-iconSecondary: light-dark(
-		var(--color-neutral-400),
-		var(--color-neutral-700)
-	);
+	--font-hubot: 'Hubot Sans';
+	--font-serif: 'IBM Plex Serif', serif;
 }
 
 :root {
 	color-scheme: light dark;
 	font-family: Inter, sans-serif;
-	font-feature-settings:
-		'ss07',
-		'ss08',
-		'liga' 1,
-		'calt' 1;
 }
 
 @supports (font-variation-settings: normal) {
 	:root {
 		font-family: InterVariable, sans-serif;
+		font-optical-sizing: auto;
+		font-feature-settings:
+			'ss07',
+			'ss08',
+			'liga' 1,
+			'calt' 1;
 	}
 }
 
 html {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
 p a {
-	@apply underline decoration-neutral-200 decoration-2 hover:text-neutral-900 hover:decoration-neutral-500 active:text-neutral-900 active:decoration-neutral-500 dark:decoration-neutral-800 dark:hover:text-neutral-100 dark:hover:decoration-neutral-500 dark:active:text-neutral-100 dark:active:decoration-neutral-500;
+	@apply focus-visible:ring-3 focus-visible:ring-accent ring-offset-bgPrimary rounded-lg underline decoration-neutral-200 decoration-2 ring-offset-4 hover:text-neutral-900 hover:decoration-neutral-500 focus-visible:outline-none active:text-neutral-900 active:decoration-neutral-500 dark:decoration-neutral-800 dark:hover:text-neutral-100 dark:hover:decoration-neutral-500 dark:active:text-neutral-100 dark:active:decoration-neutral-500;
 }
