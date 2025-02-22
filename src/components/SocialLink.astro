@@ -1,29 +1,31 @@
 ---
 import { Icon } from 'astro-icon/components';
-const { icon, link, title, subtitle } = Astro.props;
+const { icon, link, title, handle, subtitle } = Astro.props;
 ---
 
 <a
 	href={link}
 	target="_blank"
-	class="group relative flex flex-1 gap-3 rounded-xl px-2 py-4 text-sm after:absolute after:left-0 after:top-1 after:-z-10 after:h-[calc(100%-8px)] after:w-full after:rounded-xl after:ring-offset-0 after:transition-shadow hover:after:bg-neutral-100 focus-visible:outline-none focus-visible:after:ring-[3px] active:after:bg-neutral-100 dark:hover:after:bg-neutral-900 dark:active:after:bg-neutral-900"
+	class="group/link relative flex flex-1 gap-3 rounded-xl py-3 pl-2 pr-4 text-sm after:absolute after:left-0 after:top-1 after:-z-10 after:h-[calc(100%-8px)] after:w-full after:rounded-lg after:ring-offset-0 after:transition-shadow hover:after:bg-neutral-100 focus-visible:outline-none focus-visible:after:ring-[3px] active:after:bg-neutral-100 dark:hover:after:bg-neutral-900 dark:active:after:bg-neutral-900"
 >
 	<Icon
 		name={icon}
 		size="24"
 		fill="transparent"
-		class="text-textTertiary group-hover:text-textPrimary group-active:text-textPrimary"
+		class="text-iconSecondary group-hover/link:text-iconPrimary"
 	/>
-	<div class="flex flex-col">
+	<div class="flex w-full items-baseline justify-between">
 		<span
-			class="text-textSecondary group-hover:text-textPrimary group-active:text-textPrimary font-medium leading-[24px]"
+			class="text-textSecondary group-hover/link:text-textPrimary group-active/link:text-textPrimary font-medium leading-[24px]"
 		>
 			{title}
 		</span>
 		<span
-			class="text-textTertiary group-hover:text-textSecondary group-active:text-textSecondary"
+			class="text-textTertiary group-hover/link:text-textSecondary group-active/link:text-textSecondary group/handle"
 		>
-			{subtitle}
+			<span class="mr-[1px] opacity-50 group-hover/link:opacity-100"
+				>{handle?.slice(0, 1)}</span
+			>{handle?.slice(1)}
 		</span>
 	</div>
 </a>

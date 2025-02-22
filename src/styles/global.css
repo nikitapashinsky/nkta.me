@@ -1,6 +1,10 @@
 @import 'tailwindcss';
 
 @theme {
+	/* Background colors */
+	--color-bgPrimary: light-dark(var(--color-white), var(--color-neutral-950));
+
+	/* Text colors */
 	--color-textPrimary: light-dark(
 		var(--color-neutral-950),
 		var(--color-neutral-100)
@@ -8,15 +12,24 @@
 
 	--color-textSecondary: light-dark(
 		var(--color-neutral-700),
-		var(--color-neutral-300)
+		var(--color-neutral-400)
 	);
 
 	--color-textTertiary: light-dark(
 		var(--color-neutral-500),
-		var(--color-neutral-500)
+		var(--color-neutral-600)
 	);
 
-	--color-bgPrimary: light-dark(var(--color-white), var(--color-neutral-950));
+	/* Icon colors */
+	--color-iconPrimary: light-dark(
+		var(--color-neutral-950),
+		var(--color-neutral-100)
+	);
+
+	--color-iconSecondary: light-dark(
+		var(--color-neutral-400),
+		var(--color-neutral-700)
+	);
 }
 
 :root {
