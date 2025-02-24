@@ -1,7 +1,15 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="32" height="32" fill="black"/>
-<path d="M15 15H11.08L5.52 4.5H4.5L5.5 6.5V15H3V2H6.948L12.48 12.5H13.48L12.48 10.5V2H15V15Z" fill="white"/>
-<path d="M29 2L23.244 7.296V7.5C23.869 7.5 24.9457 7.5 26 7.5C27.6569 7.5 29 8.84252 29 10.4994C29 12.1775 29 14.1068 29 15H26.5V11C26.5 10.4477 26.0523 10 25.5 10H19.5V15H17V2H19.5V8L26 2H29Z" fill="white"/>
-<path d="M15 19.5H10.25V30H7.75V19.5H3V17H15V19.5Z" fill="white"/>
-<path d="M29 30H26.5V26H19.5V30H17C17 28.2014 17 23.2451 17 19.9982C17 18.3414 18.3413 17 19.9981 17C22.9774 17 27.3354 17 29 17V30ZM26.5 23.5V19.5H20.5C19.9477 19.5 19.5 19.9477 19.5 20.5V25.8L22 23.5H26.5Z" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" >
+  <style>
+    path {
+      fill: #000000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      path {
+        fill: #ffffff;
+      }
+    }
+  </style>
+  <path id="Left" d="M128 24V104H112V36.4877H109.578L88.5333 104H76V89.639L96 24H128Z" fill="black"/>
+  <path id="Right" d="M0 24.0001V104H16V36.4878H18.4219L40 104H72V24.0001H56V89.6391H53.5781L32 24.0001H0Z" fill="black"/>
 </svg>

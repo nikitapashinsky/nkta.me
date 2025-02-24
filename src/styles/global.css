@@ -3,7 +3,6 @@
 @import './fonts.css';
 
 @theme {
-	--font-hubot: 'Hubot Sans';
 	--font-serif: 'IBM Plex Serif', serif;
 	--font-mono: 'IBM Plex Mono';
 }
