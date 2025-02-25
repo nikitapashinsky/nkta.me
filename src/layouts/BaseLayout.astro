@@ -23,21 +23,13 @@ const isDev = import.meta.env.DEV;
 			content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
 		/>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-			rel="stylesheet"
-		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 		<script>
 			document.addEventListener('touchstart', function () {}, false);
 		</script>
 	</head>
-	<body
-		class="text-textPrimary bg-bgPrimary flex flex-col gap-16 px-6 pt-16 antialiased sm:px-12"
-	>
+	<body class="text-textPrimary bg-bgPrimary">
 		{isDev && <Sitemap />}
 		{isDev && <Breakpoint />}
 		<main>

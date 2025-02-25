@@ -4,7 +4,7 @@ console.log('current page is ' + currentPage);
 ---
 
 <div
-	class="bg-bgPrimary dark:bg-bgSecondary fixed right-4 top-4 z-10 flex w-40 cursor-default flex-col gap-1 rounded-lg p-1 text-sm font-medium shadow-[0px_0px_0px_1px,0px_1px_1px_-0.5px,0px_3px_3px_-1.5px,0px_6px_6px_-3px,0px_12px_12px_-6px,0px_24px_24px_-12px] shadow-black/[0.06]"
+	class="bg-bgPrimary dark:bg-bgSecondary fixed right-4 top-4 z-10 hidden w-40 cursor-default flex-col gap-1 rounded-lg p-1 text-sm font-medium shadow-[0px_0px_0px_1px,0px_1px_1px_-0.5px,0px_3px_3px_-1.5px,0px_6px_6px_-3px,0px_12px_12px_-6px,0px_24px_24px_-12px] shadow-black/[0.06] sm:flex"
 >
 	{currentPage !== '/' ? <a href="/">Home</a> : <p>Home</p>}
 	{currentPage !== '/apps' ? <a href="/apps">Stack</a> : <p>Stack</p>}

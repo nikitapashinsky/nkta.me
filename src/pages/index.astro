@@ -9,28 +9,41 @@ import Layout from '../layouts/BaseLayout.astro';
 ---
 
 <Layout pageTitle="Nikita Pashinsky">
-	<div class="flex flex-col gap-16">
-		<div
-			class="flex max-w-md flex-col gap-4 font-serif text-2xl leading-snug tracking-tight md:text-3xl"
+	<div class="flex flex-col gap-16 px-6 pt-8 antialiased sm:px-12 sm:pt-12">
+		<hgroup
+			class="flex max-w-md flex-col gap-4 text-2xl font-[500] leading-snug tracking-tight sm:text-3xl"
 		>
-			<h1>Hi&thinsp;—&thinsp;thanks for stopping by.</h1>
 			<p>
-				I'm <Image
+				I'm<Image
 					src={pfp}
 					width={28}
 					densities={[1.5, 2, 3]}
-					class="-mr-px -mt-1 ml-1 inline rounded-full"
+					class="xs:inline -mt-[6px] ml-[10px] hidden rounded-full"
 					alt="That's me!"
 				/>&nbsp;Nikita, a designer focused on crafting beautiful software.
 			</p>
 			<p>
-				Currently <Icon name="WorkBadge" />&nbsp;Product Designer at&nbsp;<a
+				Currently<span class="whitespace-nowrap"
+					><Icon
+						name="WorkBadge"
+						size={36}
+						class="xs:inline -mt-[6px] ml-1 hidden text-cyan-500 dark:text-cyan-400"
+					/>Product Designer</span
+				> at&nbsp;<a
 					href="https://piano.io"
 					target="_blank"
-					class="decoration-2 underline-offset-[4px]">Piano</a
-				>, based in <Icon name="Location" />&nbsp;Amsterdam.
+					class="focus-visible:ring-3 focus-visible:ring-accent ring-offset-bgPrimary decoration-3 underline-offset-6 hover:decoration-textPrimary active:decoration-textPrimary rounded-lg underline decoration-neutral-200 ring-offset-4 hover:text-neutral-900 focus-visible:outline-none active:text-neutral-900 dark:decoration-neutral-700 dark:hover:text-neutral-100 dark:active:text-neutral-100"
+					>Piano</a
+				>, based in<span class="whitespace-nowrap"
+					><Icon
+						name="Location"
+						size={36}
+						class="xs:inline -mr-px -mt-1 ml-1 hidden text-blue-600 dark:text-blue-500"
+					/>Amsterdam.</span
+				>
 			</p>
-		</div>
+		</hgroup>
+
 		<div class="-ml-3 flex max-w-[29.5rem] flex-col">
 			{
 				socials.map(({ icon, link, title, handle }) => {
@@ -49,14 +62,4 @@ import Layout from '../layouts/BaseLayout.astro';
 	</div>
 </Layout>
 
-<style>
-	@reference "tailwindcss";
-
-	[data-icon='WorkBadge'] {
-		@apply -ml-[2px] -mr-1 -mt-[5px] inline text-cyan-500 dark:text-cyan-400;
-	}
-
-	[data-icon='Location'] {
-		@apply -mr-1 -mt-1 inline text-blue-600 dark:text-blue-500;
-	}
-</style>
+<style></style>
