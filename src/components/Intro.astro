@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import EmailButton from "./EmailButton.astro";
 ---
 
 <Layout>
@@ -11,7 +12,7 @@ import Layout from "../layouts/Layout.astro";
   <div class="links">
     <div class="link-email">
       <a href="mailto:nikitapashinsky@gmail.com">Email<span>↗</span></a>
-      <button data-copy-email>Copy</button>
+      <EmailButton />
     </div>
     <a href="https://bsky.app/profile/nkta.me" target="_blank"
       >Bluesky<span>↗</span></a
@@ -21,27 +22,6 @@ import Layout from "../layouts/Layout.astro";
     >
   </div>
 </Layout>
-
-<script>
-  async function copyEmail() {
-    try {
-      await navigator.clipboard.writeText("nikitapashinsky@gmail.com");
-    } catch (error: any) {
-      console.error(error.message);
-    }
-  }
-
-  const button = document.querySelector("[data-copy-email]");
-
-  button?.addEventListener("click", () => {
-    copyEmail();
-
-    button.textContent = "Copied";
-    setTimeout(() => {
-      button.textContent = "Copy";
-    }, 1500);
-  });
-</script>
 
 <style>
   h1 {
@@ -55,6 +35,11 @@ import Layout from "../layouts/Layout.astro";
     max-width: 400px;
 
     color: rgb(0 0 0 / 70%);
+  }
+
+  .link-email {
+    display: flex;
+    gap: 0.5rem;
   }
 
   .links {
@@ -85,28 +70,6 @@ import Layout from "../layouts/Layout.astro";
           > span {
             color: rgb(0 0 0 /90%);
           }
-        }
-      }
-    }
-  }
-
-  .link-email {
-    display: flex;
-    gap: 0.5rem;
-
-    button {
-      border: none;
-      outline: none;
-      padding: 2px 8px;
-      font-weight: 500;
-      color: rgb(0 0 0 / 75%);
-      border-radius: 6px;
-      background-color: rgb(0 0 0 / 3%);
-
-      @media (hover: hover) {
-        &:hover {
-          color: rgb(0 0 0 / 90%);
-          background-color: rgb(0 0 0 / 5%);
         }
       }
     }
