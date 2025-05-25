@@ -79,12 +79,14 @@ import Layout from "../layouts/Layout.astro";
         color: rgb(0 0 0 /40%);
       }
 
-      &:hover {
-        color: rgb(0 0 0 / 90%);
-        background-color: rgb(0 0 0 / 5%);
+      @media (hover: hover) {
+        &:hover {
+          color: rgb(0 0 0 / 90%);
+          background-color: rgb(0 0 0 / 5%);
 
-        > span {
-          color: rgb(0 0 0 /90%);
+          > span {
+            color: rgb(0 0 0 /90%);
+          }
         }
       }
     }
@@ -103,9 +105,11 @@ import Layout from "../layouts/Layout.astro";
       border-radius: 6px;
       background-color: rgb(0 0 0 / 3%);
 
-      &:hover {
-        color: rgb(0 0 0 / 90%);
-        background-color: rgb(0 0 0 / 5%);
+      @media (hover: hover) {
+        &:hover {
+          color: rgb(0 0 0 / 90%);
+          background-color: rgb(0 0 0 / 5%);
+        }
       }
     }
   }
