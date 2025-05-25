@@ -1,0 +1,112 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <h1>Nikita Pashinsky</h1>
+  <p>
+    I'm a designer and developer focused on crafting beautiful and intuitive
+    interfaces.
+  </p>
+  <div class="links">
+    <div class="link-email">
+      <a href="mailto:nikitapashinsky@gmail.com"
+        >nikitapashinsky@gmail.com <span>↗</span></a
+      >
+      <button data-copy-email>Copy</button>
+    </div>
+    <a href="https://bsky.app/profile/nkta.me" target="_blank"
+      >Bluesky <span>↗</span></a
+    >
+    <a href="https://www.linkedin.com/in/nkta/" target="_blank"
+      >LinkedIn <span>↗</span></a
+    >
+  </div>
+</Layout>
+
+<script>
+  async function copyEmail() {
+    try {
+      await navigator.clipboard.writeText("nikitapashinsky@gmail.com");
+    } catch (error: any) {
+      console.error(error.message);
+    }
+  }
+
+  const button = document.querySelector("[data-copy-email]");
+
+  button?.addEventListener("click", () => {
+    copyEmail();
+
+    button.textContent = "Copied";
+    setTimeout(() => {
+      button.textContent = "Copy";
+    }, 1500);
+  });
+</script>
+
+<style>
+  h1 {
+    font-size: 1.25rem;
+    font-weight: 550;
+  }
+
+  p {
+    margin-top: 0.75rem;
+    font-size: 1.25rem;
+    max-width: 400px;
+
+    color: rgb(0 0 0 / 70%);
+  }
+
+  .links {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    a {
+      padding: 2px 8px;
+      align-self: flex-start;
+      font-weight: 500;
+      text-decoration: none;
+      color: rgb(0 0 0 / 75%);
+      border-radius: 6px;
+      background-color: rgb(0 0 0 / 3%);
+
+      > span {
+        margin-left: 0.25rem;
+        color: rgb(0 0 0 /40%);
+      }
+
+      &:hover {
+        color: rgb(0 0 0 / 90%);
+        background-color: rgb(0 0 0 / 5%);
+
+        > span {
+          color: rgb(0 0 0 /90%);
+        }
+      }
+    }
+  }
+
+  .link-email {
+    display: flex;
+    gap: 0.5rem;
+
+    button {
+      border: none;
+      outline: none;
+      padding: 2px 8px;
+      font-weight: 500;
+      color: rgb(0 0 0 / 75%);
+      border-radius: 6px;
+      background-color: rgb(0 0 0 / 3%);
+
+      &:hover {
+        color: rgb(0 0 0 / 90%);
+        background-color: rgb(0 0 0 / 5%);
+      }
+    }
+  }
+</style>
