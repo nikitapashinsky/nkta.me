@@ -12,6 +12,7 @@ import EmailButton from "./EmailButton.astro";
   <div class="links">
     <div class="link-email">
       <a href="mailto:nikitapashinsky@gmail.com">Email<span>↗</span></a>
+      <div class="divider"></div>
       <EmailButton />
     </div>
     <a href="https://bsky.app/profile/nkta.me" target="_blank"
@@ -38,11 +39,6 @@ import EmailButton from "./EmailButton.astro";
     letter-spacing: -0.01em;
 
     color: var(--text-secondary);
-  }
-
-  .link-email {
-    display: flex;
-    gap: 0.5rem;
   }
 
   .links {
@@ -91,6 +87,25 @@ import EmailButton from "./EmailButton.astro";
           }
         }
       }
+    }
+  }
+
+  .link-email {
+    display: flex;
+
+    .divider {
+      display: block;
+      width: 1px;
+      background-color: var(--color-border);
+    }
+
+    a {
+      position: relative;
+      border-radius: 6px 0 0 6px;
+    }
+
+    button {
+      border-radius: 0 6px 6px 0;
     }
   }
 </style>

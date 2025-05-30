@@ -17,12 +17,16 @@
   --bg-tertiary: hsl(0 0% 98%);
   --bg-tertiary-hover: hsl(0 0% 95%);
 
+  --color-border: hsl(0 0% 93%);
+
   --padding: 1.5rem;
 
   @media (prefers-color-scheme: dark) {
     --text-primary: rgb(255 255 255 / 95%);
     --text-secondary: hsl(0 0% 50%);
     --text-tertiary: hsl(0 0% 20%);
+
+    --color-border: hsl(0 0% 12%);
 
     --bg-primary: hsl(0 0% 4%);
     --bg-tertiary: hsl(0 0% 7%);
