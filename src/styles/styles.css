@@ -8,7 +8,30 @@
   src: url("/fonts/InterVariable.woff2") format("woff2");
 }
 
+:root {
+  --text-primary: rgb(0 0 0 / 95%);
+  --text-secondary: hsl(0 0% 40%);
+  --text-tertiary: hsl(0 0% 75%);
+
+  --bg-primary: hsl(0 0% 100%);
+  --bg-tertiary: hsl(0 0% 98%);
+  --bg-tertiary-hover: hsl(0 0% 95%);
+
+  @media (prefers-color-scheme: dark) {
+    --text-primary: rgb(255 255 255 / 95%);
+    --text-secondary: hsl(0 0% 50%);
+    --text-tertiary: hsl(0 0% 20%);
+
+    --bg-primary: hsl(0 0% 4%);
+    --bg-tertiary: hsl(0 0% 7%);
+    --bg-tertiary-hover: hsl(0 0% 10%);
+  }
+}
+
 body {
   padding: 48px;
   font-family: InterVariable, sans-serif;
+  font-feature-settings: "calt", "dlig";
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
 }
