@@ -26,11 +26,11 @@
     --text-secondary: hsl(0 0% 50%);
     --text-tertiary: hsl(0 0% 20%);
 
-    --color-border: hsl(0 0% 12%);
-
     --bg-primary: hsl(0 0% 4%);
     --bg-tertiary: hsl(0 0% 7%);
     --bg-tertiary-hover: hsl(0 0% 10%);
+
+    --color-border: hsl(0 0% 12%);
   }
 
   @media (min-width: 768px) {
