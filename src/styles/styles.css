@@ -12,10 +12,13 @@
   --text-primary: rgb(0 0 0 / 95%);
   --text-secondary: hsl(0 0% 40%);
   --text-tertiary: hsl(0 0% 75%);
+  --text-inverse: hsl(0 0% 100%);
 
   --bg-primary: hsl(0 0% 100%);
   --bg-tertiary: hsl(0 0% 98%);
   --bg-tertiary-hover: hsl(0 0% 95%);
+  --bg-inverse: hsl(0 0% 5%);
+  --bg-inverse-hover: hsl(0 0% 10%);
 
   --color-border: hsl(0 0% 93%);
 
@@ -25,10 +28,13 @@
     --text-primary: rgb(255 255 255 / 95%);
     --text-secondary: hsl(0 0% 50%);
     --text-tertiary: hsl(0 0% 20%);
+    --text-inverse: hsl(0 0% 0%);
 
     --bg-primary: hsl(0 0% 4%);
     --bg-tertiary: hsl(0 0% 7%);
     --bg-tertiary-hover: hsl(0 0% 10%);
+    --bg-inverse: hsl(0 0% 95%);
+    --bg-inverse-hover: hsl(0 0% 90%);
 
     --color-border: hsl(0 0% 12%);
   }

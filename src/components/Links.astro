@@ -1,0 +1,73 @@
+---
+const { class: className, ...rest } = Astro.props;
+---
+
+<div class:list={["links", className]} {...rest}>
+  <a href="mailto:n@nkta.me">Email<span>↗</span></a>
+  <a href="https://twitter.com/nikitapashinsky" target="_blank"
+    >Twitter<span>↗</span></a
+  >
+  <a href="https://bsky.app/profile/nkta.me" target="_blank"
+    >Bluesky<span>↗</span></a
+  >
+  <a href="https://figma.com/@nkta" target="_blank">Figma<span>↗</span></a>
+  <a href="https://github.com/nikitapashinsky" target="_blank"
+    >GitHub<span>↗</span></a
+  >
+  <a href="https://www.linkedin.com/in/nkta/" target="_blank"
+    >LinkedIn<span>↗</span></a
+  >
+</div>
+
+<style>
+  .links {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+
+    a {
+      padding: 2px 8px;
+      align-self: flex-start;
+      text-decoration: none;
+      user-select: none;
+      color: var(--text-secondary);
+      border-radius: 6px;
+      background-color: var(--bg-tertiary);
+      transition:
+        color 180ms ease,
+        background-color 180ms ease,
+        scale 180ms ease;
+
+      > span {
+        display: inline-block;
+        margin-left: 0.375rem;
+        color: var(--text-tertiary);
+        transition:
+          color 180ms ease,
+          transform 180ms ease;
+      }
+
+      &:active {
+        scale: 0.95;
+      }
+
+      &:focus-visible {
+        outline: 1px solid var(--text-secondary);
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          color: var(--text-primary);
+          background-color: var(--bg-tertiary-hover);
+
+          > span {
+            transform: translate(2px, -2px);
+            color: var(--text-secondary);
+          }
+        }
+      }
+    }
+  }
+</style>
