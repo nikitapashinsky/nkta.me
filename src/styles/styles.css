@@ -52,11 +52,17 @@ body {
 }
 
 ::selection {
-	color: oklch(70% 0.04 174);
 	background-color: var(--color-selection);
 }
 
-h1::selection {
-	color: oklch(95% 0.05 174.2);
-	background-color: var(--color-selection);
+@media (prefers-color-scheme: dark) {
+	::selection {
+		color: oklch(70% 0.04 174);
+		background-color: var(--color-selection);
+	}
+
+	h1::selection {
+		color: oklch(95% 0.05 174.2);
+		background-color: var(--color-selection);
+	}
 }
