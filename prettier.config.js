@@ -1,4 +1,4 @@
-/** @type {import("prettier").Config} */
+/** @type {import("prettier").Config & import('prettier-plugin-tailwindcss').PluginOptions} */
 export default {
 	printWidth: 100,
 	semi: true,
@@ -6,7 +6,9 @@ export default {
 	tabWidth: 2,
 	trailingComma: 'all',
 	useTabs: true,
-	plugins: ['prettier-plugin-astro'],
+	plugins: ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
+	tailwindStylesheet: './src/styles/global.css',
+
 	overrides: [
 		{
 			files: ['*.toml', '*.yml'],

@@ -1,10 +1,8 @@
-@import 'reset.css';
-
 @font-face {
 	font-family: InterVariable;
 	font-style: normal;
 	font-weight: 100 900;
-	font-display: auto;
+	font-display: swap;
 	src: url('/fonts/InterVariable.woff2') format('woff2');
 }
 
@@ -25,7 +23,7 @@
 	--color-border: hsl(0 0% 93%);
 	--color-selection: oklch(59% 0.111 174 / 10%);
 
-	@media (prefers-color-scheme: dark) {
+	/* @media (prefers-color-scheme: dark) {
 		--text-primary: oklch(98% 0.01 174.2);
 		--text-secondary: oklch(60% 0.015 174);
 		--text-tertiary: oklch(35% 0.015 174);
@@ -39,23 +37,22 @@
 
 		--color-border: hsl(0 0% 12%);
 		--color-selection: oklch(85% 0.1 174 / 10%);
-	}
+	} */
 }
 
 body {
-	padding: var(--padding);
-	padding-top: 5rem;
 	font-family: InterVariable, sans-serif;
-	font-feature-settings: 'calt', 'dlig';
+	/*font-feature-settings: 'calt', 'dlig';*/
 	color: var(--text-primary);
 	background-color: var(--bg-primary);
+	-webkit-font-smoothing: antialiased;
 }
 
 ::selection {
 	background-color: var(--color-selection);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
 	::selection {
 		color: oklch(70% 0.04 174);
 		background-color: var(--color-selection);
@@ -65,4 +62,4 @@ body {
 		color: oklch(95% 0.05 174.2);
 		background-color: var(--color-selection);
 	}
-}
+} */

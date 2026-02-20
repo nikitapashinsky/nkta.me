@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+	<style>
+		.favicon {
+			fill: #000000;
+		}
+
+		@media (prefers-color-scheme: dark) {
+			.favicon {
+				fill: #ffffff;
+			}
+		}
+	</style>
+	<path
+		class="favicon"
+		d="M7 10H5v4H4v-4H2V9h5v1Zm3 1h3v-1h1v4h-1v-2h-3v2H9v-4h1v1Zm3-1h-3V9h3v1ZM3 3h1v1H3v3H2V2h1v1Zm4 4H6V6H5V5h1V2h1v5Zm3-3h2v1h-2v2H9V2h1v2Zm4 3h-1V6h1v1Zm-1-1h-1V5h1v1ZM5 5H4V4h1v1Zm8-1h-1V3h1v1Zm1-1h-1V2h1v1Z"
+	/>
+</svg>

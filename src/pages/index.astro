@@ -5,14 +5,52 @@ import Intro from '../components/Intro.astro';
 ---
 
 <Layout>
-	<main>
+	<main
+		class:list={[
+			'flex flex-col gap-6',
+			'lg:grid lg:flex-1 lg:grid-cols-[320px_1fr] lg:overflow-hidden',
+		]}
+	>
 		<Intro />
+		<div
+			class:list={['work', 'flex flex-col gap-4 p-4', 'lg:overflow-y-scroll lg:overscroll-contain']}
+		>
+			<video autoplay loop muted playsinline src="/select-touchpoint.mp4"></video>
+			<video autoplay loop muted playsinline src="/audience-estimate.mp4"></video>
+			<div class="flex aspect-16/10 items-center justify-center">
+				<video autoplay loop muted playsinline src="/sidebar-icon.mp4" class="w-2/3"></video>
+			</div>
+		</div>
 	</main>
 </Layout>
 
 <style>
-	main {
-		margin: 0 auto;
-		max-width: 480px;
+	@keyframes slide-in {
+		from {
+			transform: translateY(48px);
+			opacity: 0;
+			filter: blur(5px);
+		}
+
+		to {
+			transform: translateY(0);
+			opacity: 1;
+			filter: blur(0px);
+		}
+	}
+
+	.work {
+		> * {
+			opacity: 0;
+			animation: 1s 850ms slide-in cubic-bezier(0.32, 0.72, 0, 1) forwards;
+
+			&:nth-child(2) {
+				animation-delay: 1050ms;
+			}
+
+			&:nth-child(3) {
+				animation-delay: 1250ms;
+			}
+		}
 	}
 </style>
