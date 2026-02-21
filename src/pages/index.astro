@@ -5,16 +5,9 @@ import Intro from '../components/Intro.astro';
 ---
 
 <Layout>
-	<main
-		class:list={[
-			'flex flex-col gap-6',
-			'lg:grid lg:flex-1 lg:grid-cols-[320px_1fr] lg:overflow-hidden',
-		]}
-	>
+	<main class:list={['flex flex-col', 'lg:block lg:flex-1']}>
 		<Intro />
-		<div
-			class:list={['work', 'flex flex-col gap-4 p-4', 'lg:overflow-y-scroll lg:overscroll-contain']}
-		>
+		<div class:list={['work', 'flex flex-col gap-6 p-6', 'lg:pl-86']}>
 			<video autoplay loop muted playsinline src="/select-touchpoint.mp4"></video>
 			<video autoplay loop muted playsinline src="/audience-estimate.mp4"></video>
 			<div class="flex aspect-16/10 items-center justify-center">
