@@ -1,8 +1,9 @@
 # build output
 dist/
-
-# generated types
-.astro/
+.output/
+.nitro/
+.tanstack/
+.vinxi/
 
 # dependencies
 node_modules/
