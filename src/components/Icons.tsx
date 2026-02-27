@@ -1,0 +1,134 @@
+import { cn } from '../lib/utils';
+
+export type IconProps = React.SVGProps<SVGSVGElement>;
+
+export function ArenaIcon({ className, ...props }: IconProps) {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="20"
+			height="20"
+			viewBox="0 0 20 20"
+			className={cn('fill-neutral-400', className)}
+			{...props}
+		>
+			<path d="m18.99 12.178-2.542-1.998c-.155-.122-.155-.322 0-.444l2.542-1.997c.156-.122.221-.329.145-.458-.076-.13-.29-.176-.473-.103L15.64 8.382c-.184.074-.357-.027-.385-.223l-.454-3.227c-.028-.196-.176-.356-.329-.356-.152 0-.299.16-.326.356L13.69 8.16c-.028.196-.2.297-.385.223l-2.972-1.184a1.042 1.042 0 0 0-.668 0L6.693 8.382c-.184.074-.357-.027-.385-.223l-.454-3.227c-.028-.196-.175-.356-.327-.356-.153 0-.3.16-.328.356L4.744 8.16c-.027.196-.2.297-.384.223L1.338 7.18c-.184-.074-.397-.028-.473.102-.076.13-.011.336.145.458l2.54 1.996c.156.122.156.322 0 .445l-2.54 1.997c-.157.122-.221.34-.145.485.076.146.29.204.473.13l2.995-1.203c.184-.073.355.027.38.223l.433 3.255c.026.196.197.356.38.356s.354-.16.38-.356l.433-3.255c.026-.196.198-.296.38-.223l2.947 1.183c.183.074.484.074.667 0l2.946-1.183c.183-.073.355.027.38.223l.434 3.255c.025.196.197.356.38.356.182 0 .354-.16.38-.356l.433-3.255c.026-.196.197-.296.38-.223l2.996 1.203c.183.074.396.015.472-.13.077-.144.012-.363-.144-.485Zm-6.466-1.972-2.239 1.723a.494.494 0 0 1-.57 0l-2.239-1.723c-.156-.121-.157-.32-.002-.442l2.243-1.767a.48.48 0 0 1 .566 0l2.243 1.767c.155.122.154.32-.003.442Z" />
+		</svg>
+	);
+}
+
+export function EmailIcon({ className, ...props }: IconProps) {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="20"
+			height="20"
+			viewBox="0 0 20 20"
+			className={cn('fill-neutral-400', className)}
+			{...props}
+		>
+			<path d="M18.333 15.208a1.46 1.46 0 0 1-1.458 1.459H3.125a1.46 1.46 0 0 1-1.458-1.459v-8.15l7.677 3.862c.412.208.9.208 1.312 0l7.677-3.862v8.15ZM16.875 3.333a1.46 1.46 0 0 1 1.458 1.459v.865l-8.24 4.147a.212.212 0 0 1-.187 0L1.667 5.657v-.865a1.46 1.46 0 0 1 1.458-1.459h13.75Z" />
+		</svg>
+	);
+}
+
+export function TwitterIcon({ className, ...props }: IconProps) {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="20"
+			height="20"
+			viewBox="0 0 20 20"
+			className={cn(
+				'fill-neutral-400',
+				className,
+				'group-hover:fill-[#1DA1F2] group-active:fill-[#1DA1F2]',
+			)}
+			{...props}
+		>
+			<path d="M19.375 4.276c-.69.3-1.43.504-2.21.596a3.81 3.81 0 0 0 1.693-2.095 7.757 7.757 0 0 1-2.443.918A3.875 3.875 0 0 0 13.607 2.5c-2.124 0-3.846 1.696-3.846 3.787 0 .296.034.585.099.862a10.98 10.98 0 0 1-7.93-3.957 3.743 3.743 0 0 0-.52 1.904 3.77 3.77 0 0 0 1.712 3.152 3.874 3.874 0 0 1-1.743-.474v.05c0 1.834 1.325 3.364 3.086 3.713a3.953 3.953 0 0 1-1.737.064A3.842 3.842 0 0 0 6.32 14.23a7.797 7.797 0 0 1-4.778 1.622c-.31 0-.616-.019-.918-.053A11.007 11.007 0 0 0 6.521 17.5c7.077 0 10.946-5.77 10.946-10.773 0-.163-.005-.327-.012-.49a7.748 7.748 0 0 0 1.918-1.959l.002-.002Z" />
+		</svg>
+	);
+}
+
+export function FigmaIcon({ className, ...props }: IconProps) {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="20"
+			height="20"
+			viewBox="0 0 20 20"
+			className={cn(
+				[
+					'[--top-left:var(--color-neutral-400)]',
+					'[--top-right:var(--color-neutral-400)]',
+					'[--middle-left:var(--color-neutral-400)]',
+					'[--middle-right:var(--color-neutral-400)]',
+					'[--bottom-left:var(--color-neutral-400)]',
+				],
+				[
+					'[--top-left-delay:0ms]',
+					'[--top-right-delay:50ms]',
+					'[--middle-left-delay:100ms]',
+					'[--middle-right-delay:150ms]',
+					'[--bottom-left-delay:200ms]',
+				],
+				[
+					'group-hover:[--top-left:#FF3737]',
+					'group-hover:[--top-right:#FF7237]',
+					'group-hover:[--middle-left:#874FFF]',
+					'group-hover:[--middle-right:#00B6FF]',
+					'group-hover:[--bottom-left:#24CB71]',
+					'group-active:[--top-left:#FF3737]',
+					'group-active:[--top-right:#FF7237]',
+					'group-active:[--middle-left:#874FFF]',
+					'group-active:[--middle-right:#00B6FF]',
+					'group-active:[--bottom-left:#24CB71]',
+				],
+			)}
+			{...props}
+		>
+			<path
+				className={'fill-(--top-left) transition-colors delay-(--top-left-delay)'}
+				d="M10 1.667H7.22a2.78 2.78 0 0 0 0 5.558H10V1.667Z"
+			/>
+			<path
+				className={'fill-(--top-right) transition-colors delay-(--top-right-delay)'}
+				d="M10 1.667h2.78a2.78 2.78 0 0 1 0 5.558H10V1.667Z"
+			/>
+			<path
+				className={'fill-(--middle-left) transition-colors delay-(--middle-left-delay)'}
+				d="M4.442 10.004A2.78 2.78 0 0 1 7.22 7.225H10v5.558H7.22a2.78 2.78 0 0 1-2.778-2.779Z"
+			/>
+			<path
+				className={'fill-(--middle-right) transition-colors delay-(--middle-right-delay)'}
+				d="M15.558 10A2.78 2.78 0 1 1 10 10a2.78 2.78 0 0 1 5.558 0Z"
+			/>
+			<path
+				className={'fill-(--bottom-left) transition-colors delay-(--bottom-left-delay)'}
+				d="M10 15.554a2.78 2.78 0 1 1-2.78-2.779H10v2.78Z"
+			/>
+		</svg>
+	);
+
+	// "#FF3737"
+	// "#FF7237"
+	// "#874FFF"
+	// "#00B6FF"
+	// "#24CB71"
+}
+
+export function GithubIcon({ className, ...props }: IconProps) {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="20"
+			height="20"
+			viewBox="0 0 20 20"
+			className={cn('fill-neutral-400', className)}
+			{...props}
+		>
+			<path d="M10 1.626a8.331 8.331 0 0 1 8.333 8.333 8.343 8.343 0 0 1-5.676 7.906c-.417.083-.574-.177-.574-.396 0-.28.01-1.177.01-2.292 0-.78-.26-1.28-.561-1.541 1.854-.208 3.801-.917 3.801-4.114 0-.917-.323-1.657-.854-2.24.084-.209.375-1.063-.083-2.209 0 0-.698-.229-2.292.855a7.733 7.733 0 0 0-2.083-.281c-.708 0-1.417.093-2.083.28-1.595-1.072-2.292-.854-2.292-.854-.458 1.146-.167 2-.083 2.209a3.242 3.242 0 0 0-.855 2.24c0 3.187 1.938 3.905 3.792 4.114-.24.208-.458.573-.53 1.115-.48.218-1.678.572-2.428-.688-.156-.25-.625-.865-1.282-.854-.697.01-.28.396.01.552.355.198.76.937.855 1.177.167.469.708 1.364 2.802.98 0 .697.01 1.354.01 1.551 0 .22-.155.47-.572.396a8.327 8.327 0 0 1-5.698-7.906A8.331 8.331 0 0 1 10 1.626Z" />
+		</svg>
+	);
+}

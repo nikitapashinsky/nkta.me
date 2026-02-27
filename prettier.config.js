@@ -6,8 +6,8 @@ export default {
 	tabWidth: 2,
 	trailingComma: 'all',
 	useTabs: true,
-	plugins: ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
-	tailwindStylesheet: './src/styles/global.css',
+	plugins: ['prettier-plugin-tailwindcss'],
+	tailwindStylesheet: './src/styles.css',
 
 	overrides: [
 		{
@@ -20,12 +20,6 @@ export default {
 			files: ['*.mdx', '*.md'],
 			options: {
 				printWidth: 80,
-			},
-		},
-		{
-			files: ['**/*.astro'],
-			options: {
-				parser: 'astro',
 			},
 		},
 	],
