@@ -8,7 +8,7 @@ export function PortfolioItemFrame({
 	ringOutside?: boolean;
 }) {
 	return (
-		<div className={cn('rounded-md bg-neutral-100 p-6', 'lg:p-12')}>
+		<div className={cn('rounded-md bg-neutral-100 p-6', 'lg:p-12 xl:p-20')}>
 			<div className={cn('relative', ringOutside && 'p-px')}>
 				<div className={cn('absolute inset-0 rounded-sm', 'ring ring-black/5 ring-inset')} />
 				{children}
