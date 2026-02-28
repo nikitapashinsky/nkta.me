@@ -1,5 +1,5 @@
-import { cn } from '../lib/utils';
 import { ArenaIcon, EmailIcon, GithubIcon, TwitterIcon } from './Icons';
+import { cn } from '~/lib/utils';
 
 interface Link {
 	label: string;
@@ -36,7 +36,7 @@ export function Links() {
 					)}
 				>
 					<Icon
-						className={cn('transition-colors duration-125', [
+						className={cn('transition-colors duration-125', 'size-5', [
 							'group-hover:fill-black group-hover:duration-75',
 							'group-active:fill-black group-active:duration-75',
 							'group-focus-visible:fill-black group-focus-visible:duration-75',
