@@ -1,7 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
+import { PortfolioItem } from '~/components/PortfolioItem';
 import { Sidebar } from '~/components/Sidebar';
+import { portfolioItems } from '~/data/portfolio';
 import { useTime } from '~/hooks/useTime';
-import { PortfolioItemFrame } from '~/components/PortfolioItemFrame';
 import { cn } from '~/lib/utils';
 
 export const Route = createFileRoute('/')({ component: Home });
@@ -13,46 +14,9 @@ function Home() {
 		<main className={'flex flex-col lg:block lg:flex-1'}>
 			<Sidebar />
 			<div className={cn('flex flex-col gap-3 p-3', 'lg:gap-6 lg:p-6 lg:pl-86')}>
-				<PortfolioItemFrame>
-					<video
-						autoPlay
-						loop
-						muted
-						playsInline
-						src="/videos/branch-menu.mp4"
-						className={'rounded-sm'}
-					/>
-				</PortfolioItemFrame>
-				<PortfolioItemFrame>
-					<video
-						autoPlay
-						loop
-						muted
-						playsInline
-						src="/videos/audience-estimate.mp4"
-						className={'rounded-sm'}
-					/>
-				</PortfolioItemFrame>
-				<PortfolioItemFrame>
-					<video
-						autoPlay
-						loop
-						muted
-						playsInline
-						src="/videos/select-touchpoint.mp4"
-						className={'rounded-sm'}
-					/>
-				</PortfolioItemFrame>
-				<PortfolioItemFrame ringOutside>
-					<video
-						autoPlay
-						loop
-						muted
-						playsInline
-						src="/videos/sidebar-icon.mp4"
-						className={'rounded-sm'}
-					/>
-				</PortfolioItemFrame>
+				{portfolioItems.map((item) => (
+					<PortfolioItem key={item.id} item={item} />
+				))}
 			</div>
 
 			<div className={cn('flex flex-col gap-6 px-3 pt-8 pb-6', 'lg:hidden')}>

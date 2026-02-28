@@ -1,5 +1,5 @@
 import { cn } from '../lib/utils';
-import { ArenaIcon, EmailIcon, FigmaIcon, GithubIcon, TwitterIcon } from './Icons';
+import { ArenaIcon, EmailIcon, GithubIcon, TwitterIcon } from './Icons';
 
 interface Link {
 	label: string;
@@ -11,7 +11,6 @@ const LinksData: Array<Link> = [
 	{ label: 'Email', url: 'mailto:n@nkta.me', icon: EmailIcon },
 	{ label: 'Twitter', url: 'https://twitter.com/nikitapashinsky', icon: TwitterIcon },
 	{ label: 'Github', url: 'https://github.com/nikitapashinsky', icon: GithubIcon },
-	{ label: 'Figma', url: 'https://figma.com/@nkta', icon: FigmaIcon },
 	{ label: 'Are.na', url: 'https://www.are.na/nikita-pashinsky', icon: ArenaIcon },
 ];
 
