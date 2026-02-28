@@ -1,6 +1,6 @@
 /// <reference types="vite/client" />
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router';
-import styles from '../styles.css?url';
+import styles from '~/styles.css?url';
 
 export const Route = createRootRoute({
 	head: () => ({

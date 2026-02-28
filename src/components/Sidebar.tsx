@@ -1,4 +1,4 @@
-import { useTime } from '../hooks/useTime';
+import { useTime } from '~/hooks/useTime';
 import { Links } from './Links';
 
 export function Sidebar() {
@@ -29,7 +29,7 @@ export function Sidebar() {
 						<div className={'tabular-nums'} suppressHydrationWarning>
 							{hours}
 						</div>
-						<div className={'animate-blink -translate-y-px'}>:</div>
+						<div className={'-translate-y-px animate-blink'}>:</div>
 						<div className={'tabular-nums'} suppressHydrationWarning>
 							{minutes}
 						</div>

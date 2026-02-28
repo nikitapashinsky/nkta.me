@@ -1,6 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Sidebar } from '../components/Sidebar';
-import { useTime } from '../hooks/useTime';
+import { Sidebar } from '~/components/Sidebar';
+import { useTime } from '~/hooks/useTime';
+import { PortfolioItemFrame } from '~/components/PortfolioItemFrame';
+import { cn } from '~/lib/utils';
 
 export const Route = createFileRoute('/')({ component: Home });
 
@@ -10,48 +12,52 @@ function Home() {
 	return (
 		<main className={'flex flex-col lg:block lg:flex-1'}>
 			<Sidebar />
-			<div className={'flex flex-col gap-6 p-6 lg:pl-86'}>
-				<video
-					autoPlay
-					loop
-					muted
-					playsInline
-					src="/videos/branch-menu.mp4"
-					className={'rounded-md'}
-				/>
-				<video
-					autoPlay
-					loop
-					muted
-					playsInline
-					src="/videos/audience-estimate.mp4"
-					className={'rounded-md'}
-				/>
-				<video
-					autoPlay
-					loop
-					muted
-					playsInline
-					src="/videos/select-touchpoint.mp4"
-					className={'rounded-md'}
-				/>
-				<div className={'relative'}>
-					<div className={'absolute inset-0 rounded-md ring ring-black/6 ring-inset'} />
+			<div className={cn('flex flex-col gap-3 p-3', 'lg:gap-6 lg:p-6 lg:pl-86')}>
+				<PortfolioItemFrame>
+					<video
+						autoPlay
+						loop
+						muted
+						playsInline
+						src="/videos/branch-menu.mp4"
+						className={'rounded-sm'}
+					/>
+				</PortfolioItemFrame>
+				<PortfolioItemFrame>
+					<video
+						autoPlay
+						loop
+						muted
+						playsInline
+						src="/videos/audience-estimate.mp4"
+						className={'rounded-sm'}
+					/>
+				</PortfolioItemFrame>
+				<PortfolioItemFrame>
+					<video
+						autoPlay
+						loop
+						muted
+						playsInline
+						src="/videos/select-touchpoint.mp4"
+						className={'rounded-sm'}
+					/>
+				</PortfolioItemFrame>
+				<PortfolioItemFrame ringOutside>
 					<video
 						autoPlay
 						loop
 						muted
 						playsInline
 						src="/videos/sidebar-icon.mp4"
-						className={'rounded-md'}
+						className={'rounded-sm'}
 					/>
-				</div>
+				</PortfolioItemFrame>
 			</div>
 
-			<div className={'flex flex-col gap-6 px-6 pt-8 pb-6 lg:hidden'}>
+			<div className={cn('flex flex-col gap-6 px-3 pt-8 pb-6', 'lg:hidden')}>
 				<div className={'h-px w-full bg-neutral-100'} />
-
-				<div className={'flex items-center gap-1 text-sm text-neutral-500 lg:text-xs'}>
+				<div className={'flex items-center gap-1 px-3 text-sm text-neutral-500 lg:text-xs'}>
 					<div className={'flex items-center select-none'}>
 						<div className={'tabular-nums'} suppressHydrationWarning>
 							{hours}
