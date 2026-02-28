@@ -9,7 +9,7 @@ export function PortfolioItemFrame({
 }) {
 	return (
 		<div className={cn('rounded-md bg-neutral-100 p-6', 'lg:p-12 xl:p-20')}>
-			<div className={cn('relative', ringOutside && 'p-px')}>
+			<div className={cn('relative', ringOutside && 'p-[0.5px] lg:p-px')}>
 				<div
 					className={cn(
 						'absolute inset-0 rounded-sm ring-[0.5px] ring-black/8 ring-inset',
