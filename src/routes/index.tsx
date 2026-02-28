@@ -11,10 +11,41 @@ function Home() {
 		<main className={'flex flex-col lg:block lg:flex-1'}>
 			<Sidebar />
 			<div className={'flex flex-col gap-6 p-6 lg:pl-86'}>
-				<video autoPlay loop muted playsInline src="/videos/branch-menu.mp4" />
-				<video autoPlay loop muted playsInline src="/videos/audience-estimate.mp4" />
-				<video autoPlay loop muted playsInline src="/videos/select-touchpoint.mp4" />
-				<video autoPlay loop muted playsInline src="/videos/sidebar-icon.mp4" />
+				<video
+					autoPlay
+					loop
+					muted
+					playsInline
+					src="/videos/branch-menu.mp4"
+					className={'rounded-md'}
+				/>
+				<video
+					autoPlay
+					loop
+					muted
+					playsInline
+					src="/videos/audience-estimate.mp4"
+					className={'rounded-md'}
+				/>
+				<video
+					autoPlay
+					loop
+					muted
+					playsInline
+					src="/videos/select-touchpoint.mp4"
+					className={'rounded-md'}
+				/>
+				<div className={'relative'}>
+					<div className={'absolute inset-0 rounded-md ring ring-black/6 ring-inset'} />
+					<video
+						autoPlay
+						loop
+						muted
+						playsInline
+						src="/videos/sidebar-icon.mp4"
+						className={'rounded-md'}
+					/>
+				</div>
 			</div>
 
 			<div className={'flex flex-col gap-6 px-6 pt-8 pb-6 lg:hidden'}>
@@ -25,7 +56,7 @@ function Home() {
 						<div className={'tabular-nums'} suppressHydrationWarning>
 							{hours}
 						</div>
-						<div className={'animate-blink -translate-y-px'}>:</div>
+						<div className={'-translate-y-px animate-blink'}>:</div>
 						<div className={'tabular-nums'} suppressHydrationWarning>
 							{minutes}
 						</div>
