@@ -10,6 +10,13 @@ export const Route = createRootRoute({
 			{ title: 'Nikita Pashinsky' },
 		],
 		links: [
+			{
+				rel: 'preload',
+				href: '/fonts/InterVariable.woff2',
+				as: 'font',
+				type: 'font/woff2',
+				crossOrigin: 'anonymous',
+			},
 			{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
 			{ rel: 'stylesheet', href: styles },
 		],

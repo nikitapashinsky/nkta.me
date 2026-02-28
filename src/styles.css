@@ -14,6 +14,18 @@
 	--text-sm--line-height: 1.25rem;
 
 	--default-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+	--animate-blink: blink 2s step-end infinite;
+
+	@keyframes blink {
+		0%,
+		100% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 0;
+		}
+	}
 }
 
 @layer base {
@@ -27,18 +39,4 @@
 		background-color: oklch(95% 0.205 118);
 		color: #000;
 	}
-}
-
-@keyframes blink {
-	0%,
-	100% {
-		opacity: 1;
-	}
-	50% {
-		opacity: 0;
-	}
-}
-
-.colon-blink {
-	animation: blink 2s step-end infinite;
 }
