@@ -42,7 +42,7 @@ export function TwitterIcon({ className, ...props }: IconProps) {
 			className={cn(
 				'fill-neutral-400',
 				className,
-				'group-hover:fill-[#1DA1F2] group-active:fill-[#1DA1F2]',
+				'group-hover:fill-[#1DA1F2] group-focus-visible:fill-[#1DA1F2] group-active:fill-[#1DA1F2]',
 			)}
 			{...props}
 		>
@@ -84,6 +84,11 @@ export function FigmaIcon({ className, ...props }: IconProps) {
 					'group-active:[--middle-left:#874FFF]',
 					'group-active:[--middle-right:#00B6FF]',
 					'group-active:[--bottom-left:#24CB71]',
+					'group-focus-visible:[--top-left:#FF3737]',
+					'group-focus-visible:[--top-right:#FF7237]',
+					'group-focus-visible:[--middle-left:#874FFF]',
+					'group-focus-visible:[--middle-right:#00B6FF]',
+					'group-focus-visible:[--bottom-left:#24CB71]',
 				],
 			)}
 			{...props}
