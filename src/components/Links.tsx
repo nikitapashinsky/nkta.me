@@ -7,7 +7,7 @@ interface Link {
 	icon: (props: React.SVGProps<SVGSVGElement>) => React.JSX.Element;
 }
 
-const LinksData: Link[] = [
+const LinksData: Array<Link> = [
 	{ label: 'Email', url: 'mailto:n@nkta.me', icon: EmailIcon },
 	{ label: 'Twitter', url: 'https://twitter.com/nikitapashinsky', icon: TwitterIcon },
 	{ label: 'Github', url: 'https://github.com/nikitapashinsky', icon: GithubIcon },

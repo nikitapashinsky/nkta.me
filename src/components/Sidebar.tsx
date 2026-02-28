@@ -1,5 +1,5 @@
-import { useTime } from '~/hooks/useTime';
 import { Links } from './Links';
+import { useTime } from '~/hooks/useTime';
 
 export function Sidebar() {
 	const { hours, minutes } = useTime('Europe/Amsterdam');
