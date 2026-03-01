@@ -5,13 +5,14 @@
 	font-style: normal;
 	font-weight: 100 900;
 	font-display: swap;
-	font-feature-settings: 'ss03';
+	font-feature-settings: 'case', 'calt', 'ss07', 'ss08';
 	src: url('/fonts/InterVariable.woff2') format('woff2');
 }
 
 @theme {
 	--text-base--line-height: 1.5rem;
 	--text-sm--line-height: 1.25rem;
+	--text-sm--letter-spacing: -0.005em;
 
 	--default-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 
