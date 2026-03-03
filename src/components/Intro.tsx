@@ -15,9 +15,12 @@ export function Intro() {
 						href="https://piano.io"
 						target="_blank"
 						rel="noopener noreferrer"
-						className={
-							'underline decoration-black/10 underline-offset-4 transition-colors duration-125 hover:decoration-black hover:duration-75'
-						}
+						className={cn(
+							'relative underline decoration-black/10 underline-offset-4 outline-none',
+							'transition-colors duration-125 hover:duration-75',
+							'before:absolute before:-inset-x-0.5 before:-inset-y-0.5 before:-z-1 before:rounded-[3px] before:bg-acid-lime before:opacity-0',
+							'hover:decoration-black focus-visible:decoration-transparent focus-visible:before:opacity-100',
+						)}
 					>
 						Piano
 					</a>

@@ -49,7 +49,7 @@ export function Links() {
 								'relative text-sm font-[450] select-none',
 								'transition-colors duration-125 group-hover:duration-75 group-active:duration-75',
 								'underline decoration-black/10 underline-offset-4',
-								'group-hover:decoration-transparent',
+								'group-hover:decoration-transparent group-active:decoration-transparent',
 							)}
 						>
 							{label}
