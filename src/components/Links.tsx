@@ -1,4 +1,4 @@
-import { ArenaIcon, EmailIcon, GithubIcon, TwitterIcon } from './Icons';
+import { ArenaIcon, BlueskyIcon, EmailIcon, GithubIcon, TwitterIcon } from './Icons';
 import { cn } from '~/lib/utils';
 
 interface Link {
@@ -10,6 +10,7 @@ interface Link {
 const LinksData: Array<Link> = [
 	{ label: 'Email', url: 'mailto:n@nkta.me', icon: EmailIcon },
 	{ label: 'Twitter', url: 'https://twitter.com/nikitapashinsky', icon: TwitterIcon },
+	{ label: 'Bluesky', url: 'https://bsky.app/profile/nkta.me', icon: BlueskyIcon },
 	{ label: 'Github', url: 'https://github.com/nikitapashinsky', icon: GithubIcon },
 	{ label: 'Are.na', url: 'https://www.are.na/nikita-pashinsky', icon: ArenaIcon },
 ];
