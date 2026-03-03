@@ -1,7 +1,7 @@
 import { Links } from './Links';
 import { Footer } from './Footer';
 import { Intro } from './Intro';
-import { cn } from '~/lib/utils';
+import { cn } from '~/utils/cn';
 
 export function Sidebar() {
 	return (

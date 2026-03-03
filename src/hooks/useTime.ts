@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { formatTime } from '../lib/time';
+import { formatTime } from '../utils/formatTime';
 
 export function useTime(timeZone: string) {
 	const [{ hours, minutes }, setTime] = useState(() => formatTime(timeZone));

@@ -3,7 +3,7 @@ import { Footer } from '~/components/Footer';
 import { PortfolioItem } from '~/components/PortfolioItem';
 import { Sidebar } from '~/components/Sidebar';
 import { portfolioItems } from '~/data/portfolio';
-import { cn } from '~/lib/utils';
+import { cn } from '~/utils/cn';
 
 export const Route = createFileRoute('/')({ component: Home });
 

@@ -1,5 +1,5 @@
 import { ArenaIcon, BlueskyIcon, EmailIcon, GithubIcon, TwitterIcon } from './Icons';
-import { cn } from '~/lib/utils';
+import { cn } from '~/utils/cn';
 
 interface Link {
 	label: string;

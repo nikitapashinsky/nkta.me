@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Popover } from '@base-ui/react';
-import { cn } from '~/lib/utils';
+import { cn } from '~/utils/cn';
 import { useTime } from '~/hooks/useTime';
 import scheveningen1 from '~/assets/scheveningen_1.webp';
 import scheveningen2 from '~/assets/scheveningen_2.webp';

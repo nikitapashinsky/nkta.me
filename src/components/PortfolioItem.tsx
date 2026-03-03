@@ -1,5 +1,5 @@
 import type { PortfolioItem } from '~/data/portfolio';
-import { cn } from '~/lib/utils';
+import { cn } from '~/utils/cn';
 
 export function PortfolioItem({ item }: { item: PortfolioItem }) {
 	return (
