@@ -33,9 +33,14 @@ export function Footer({ breakpoint }: { breakpoint: 'desktop' | 'mobile' }) {
 					<Popover.Trigger className={'group outline-none'}>
 						<span
 							className={cn(
+								'relative',
 								'underline decoration-black/30 decoration-dotted decoration-1 underline-offset-[3px]',
 								'cursor-help outline-none',
 								'group-hover:text-black group-focus-visible:text-black group-data-popup-open:text-black',
+								'transition-colors duration-125 group-hover:duration-75',
+								'before:absolute before:-inset-y-0.5 before:-inset-s-0.75 before:-inset-e-1.5 before:-z-1 before:rounded-[3px] before:bg-black/8 before:opacity-0',
+								'before:east-out before:transition-opacity before:duration-150',
+								'group-data-popup-open:decoration-transparent group-data-popup-open:before:opacity-100',
 							)}
 						>
 							Scheveningen
@@ -48,9 +53,9 @@ export function Footer({ breakpoint }: { breakpoint: 'desktop' | 'mobile' }) {
 								className={cn(
 									'flex max-w-72 flex-col',
 									'rounded-md bg-white shadow-2xl ring-[0.5px] ring-black/8 outline-none',
-									'origin-(--transform-origin) transition-all duration-150 ease-out',
-									'data-starting-style:scale-95 data-starting-style:opacity-0',
-									'data-ending-style:scale-95 data-ending-style:opacity-0',
+									'origin-(--transform-origin) transition-all duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] will-change-transform lg:ease-[cubic-bezer(0.175,0.885,0.32,1.1)]',
+									'data-starting-style:scale-90 data-starting-style:opacity-0',
+									'data-ending-style:scale-90 data-ending-style:opacity-0',
 								)}
 							>
 								<div
@@ -58,25 +63,31 @@ export function Footer({ breakpoint }: { breakpoint: 'desktop' | 'mobile' }) {
 										'flex w-full snap-x snap-mandatory scroll-px-1 gap-1 overflow-x-auto px-1 pt-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
 									}
 								>
-									<div
+									<img
+										src="/images/scheveningen_2.webp"
+										alt="A rocky shoreline in the foreground with a seaside pier, large Ferris wheel, and bungee tower extending over the sea under a clear blue sky."
 										className={
-											'aspect-4/3! w-full shrink-0 snap-start snap-always rounded-xs bg-[url(/images/scheveningen.webp)] bg-cover'
+											'aspect-3/4 w-[calc(100%-8px)] shrink-0 snap-center snap-always rounded-xs select-none'
 										}
 									/>
-									{/* <div
+									<img
+										src="/images/scheveningen_1.webp"
+										alt="A wide sandy beach with dark, algae-covered rocks in the foreground and gentle waves rolling in under a clear blue sky."
 										className={
-											'h-full w-64 shrink-0 snap-center snap-always rounded-xs bg-neutral-200'
+											'aspect-3/4 w-[calc(100%-8px)] shrink-0 snap-start snap-always rounded-xs select-none'
 										}
 									/>
-									<div
+									<img
+										src="/images/scheveningen_3.webp"
+										alt="An empty sandy beach with tire tracks in the foreground and a seaside pier with a Ferris wheel and bungee tower silhouetted against a soft pink sunset sky."
 										className={
-											'h-full w-64 shrink-0 snap-end snap-always rounded-xs bg-neutral-300'
+											'aspect-3/4 w-[calc(100%-8px)] shrink-0 snap-end snap-always rounded-xs select-none'
 										}
-									/> */}
+									/>
 								</div>
-								<div className={'p-3 text-sm font-[450] lg:text-xs'}>
+								<Popover.Description className={'p-3 text-sm font-[450] lg:text-xs'}>
 									A seaside district in The Hague, Netherlands.
-								</div>
+								</Popover.Description>
 							</Popover.Popup>
 						</Popover.Positioner>
 					</Popover.Portal>
