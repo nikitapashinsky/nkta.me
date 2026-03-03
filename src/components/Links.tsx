@@ -47,9 +47,8 @@ export function Links() {
 							className={cn(
 								'relative text-sm font-[450] select-none',
 								'transition-colors duration-125 group-hover:duration-75 group-active:duration-75',
-								'after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:bg-neutral-200',
-								'after:transition-opacity after:duration-125 group-hover:after:duration-75 group-active:after:duration-75',
-								'group-hover:after:opacity-0 group-active:after:opacity-0',
+								'underline decoration-black/10 underline-offset-4',
+								'group-hover:decoration-transparent',
 							)}
 						>
 							{label}
