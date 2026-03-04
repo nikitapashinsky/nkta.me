@@ -32,6 +32,21 @@ export function EmailIcon({ className, ...props }: IconProps) {
 	);
 }
 
+export function XTwitterIcon({ className, ...props }: IconProps) {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="20"
+			height="20"
+			viewBox="0 0 20 20"
+			className={cn('shrink-0 fill-neutral-400', className)}
+			{...props}
+		>
+			<path d="M14.673 2.656 10.568 7.35l-3.55-4.693H1.875L8.02 10.69l-5.823 6.655H4.69l4.494-5.134 3.927 5.134h5.015L11.72 8.878l5.444-6.222h-2.492Zm-.874 13.196L4.785 4.07h1.482l8.912 11.783H13.8Z" />
+		</svg>
+	);
+}
+
 export function TwitterIcon({ className, ...props }: IconProps) {
 	return (
 		<svg

@@ -3,9 +3,18 @@ import { cn } from '~/utils/cn';
 
 export function PortfolioItem({ item }: { item: PortfolioItem }) {
 	return (
-		<div className={cn('rounded-[3px] bg-neutral-100 p-6', 'lg:p-12 xl:p-20')}>
+		<div
+			className={cn(
+				'flex items-center justify-center rounded-[3px] bg-neutral-100 p-6 md:aspect-16/9',
+				'lg:p-12',
+			)}
+		>
 			<div
-				className={cn('relative', item.id === 'piano-tutor-sidebar-icon' && 'p-[0.5px] lg:p-px')}
+				className={cn(
+					'relative',
+					item.isSmall ? 'max-w-[720px]' : 'max-w-5xl',
+					item.id === 'piano-tutor-sidebar-icon' && 'p-[0.5px] lg:p-px',
+				)}
 			>
 				<div
 					className={cn(

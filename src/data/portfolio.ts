@@ -4,22 +4,25 @@ interface PortfolioItemSchema {
 	company: string;
 	year: string;
 	src: string;
+	isSmall: boolean;
 }
 
 export const portfolioItems = [
-	{
-		id: 'piano-branch-menu',
-		title: 'Branch menu interaction',
-		company: 'Piano',
-		year: '2026',
-		src: '/videos/branch-menu.mp4',
-	},
 	{
 		id: 'piano-audience-estimate',
 		title: 'Audience estimate interaction',
 		company: 'Piano',
 		year: '2025',
 		src: '/videos/audience-estimate.mp4',
+		isSmall: false,
+	},
+	{
+		id: 'piano-branch-menu',
+		title: 'Branch menu interaction',
+		company: 'Piano',
+		year: '2026',
+		src: '/videos/branch-menu.mp4',
+		isSmall: true,
 	},
 	{
 		id: 'piano-select-touchpoint',
@@ -27,6 +30,7 @@ export const portfolioItems = [
 		company: 'Piano',
 		year: '2025',
 		src: '/videos/select-touchpoint.mp4',
+		isSmall: false,
 	},
 	{
 		id: 'piano-tutor-sidebar-icon',
@@ -34,6 +38,7 @@ export const portfolioItems = [
 		company: 'Piano',
 		year: '2025',
 		src: '/videos/sidebar-icon.mp4',
+		isSmall: true,
 	},
 ] as const satisfies ReadonlyArray<PortfolioItemSchema>;
 
