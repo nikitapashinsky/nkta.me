@@ -4,9 +4,10 @@ import { cn } from '~/utils/cn';
 export function IconLinks() {
 	return (
 		<ul className={'-ml-2 flex gap-2'}>
-			{LinksData.map(({ icon: Icon, url }) => (
+			{LinksData.map(({ icon: Icon, label, url }) => (
 				<li>
 					<a
+						key={label}
 						href={url}
 						target="_blank"
 						rel="noopener noreferrer"
