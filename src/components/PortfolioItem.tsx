@@ -5,14 +5,14 @@ export function PortfolioItem({ item }: { item: PortfolioItem }) {
 	return (
 		<div
 			className={cn(
-				'flex items-center justify-center rounded-[3px] bg-neutral-100 p-6 md:aspect-16/9',
+				'flex items-center justify-center rounded-[3px] bg-neutral-100 p-6 md:aspect-video',
 				'lg:p-12',
 			)}
 		>
 			<div
 				className={cn(
 					'relative',
-					item.isSmall ? 'max-w-[720px]' : 'max-w-5xl',
+					item.isSmall ? 'max-w-180' : 'max-w-5xl',
 					item.id === 'piano-tutor-sidebar-icon' && 'p-[0.5px] lg:p-px',
 				)}
 			>

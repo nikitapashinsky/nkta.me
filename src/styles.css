@@ -12,9 +12,14 @@
 @theme {
 	--color-acid-lime: oklch(95% 0.205 118);
 
+	/* between 55.6% and 70.8% */
+	--color-neutral-450: oklch(63.2% 0 0);
+
 	--text-base--line-height: 1.5rem;
 	--text-sm--line-height: 1.25rem;
 	--text-sm--letter-spacing: -0.005em;
+
+	--tracking-tight: -0.0125em;
 
 	--ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 	--ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
