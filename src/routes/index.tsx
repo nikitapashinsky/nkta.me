@@ -26,7 +26,7 @@ function Home() {
 								className={cn(
 									'relative outline-none',
 									'transition-colors duration-125 hover:duration-75',
-									'hover:text-black focus-visible:text-black',
+									'hover:text-black focus-visible:text-black active:text-black',
 									'before:absolute before:inset-x-0 before:-bottom-px before:-z-1 before:h-px before:bg-black/12',
 									'before:transition-all before:duration-125 hover:before:duration-75 focus-visible:before:duration-75 active:duration-75',
 									'hover:before:-inset-s-0.5 hover:before:-inset-e-0.75 hover:before:h-[calc(100%+2px)]',
