@@ -5,9 +5,8 @@ export function IconLinks() {
 	return (
 		<ul className={'-ml-3 flex md:-ml-2.5'}>
 			{LinksData.map(({ icon: Icon, label, url }) => (
-				<li>
+				<li key={label}>
 					<a
-						key={label}
 						href={url}
 						target="_blank"
 						rel="noopener noreferrer"
