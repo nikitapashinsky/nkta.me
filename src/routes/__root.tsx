@@ -30,7 +30,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<head>
 				<HeadContent />
 			</head>
-			<body className="flex h-dvh w-full overscroll-contain">
+			<body>
 				{children}
 				<Scripts />
 			</body>

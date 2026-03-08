@@ -62,10 +62,17 @@
 }
 
 @layer base {
+	html,
+	body {
+		height: 100%;
+
+		@apply overflow-hidden md:overflow-auto;
+	}
+
 	body {
 		font-family: InterVariable, sans-serif;
 
-		@apply text-base antialiased;
+		@apply flex text-base antialiased;
 	}
 
 	::selection {

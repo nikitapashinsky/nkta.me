@@ -1,4 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
+import { Carousel } from '~/components/Carousel';
+import { Footer } from '~/components/Footer';
 import { IconLinks } from '~/components/IconLinks';
 import { PortfolioItem } from '~/components/PortfolioItem';
 import { portfolioItems } from '~/data/portfolio';
@@ -11,8 +13,10 @@ function Home() {
 	// const { hours, minutes } = useTime('Europe/Amsterdam');
 
 	return (
-		<div className={'flex flex-1 flex-col'}>
-			<div className={'flex h-[90svh] shrink-0 flex-col items-center justify-center'}>
+		<div
+			className={cn('flex flex-1 flex-col justify-between pt-12 pb-4', 'md:justify-start md:py-0')}
+		>
+			<div className={'flex shrink-0 flex-col items-center justify-center md:h-[80svh]'}>
 				<div className={'flex flex-col gap-6 px-12'}>
 					<div className={'flex max-w-prose flex-col gap-2 text-balance'}>
 						<h1 className={'font-[550] tracking-tight'}>Nikita Pashinsky</h1>
@@ -53,11 +57,13 @@ function Home() {
 				</div> */}
 			</div>
 
-			<div className={cn('flex flex-col gap-3 p-3', 'lg:gap-6 lg:p-6')}>
+			<div className={cn('hidden flex-col gap-6 p-6 md:flex')}>
 				{portfolioItems.map((item) => (
 					<PortfolioItem key={item.id} item={item} />
 				))}
 			</div>
+
+			<Carousel className={'md:hidden'} />
 		</div>
 	);
 }
