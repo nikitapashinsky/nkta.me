@@ -1,45 +1,38 @@
-interface PortfolioItemSchema {
-	id: string;
-	title: string;
-	company: string;
-	year: string;
-	src: string;
-	isSmall: boolean;
-}
+import { z as zod } from 'zod';
 
-export const portfolioItems = [
-	{
-		id: 'piano-audience-estimate',
+const portfolioItemSchema = zod.object({
+	title: zod.string(),
+	company: zod.string(),
+	year: zod.string(),
+	src: zod.string(),
+});
+
+export const portfolio = {
+	audienceEstimate: {
 		title: 'Audience estimate interaction',
 		company: 'Piano',
 		year: '2025',
 		src: '/videos/audience-estimate.mp4',
-		isSmall: false,
 	},
-	{
-		id: 'piano-branch-menu',
+	branchMenu: {
 		title: 'Branch menu interaction',
 		company: 'Piano',
 		year: '2026',
 		src: '/videos/branch-menu.mp4',
-		isSmall: true,
 	},
-	{
-		id: 'piano-select-touchpoint',
+	selectTouchpoint: {
 		title: 'Select touchpoint',
 		company: 'Piano',
 		year: '2025',
 		src: '/videos/select-touchpoint.mp4',
-		isSmall: false,
 	},
-	{
-		id: 'piano-tutor-sidebar-icon',
+	sidebarIcon: {
 		title: 'Animated sidebar icon',
 		company: 'Piano',
 		year: '2025',
 		src: '/videos/sidebar-icon.mp4',
-		isSmall: true,
 	},
-] as const satisfies ReadonlyArray<PortfolioItemSchema>;
+} as const satisfies Record<string, zod.infer<typeof portfolioItemSchema>>;
 
-export type PortfolioItem = (typeof portfolioItems)[number];
+export type PortfolioKey = keyof typeof portfolio;
+export type PortfolioItem = (typeof portfolio)[PortfolioKey];

@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router';
+import { HeadContent, Outlet, Scripts, createRootRoute } from '@tanstack/react-router';
+import { DevToolbarProvider } from '~/components/DevToolbar';
 import styles from '~/styles.css?url';
 
 export const Route = createRootRoute({
@@ -22,7 +23,16 @@ export const Route = createRootRoute({
 		],
 	}),
 	shellComponent: RootDocument,
+	component: RootComponent,
 });
+
+function RootComponent() {
+	return (
+		<DevToolbarProvider>
+			<Outlet />
+		</DevToolbarProvider>
+	);
+}
 
 function RootDocument({ children }: { children: React.ReactNode }) {
 	return (

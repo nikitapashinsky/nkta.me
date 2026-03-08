@@ -1,7 +1,7 @@
 import useEmblaCarousel from 'embla-carousel-react';
 import type { EmblaOptionsType } from 'embla-carousel';
 import { PortfolioItem } from '~/components/PortfolioItem';
-import { portfolioItems } from '~/data/portfolio';
+import { portfolio } from '~/data/portfolio';
 import { cn } from '~/utils/cn';
 
 export function Carousel(props: React.ComponentProps<'div'>) {
@@ -10,17 +10,35 @@ export function Carousel(props: React.ComponentProps<'div'>) {
 	return (
 		<div {...props}>
 			<div
-				className={cn('overflow-hidden pl-4', '[--slide-size:90%] [--slide-spacing:1rem]')}
+				className={cn(
+					'overflow-hidden pl-4 md:pl-6',
+					'[--slide-size:90%] [--slide-spacing:1rem] md:[--slide-spacing:1.5rem]',
+				)}
 				ref={emblaRef}
 			>
-				<div className={cn('ml-[calc(var(--slide-spacing)*-1)] flex touch-pan-y touch-pinch-zoom')}>
-					{portfolioItems.map((item) => (
+				<div
+					className={cn(
+						'ml-[calc(var(--slide-spacing)*-1)] flex touch-pan-y touch-pinch-zoom items-stretch',
+					)}
+				>
+					{Object.entries(portfolio).map(([key, item]) => (
 						<div
 							className={cn('min-w-0 flex-[0_0_var(--slide-size)] pl-(--slide-spacing)')}
-							key={item.id}
+							key={key}
 						>
-							<div className={cn('flex items-center justify-center select-none')}>
-								<PortfolioItem item={item} />
+							<div
+								className={cn(
+									'flex h-full items-center justify-center select-none',
+									'md:bg-neutral-50 md:p-12',
+								)}
+							>
+								<PortfolioItem
+									item={item}
+									className={cn(
+										(item === portfolio.branchMenu || item === portfolio.sidebarIcon) &&
+											'max-w-[640px]',
+									)}
+								/>
 							</div>
 						</div>
 					))}
