@@ -15,7 +15,7 @@ export const linkStyles = cn(
 
 type ExternalLinkProps = Omit<React.ComponentProps<'a'>, 'href'> & {
 	external: true;
-	to: `http://${string}` | `https://${string}` | `mailto:${string}`;
+	to: string;
 };
 
 type InternalLinkProps = React.ComponentProps<typeof RouterLink> & {

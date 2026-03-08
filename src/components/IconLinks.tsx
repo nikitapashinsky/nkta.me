@@ -4,8 +4,12 @@ import { cn } from '~/utils/cn';
 export function IconLinks() {
 	return (
 		<ul className={'-ml-3 flex md:-ml-2.5'}>
-			{LinksData.map(({ icon: Icon, label, url }) => (
-				<li key={label}>
+			{LinksData.map(({ icon: Icon, label, url }, index) => (
+				<li
+					key={label}
+					style={{ '--delay': `${index * 50 + 250}ms` } as React.CSSProperties}
+					className={'animate-slide-in will-change-transform animation-delay-(--delay)'}
+				>
 					<a
 						href={url}
 						target="_blank"

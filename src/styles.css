@@ -21,6 +21,8 @@
 
 	--tracking-tight: -0.0125em;
 
+	--ease-ionic: cubic-bezier(0.32, 0.72, 0, 1);
+
 	--ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 	--ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 	--ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
@@ -49,6 +51,23 @@
 	--default-transition-timing-function: var(--ease-out-quart);
 
 	--animate-blink: blink 2s step-end infinite;
+	--animate-slide-in: slide-in 600ms ease both;
+	--animate-fade-in: fade-in 600ms ease both;
+
+	@keyframes slide-in {
+		from {
+			opacity: 0;
+			filter: blur(6px);
+			transform: translateY(24px);
+		}
+	}
+
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+			filter: blur(6px);
+		}
+	}
 
 	@keyframes blink {
 		0%,
@@ -59,6 +78,24 @@
 			opacity: 0;
 		}
 	}
+}
+
+@layer base {
+	body {
+		font-family: InterVariable, sans-serif;
+
+		@apply text-base antialiased;
+	}
+
+	::selection {
+		background-color: var(--color-acid-lime);
+		color: #000;
+	}
+}
+
+@utility animation-delay-* {
+	animation-delay: calc(--value(integer) * 1ms);
+	animation-delay: --value([*]);
 }
 
 @utility grid-debug {
@@ -108,18 +145,5 @@
 			--alpha(var(--color-blue-500) / 5%) 0.5px calc(100% - 0.5px),
 			--alpha(var(--color-blue-500) / 30%) calc(100% - 0.5px) 100%
 		);
-	}
-}
-
-@layer base {
-	body {
-		font-family: InterVariable, sans-serif;
-
-		@apply text-base antialiased;
-	}
-
-	::selection {
-		background-color: var(--color-acid-lime);
-		color: #000;
 	}
 }

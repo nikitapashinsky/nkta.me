@@ -31,8 +31,20 @@ function Home() {
 			>
 				<div className={cn('flex flex-col gap-6', 'md:col-span-5 md:col-start-2')}>
 					<div className={'flex max-w-[400px] flex-col gap-2 text-balance'}>
-						<h1 className={'font-[550] tracking-tight'}>Nikita Pashinsky</h1>
-						<p className={'font-[450] tracking-tight text-neutral-600'}>
+						<h1
+							className={cn(
+								'font-[550] tracking-tight',
+								'animate-slide-in will-change-transform animation-delay-100',
+							)}
+						>
+							Nikita Pashinsky
+						</h1>
+						<p
+							className={cn(
+								'font-[450] tracking-tight text-neutral-600',
+								'animate-slide-in will-change-transform animation-delay-150',
+							)}
+						>
 							I’m a product designer focused on crafting high-quality software. Currently leading
 							product design on Composer at{' '}
 							<Link to="https://piano.io" external>
@@ -45,20 +57,7 @@ function Home() {
 				</div>
 			</div>
 
-			{/* <div className={'relative col-span-full hidden grid-cols-subgrid md:grid'}>
-				<PortfolioItem item={portfolio.audienceEstimate} className={'col-span-10 col-start-2'} />
-			</div>
-			<div className={'relative col-span-full hidden grid-cols-subgrid py-16 md:grid'}>
-				<PortfolioItem item={portfolio.branchMenu} className={'col-span-6 col-start-4'} />
-			</div>
-			<div className={'relative col-span-full hidden grid-cols-subgrid md:grid'}>
-				<PortfolioItem item={portfolio.selectTouchpoint} className={'col-span-10 col-start-2'} />
-			</div>
-			<div className={'relative col-span-full hidden grid-cols-subgrid py-16 md:grid'}>
-				<PortfolioItem item={portfolio.sidebarIcon} className={'col-span-6 col-start-4'} />
-			</div> */}
-
-			<Carousel className={'col-span-full md:-mx-6'} />
+			<Carousel className={'col-span-full animate-fade-in animation-delay-550 md:-mx-6'} />
 		</div>
 	);
 }
