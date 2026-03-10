@@ -51,23 +51,6 @@
 	--default-transition-timing-function: var(--ease-out-quart);
 
 	--animate-blink: blink 2s step-end infinite;
-	--animate-slide-in: slide-in 600ms ease both;
-	--animate-fade-in: fade-in 600ms ease both;
-
-	@keyframes slide-in {
-		from {
-			opacity: 0;
-			filter: blur(6px);
-			transform: translateY(24px);
-		}
-	}
-
-	@keyframes fade-in {
-		from {
-			opacity: 0;
-			filter: blur(6px);
-		}
-	}
 
 	@keyframes blink {
 		0%,
@@ -84,7 +67,7 @@
 	body {
 		font-family: InterVariable, sans-serif;
 
-		@apply text-base antialiased;
+		@apply bg-neutral-50 text-base antialiased;
 	}
 
 	::selection {
@@ -93,57 +76,36 @@
 	}
 }
 
+@utility fade-in-slide {
+	opacity: 1;
+	filter: blur(0px);
+	transform: translateY(0px);
+	transition:
+		opacity 600ms ease,
+		filter 600ms ease,
+		transform 600ms ease;
+
+	@starting-style {
+		opacity: 0;
+		filter: blur(3px);
+		transform: translateY(24px);
+	}
+}
+
+@utility fade-in {
+	opacity: 1;
+	filter: blur(0px);
+	transition:
+		opacity 600ms ease,
+		filter 600ms ease;
+
+	@starting-style {
+		opacity: 0;
+		filter: blur(3px);
+	}
+}
+
 @utility animation-delay-* {
 	animation-delay: calc(--value(integer) * 1ms);
 	animation-delay: --value([*]);
-}
-
-@utility grid-debug {
-	z-index: 90;
-	overflow: clip;
-	--grid-debug-cols: 12;
-	--grid-debug-margin: 24px;
-	--grid-debug-gap: 24px;
-	--grid-debug-col-width: calc(
-		(100% - (var(--grid-debug-cols) - 1) * var(--grid-debug-gap)) / var(--grid-debug-cols)
-	);
-
-	/* columns + column gaps */
-	&::before {
-		z-index: 90;
-		content: '';
-		position: fixed;
-		inset: 0;
-		left: var(--grid-debug-margin);
-		right: var(--grid-debug-margin);
-		pointer-events: none;
-		background: repeating-linear-gradient(
-			90deg,
-			/* left border */ --alpha(var(--color-blue-500) / 30%) 0 0.5px,
-			/* column fill */ --alpha(var(--color-blue-500) / 5%) 0.5px
-				calc(var(--grid-debug-col-width) - 0.5px),
-			/* right border */ --alpha(var(--color-blue-500) / 30%)
-				calc(var(--grid-debug-col-width) - 0.5px) var(--grid-debug-col-width),
-			/* gap fill */ --alpha(var(--color-blue-500) / 10%) var(--grid-debug-col-width)
-				calc(var(--grid-debug-col-width) + var(--grid-debug-gap))
-		);
-	}
-
-	/* row gaps */
-	& > *:not(:last-child)::after {
-		z-index: 90;
-		content: '';
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: calc(var(--grid-debug-gap) * -1);
-		height: var(--grid-debug-gap);
-		pointer-events: none;
-		background: linear-gradient(
-			180deg,
-			--alpha(var(--color-blue-500) / 30%) 0 0.5px,
-			--alpha(var(--color-blue-500) / 5%) 0.5px calc(100% - 0.5px),
-			--alpha(var(--color-blue-500) / 30%) calc(100% - 0.5px) 100%
-		);
-	}
 }

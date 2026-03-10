@@ -8,7 +8,7 @@ export function IconLinks() {
 				<li
 					key={label}
 					style={{ '--delay': `${index * 50 + 250}ms` } as React.CSSProperties}
-					className={'animate-slide-in will-change-transform animation-delay-(--delay)'}
+					className={'fade-in-slide delay-(--delay)'}
 				>
 					<a
 						href={url}
