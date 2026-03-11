@@ -1,0 +1,12 @@
+{
+	"composer": {
+		"name": "Composer",
+		"company": "Piano",
+		"description": "Composer is  a powerful rules engine that enables anyone to set conditions and triggers based on time, visits, user behavior, content, on-site events, and more."
+	},
+	"tutor": {
+		"name": "Tutor",
+		"company": "Piano",
+		"description": "Tutor is a chatbot designed to assist with questions about Piano products and services. Powered by OpenAI."
+	}
+}

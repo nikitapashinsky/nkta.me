@@ -1,14 +1,16 @@
-import type { PortfolioItem } from '~/data/portfolio';
-import { cn } from '~/utils/cn';
+import type { CollectionEntry } from 'astro:content';
+import { twMerge } from 'tailwind-merge';
+
+type ProjectData = CollectionEntry<'projects'>['data'];
 
 export function PortfolioItem({
 	item,
 	className,
 	...props
-}: { item: PortfolioItem } & React.ComponentProps<'div'>) {
+}: { item: ProjectData } & React.ComponentProps<'div'>) {
 	return (
 		<div
-			className={cn(
+			className={twMerge(
 				'relative aspect-16/10 max-h-full',
 				item.title === 'Branch menu interaction' && 'max-w-2xl',
 				item.title === 'Animated sidebar icon' && 'max-w-2xl',
@@ -17,10 +19,13 @@ export function PortfolioItem({
 			{...props}
 		>
 			<div
-				className={cn('relative h-fit w-fit', item.title === 'Animated sidebar icon' && 'md:p-px')}
+				className={twMerge(
+					'relative h-fit w-fit',
+					item.title === 'Animated sidebar icon' && 'md:p-px',
+				)}
 			>
 				<div
-					className={cn(
+					className={twMerge(
 						'absolute inset-0 rounded-xs ring-[0.5px] ring-black/8 ring-inset',
 						'md:ring-1 md:ring-black/5',
 					)}

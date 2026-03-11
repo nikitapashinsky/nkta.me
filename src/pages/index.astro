@@ -1,0 +1,59 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import { twJoin } from 'tailwind-merge';
+
+import Layout from '~/layouts/Layout.astro';
+import IconLinks from '~/components/IconLinks.astro';
+import Link from '~/components/Link.astro';
+import { Carousel } from '~/components/Carousel';
+
+const allProducts = await getCollection('products');
+const portfolioItems = await getCollection('projects');
+
+function getItemsByProduct(productId: string) {
+	return portfolioItems
+		.filter((entry) => entry.data.product.id === productId)
+		.map((entry) => entry.data);
+}
+---
+
+<Layout>
+	<div
+		class={twJoin(
+			'mx-auto grid max-w-7xl auto-rows-min grid-cols-12 gap-6 px-12 pb-6',
+			'max-sm:grid-cols-2',
+			'bg-white outline-black/4 xl:my-6 xl:rounded xl:outline',
+		)}
+	>
+		<div class="col-span-full grid h-[85svh] grid-cols-subgrid items-center px-0 pt-0">
+			<div class="col-span-full flex flex-col gap-6">
+				<div class="flex max-w-[480px] flex-col gap-2 text-balance">
+					<h1 class={twJoin('font-[550] tracking-tight', 'fade-in-slide delay-100')}>
+						Nikita Pashinsky
+					</h1>
+					<p
+						class={twJoin('font-[450] tracking-tight text-neutral-600', 'fade-in-slide delay-150')}
+					>
+						I'm a product designer focused on crafting high-quality software. Currently leading
+						product design on Composer at <Link href="https://piano.io" external>Piano</Link>.
+					</p>
+				</div>
+				<IconLinks />
+			</div>
+		</div>
+
+		{
+			allProducts.map((product) => (
+				<Carousel
+					client:load
+					product={product.data}
+					items={getItemsByProduct(product.id)}
+					className={twJoin(
+						'col-span-full grid grid-cols-subgrid py-10',
+						'max-sm:gap-y-6 max-sm:py-6',
+					)}
+				/>
+			))
+		}
+	</div>
+</Layout>

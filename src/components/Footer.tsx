@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
 import { Popover } from '@base-ui/react';
-import { cn } from '~/utils/cn';
 import { useTime } from '~/hooks/useTime';
-import scheveningen1 from '~/assets/scheveningen_1.webp';
-import scheveningen2 from '~/assets/scheveningen_2.webp';
-import scheveningen3 from '~/assets/scheveningen_3.webp';
+import { twJoin, twMerge } from 'tailwind-merge';
 
-const popoverImages = [scheveningen2, scheveningen1, scheveningen3];
+const popoverImages = [
+	'/images/scheveningen_2.webp',
+	'/images/scheveningen_1.webp',
+	'/images/scheveningen_3.webp',
+];
 
 export function Footer({ breakpoint }: { breakpoint: 'desktop' | 'mobile' }) {
 	const { hours, minutes } = useTime('Europe/Amsterdam');
@@ -21,32 +22,28 @@ export function Footer({ breakpoint }: { breakpoint: 'desktop' | 'mobile' }) {
 
 	return (
 		<div
-			className={cn(
+			className={twJoin(
 				breakpoint === 'desktop'
 					? 'hidden flex-col gap-6 py-6 pr-6 pl-15 lg:flex'
 					: 'flex flex-col gap-6 px-3 pt-12 pb-6 lg:hidden',
 			)}
 		>
 			<div
-				className={cn(
+				className={twMerge(
 					'flex items-center gap-1 text-sm font-[450] text-neutral-600 lg:text-xs',
 					breakpoint === 'mobile' && 'pl-15',
 				)}
 			>
 				<div className={'flex items-center select-none'}>
-					<div className={'tabular-nums'} suppressHydrationWarning>
-						{hours}
-					</div>
+					<div className={'tabular-nums'}>{hours}</div>
 					<div className={'animate-blink'}>:</div>
-					<div className={'tabular-nums'} suppressHydrationWarning>
-						{minutes}
-					</div>
+					<div className={'tabular-nums'}>{minutes}</div>
 				</div>
 				here in
 				<Popover.Root>
 					<Popover.Trigger className={'group cursor-help outline-none'}>
 						<span
-							className={cn(
+							className={twJoin(
 								'relative',
 								'underline decoration-black/30 decoration-dotted decoration-1 underline-offset-[3px]',
 								'group-hover:text-black group-focus-visible:text-black group-data-popup-open:text-black',
@@ -64,7 +61,7 @@ export function Footer({ breakpoint }: { breakpoint: 'desktop' | 'mobile' }) {
 					<Popover.Portal>
 						<Popover.Positioner side="top" sideOffset={8} positionMethod="fixed">
 							<Popover.Popup
-								className={cn(
+								className={twJoin(
 									'flex max-w-72 flex-col will-change-transform outline-none',
 									'rounded-md bg-white shadow-2xl ring-[0.5px] ring-black/8',
 									'origin-(--transform-origin) transition-all duration-spring ease-spring',
@@ -93,21 +90,21 @@ function ImageCarousel() {
 			}
 		>
 			<img
-				src={scheveningen2}
+				src="/images/scheveningen_2.webp"
 				alt="A rocky shoreline in the foreground with a seaside pier, large Ferris wheel, and bungee tower extending over the sea under a clear blue sky."
 				className={
 					'aspect-4/3 w-[calc(100%-16px)] shrink-0 snap-start snap-always rounded-xs object-cover select-none'
 				}
 			/>
 			<img
-				src={scheveningen1}
+				src="/images/scheveningen_1.webp"
 				alt="A wide sandy beach with dark, algae-covered rocks in the foreground and gentle waves rolling in under a clear blue sky."
 				className={
 					'aspect-4/3 w-[calc(100%-16px)] shrink-0 snap-center snap-always rounded-xs object-cover object-[center_calc(50%-10px)] select-none'
 				}
 			/>
 			<img
-				src={scheveningen3}
+				src="/images/scheveningen_3.webp"
 				alt="An empty sandy beach with tire tracks in the foreground and a seaside pier with a Ferris wheel and bungee tower silhouetted against a soft pink sunset sky."
 				className={
 					'aspect-4/3 w-[calc(100%-16px)] shrink-0 snap-end snap-always rounded-xs object-cover select-none'
