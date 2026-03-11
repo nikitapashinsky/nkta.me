@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string"
+      },
+      "company": {
+        "type": "string"
+      },
+      "product": {
+        "type": "string"
+      },
+      "year": {
+        "type": "string"
+      },
+      "src": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "title",
+      "company",
+      "product",
+      "year",
+      "src"
+    ],
+    "additionalProperties": false
+  }
+}

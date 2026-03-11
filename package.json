@@ -4,39 +4,30 @@
 	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "vite dev --port 3000",
-		"build": "vite build",
-		"preview": "vite preview",
-		"deploy": "npm run build && wrangler deploy",
+		"dev": "astro dev --host",
+		"build": "astro build",
+		"preview": "astro preview",
+		"deploy": "astro build && wrangler deploy",
 		"lint": "eslint ."
 	},
 	"dependencies": {
+		"@astrojs/cloudflare": "^13.0.1",
+		"@astrojs/react": "^5.0.0",
 		"@base-ui/react": "^1.2.0",
 		"@tailwindcss/vite": "^4.1.18",
-		"@tanstack/react-router": "^1.132.0",
-		"@tanstack/react-start": "^1.132.0",
-		"@tanstack/router-plugin": "^1.132.0",
-		"clsx": "^2.1.1",
-		"embla-carousel-react": "^8.6.0",
-		"motion": "^12.35.0",
+		"astro": "^6.0.1",
 		"react": "^19.2.0",
 		"react-dom": "^19.2.0",
 		"tailwind-merge": "^3.5.0",
 		"tailwindcss": "^4.1.18",
-		"zod": "^4.3.6"
+		"wrangler": "^4.71.0"
 	},
 	"devDependencies": {
-		"@cloudflare/vite-plugin": "^1.25.6",
-		"@tanstack/eslint-config": "^0.4.0",
-		"@types/node": "^25.3.5",
 		"@types/react": "^19.2.0",
 		"@types/react-dom": "^19.2.0",
-		"@vitejs/plugin-react": "^5.0.4",
-		"eslint": "^9.39.3",
 		"prettier": "^3.8.1",
+		"prettier-plugin-astro": "^0.14.1",
 		"prettier-plugin-tailwindcss": "^0.7.2",
-		"typescript": "^5.7.2",
-		"vite": "^7.1.7",
-		"wrangler": "^4.69.0"
+		"typescript": "^5.7.2"
 	}
 }

@@ -1,0 +1,34 @@
+[
+	{
+		"id": "audience-estimate",
+		"title": "Audience estimate interaction",
+		"company": "piano",
+		"product": "composer",
+		"year": "2025",
+		"src": "/videos/audience-estimate.mp4"
+	},
+	{
+		"id": "branch-menu",
+		"title": "Branch menu interaction",
+		"company": "piano",
+		"product": "composer",
+		"year": "2026",
+		"src": "/videos/branch-menu.mp4"
+	},
+	{
+		"id": "select-touchpoint",
+		"title": "Select touchpoint",
+		"company": "piano",
+		"product": "composer",
+		"year": "2025",
+		"src": "/videos/select-touchpoint.mp4"
+	},
+	{
+		"id": "sidebar-icon",
+		"title": "Animated sidebar icon",
+		"company": "piano",
+		"product": "tutor",
+		"year": "2025",
+		"src": "/videos/sidebar-icon.mp4"
+	}
+]
