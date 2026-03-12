@@ -23,7 +23,7 @@ const links = [
 					aria-label={label}
 					target="_blank"
 					rel="noopener noreferrer"
-					class={twMerge(
+					class:list={[
 						'group relative flex items-center justify-center px-3 py-2 md:px-2.5',
 						'transition-transform will-change-transform active:scale-95',
 						'outline-none',
@@ -32,7 +32,7 @@ const links = [
 						'before:transition-colors before:duration-125',
 						'hover:before:bg-neutral-100 hover:before:duration-75 active:before:bg-neutral-100 active:before:duration-75',
 						'before:outline-neutral-300 focus-visible:before:outline',
-					)}
+					]}
 				>
 					<Icon
 						icon={icon}

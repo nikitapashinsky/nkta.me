@@ -11,32 +11,51 @@ const portfolioItems = await getCollection('projects');
 ---
 
 <Layout>
-	<div class:list={['flex flex-col', 'lg:h-screen lg:flex-row lg:overflow-hidden']}>
+	<div
+		class:list={[
+			'mx-auto grid max-w-container',
+			'p-4 md:p-6',
+			'grid-cols-2 md:grid-cols-12',
+			'gap-4',
+		]}
+	>
 		<!-- Sidebar -->
-		<div class:list={['flex h-[75svh] flex-col gap-6', 'p-12 lg:h-full lg:p-6']}>
-			<div class="flex flex-col gap-2 text-balance">
-				<h1 class:list={['font-[550] tracking-tight', 'animate-fade-in-slide animation-delay-100']}>
-					Nikita Pashinsky
-				</h1>
-				<p
-					class:list={[
-						'font-[450] tracking-tight text-neutral-600',
-						'animate-fade-in-slide animation-delay-150',
-					]}
-				>
-					I’m a product designer focused on crafting high-quality software. Currently leading
-					product design on Composer at <Link href="https://piano.io" external>Piano</Link>.
-				</p>
+		<div
+			class:list={[
+				'flex h-[75svh] flex-col gap-6',
+				'items-center justify-center md:items-start md:justify-start',
+				'col-span-full md:col-span-4',
+				'md:sticky md:top-6 md:h-[calc(100svh-3rem)]',
+			]}
+		>
+			<div class="flex flex-col gap-6">
+				<div class="flex max-w-[40ch] flex-col gap-2 text-balance">
+					<h1
+						class:list={['font-[550] tracking-tight', 'animate-fade-in-slide animation-delay-100']}
+					>
+						Nikita Pashinsky
+					</h1>
+					<p
+						class:list={[
+							'font-[450] tracking-tight text-neutral-600',
+							'animate-fade-in-slide animation-delay-150',
+						]}
+					>
+						I’m a product designer focused on crafting high-quality software. Currently leading
+						product design on Composer at <Link href="https://piano.io" external>Piano</Link>.
+					</p>
+				</div>
+				<IconLinks />
 			</div>
-			<IconLinks />
 		</div>
 
 		<!-- Projects -->
 		<div
 			class:list={[
-				'flex flex-col items-center overflow-y-scroll overscroll-contain',
-				'p-3 sm:p-4 lg:p-6',
-				'gap-3 sm:gap-4 lg:gap-6',
+				'flex flex-col items-center',
+				'col-start-1 md:col-start-6 lg:col-start-5 xl:col-start-5',
+				'col-span-full',
+				'gap-4 md:gap-6',
 			]}
 		>
 			{portfolioItems.map((item) => <ProjectItem project={item.data} />)}
