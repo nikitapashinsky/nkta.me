@@ -8,6 +8,13 @@
 	font-feature-settings: 'case', 'calt', 'ss07', 'ss08';
 }
 
+@font-face {
+	font-family: 'Geist Mono';
+	src: url('/fonts/GeistMono[wght].woff2') format('woff2');
+	font-weight: 100 900;
+	font-style: normal;
+}
+
 @theme {
 	--font-sans: 'Inter', sans-serif;
 	--color-acid-lime: oklch(95% 0.205 118);
