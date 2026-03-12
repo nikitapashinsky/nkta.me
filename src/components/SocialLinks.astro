@@ -1,18 +1,24 @@
 ---
-import Icon from './Icons.astro';
+import { twMerge } from 'tailwind-merge';
+
+import ArenaIcon from './icons/arena.svg';
+import EmailIcon from './icons/email.svg';
+import TwitterIcon from './icons/twitter.svg';
+import BlueskyIcon from './icons/bluesky.svg';
+import GithubIcon from './icons/github.svg';
 
 const links = [
-	{ label: 'Email', url: 'mailto:n@nkta.me', icon: 'email' as const },
-	{ label: 'Twitter', url: 'https://twitter.com/nikitapashinsky', icon: 'twitter' as const },
-	{ label: 'Bluesky', url: 'https://bsky.app/profile/nkta.me', icon: 'bluesky' as const },
-	{ label: 'Github', url: 'https://github.com/nikitapashinsky', icon: 'github' as const },
-	{ label: 'Are.na', url: 'https://www.are.na/nikita-pashinsky', icon: 'arena' as const },
+	{ label: 'Email', url: 'mailto:n@nkta.me', icon: EmailIcon },
+	{ label: 'Twitter', url: 'https://twitter.com/nikitapashinsky', icon: TwitterIcon },
+	{ label: 'Bluesky', url: 'https://bsky.app/profile/nkta.me', icon: BlueskyIcon },
+	{ label: 'Github', url: 'https://github.com/nikitapashinsky', icon: GithubIcon },
+	{ label: 'Are.na', url: 'https://www.are.na/nikita-pashinsky', icon: ArenaIcon },
 ];
 ---
 
 <ul class="-ml-3 flex md:-ml-2.5">
 	{
-		links.map(({ icon, label, url }, index) => (
+		links.map(({ icon: Icon, label, url }, index) => (
 			<li
 				style={`--delay: ${index * 50 + 250}ms`}
 				class="animate-fade-in-slide animation-delay-(--delay)"
@@ -34,10 +40,15 @@ const links = [
 					]}
 				>
 					<Icon
-						icon={icon}
-						class:list={[
-							'size-5 fill-neutral-450 transition-colors duration-125 group-hover:fill-black group-hover:duration-75 group-focus-visible:fill-black group-focus-visible:duration-75 group-active:fill-black group-active:duration-75',
-						]}
+						class={twMerge(
+							'size-5 shrink-0 fill-neutral-450 transition-colors',
+							'duration-125 group-hover:duration-75 group-focus-visible:duration-75 group-active:duration-75',
+							'group-hover:fill-black group-focus-visible:fill-black group-active:fill-black',
+							label === 'Twitter' &&
+								'group-hover:fill-[#1DA1F2] group-focus-visible:fill-[#1DA1F2] group-active:fill-[#1DA1F2]',
+							label === 'Bluesky' &&
+								'group-hover:fill-[#0f73ff] group-focus-visible:fill-[#0f73ff] group-active:fill-[#0f73ff]',
+						)}
 					/>
 				</a>
 			</li>
