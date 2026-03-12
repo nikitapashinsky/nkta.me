@@ -23,6 +23,12 @@
       },
       "src": {
         "type": "string"
+      },
+      "width": {
+        "type": "number"
+      },
+      "height": {
+        "type": "number"
       }
     },
     "required": [
@@ -30,7 +36,9 @@
       "company",
       "product",
       "year",
-      "src"
+      "src",
+      "width",
+      "height"
     ],
     "additionalProperties": false
   }

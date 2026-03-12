@@ -29,6 +29,16 @@ const { project } = Astro.props;
 			]}
 		>
 		</div>
-		<video autoplay loop muted playsinline src={project.src} class={'rounded-xs'}></video>
+		<video
+			autoplay
+			loop
+			muted
+			playsinline
+			preload="metadata"
+			width={project.width}
+			height={project.height}
+			src={project.src}
+			class={'rounded-xs'}
+		></video>
 	</div>
 </div>

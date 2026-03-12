@@ -5,7 +5,9 @@
 		"company": "piano",
 		"product": "composer",
 		"year": "2025",
-		"src": "/videos/audience-estimate.mp4"
+		"src": "/videos/audience-estimate.mp4",
+		"width": 2560,
+		"height": 1604
 	},
 	{
 		"id": "branch-menu",
@@ -13,7 +15,9 @@
 		"company": "piano",
 		"product": "composer",
 		"year": "2026",
-		"src": "/videos/branch-menu.mp4"
+		"src": "/videos/branch-menu.mp4",
+		"width": 1920,
+		"height": 1200
 	},
 	{
 		"id": "select-touchpoint",
@@ -21,7 +25,9 @@
 		"company": "piano",
 		"product": "composer",
 		"year": "2025",
-		"src": "/videos/select-touchpoint.mp4"
+		"src": "/videos/select-touchpoint.mp4",
+		"width": 2560,
+		"height": 1604
 	},
 	{
 		"id": "sidebar-icon",
@@ -29,6 +35,8 @@
 		"company": "piano",
 		"product": "tutor",
 		"year": "2025",
-		"src": "/videos/sidebar-icon.mp4"
+		"src": "/videos/sidebar-icon.mp4",
+		"width": 1920,
+		"height": 1200
 	}
 ]

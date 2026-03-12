@@ -14,7 +14,7 @@ const links = [
 <ul class="-ml-3 flex md:-ml-2.5">
 	{
 		links.map(({ icon, label, url }, index) => (
-			<li style={`--delay: ${index * 50 + 250}ms`} class="fade-in-slide delay-(--delay)">
+			<li style={`--delay: ${index * 50 + 250}ms`} class="fade-in-slide animation-delay-(--delay)">
 				<a
 					href={url}
 					aria-label={label}

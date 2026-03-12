@@ -10,6 +10,8 @@ const projects = defineCollection({
 		product: z.string(),
 		year: z.string(),
 		src: z.string(),
+		width: z.number(),
+		height: z.number(),
 	}),
 });
 
