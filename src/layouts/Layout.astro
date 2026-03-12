@@ -1,5 +1,6 @@
 ---
 import '~/styles.css';
+import TailwindBreakpoint from '~/components/TailwindBreakpoint.astro';
 
 interface Props {
 	title?: string;
@@ -19,5 +20,6 @@ const { title = 'Nikita Pashinsky' } = Astro.props;
 	</head>
 	<body ontouchstart="">
 		<slot />
+		{import.meta.env.DEV && <TailwindBreakpoint />}
 	</body>
 </html>

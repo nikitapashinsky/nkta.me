@@ -17,9 +17,9 @@
 
 @theme {
 	--font-sans: 'Inter', sans-serif;
-	--color-acid-lime: oklch(95% 0.205 118);
+	--font-mono: 'Geist Mono', monospace;
 
-	/* between 55.6% and 70.8% */
+	--color-electric-lime: oklch(94.3% 0.256 118);
 	--color-neutral-450: oklch(63.2% 0 0);
 
 	--text-sm: 0.75rem;
@@ -27,10 +27,6 @@
 	--text-lg: 1rem;
 	--text-xl: 1.125rem;
 	--text-2xl: 1.25rem;
-
-	/*--text-base--line-height: 1.5rem;
-	--text-sm--line-height: 1.25rem;
-	--text-sm--letter-spacing: -0.005em;*/
 
 	--tracking-tight: -0.0125em;
 
@@ -118,7 +114,7 @@
 	}
 
 	::selection {
-		background-color: var(--color-acid-lime);
+		background-color: var(--color-electric-lime);
 		color: #000;
 	}
 }
@@ -126,4 +122,8 @@
 @utility animation-delay-* {
 	animation-delay: calc(--value(integer) * 1ms);
 	animation-delay: --value([*]);
+}
+
+@utility corner-smooth {
+	corner-shape: superellipse(1.25);
 }
