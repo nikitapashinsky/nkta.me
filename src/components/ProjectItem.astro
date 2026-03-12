@@ -1,6 +1,5 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { twMerge } from 'tailwind-merge';
 
 interface Props {
 	project: CollectionEntry<'projects'>['data'];
@@ -12,14 +11,14 @@ const { project } = Astro.props;
 <div
 	class:list={[
 		'flex aspect-16/10 w-full flex-1 items-center justify-center',
-		'bg-neutral-50 p-6 md:p-10',
+		'animate-fade-in bg-neutral-50 p-6 animation-delay-500 md:p-10',
 	]}
 >
 	<div
 		class:list={[
-			'relative h-fit w-fit',
-			project.title === 'Animated sidebar icon' && 'md:max-w-[640px] md:p-px',
-			project.title === 'Branch menu interaction' && 'md:max-w-[640px]',
+			'relative h-fit w-fit [--small:640px]',
+			project.title === 'Animated sidebar icon' && 'md:max-w-(--small) md:p-px',
+			project.title === 'Branch menu interaction' && 'md:max-w-(--small)',
 		]}
 	>
 		<div
@@ -38,7 +37,6 @@ const { project } = Astro.props;
 			width={project.width}
 			height={project.height}
 			src={project.src}
-			class={'rounded-xs'}
-		></video>
+			class={'rounded-xs'}></video>
 	</div>
 </div>
