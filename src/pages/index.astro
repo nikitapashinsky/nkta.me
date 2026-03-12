@@ -1,10 +1,8 @@
 ---
-import { getCollection, getEntry } from 'astro:content';
-import { twJoin } from 'tailwind-merge';
+import { getCollection } from 'astro:content';
 
 import Layout from '~/layouts/Layout.astro';
-import IconLinks from '~/components/IconLinks.astro';
-import Link from '~/components/Link.astro';
+import Intro from '~/components/Intro.astro';
 import ProjectItem from '~/components/ProjectItem.astro';
 
 const portfolioItems = await getCollection('projects');
@@ -28,25 +26,7 @@ const portfolioItems = await getCollection('projects');
 				'md:sticky md:top-6 md:h-[calc(100svh-3rem)]',
 			]}
 		>
-			<div class="flex flex-col gap-6">
-				<div class="flex max-w-[40ch] flex-col gap-2 text-balance">
-					<h1
-						class:list={['font-[550] tracking-tight', 'animate-fade-in-slide animation-delay-100']}
-					>
-						Nikita Pashinsky
-					</h1>
-					<p
-						class:list={[
-							'font-[450] tracking-tight text-neutral-600',
-							'animate-fade-in-slide animation-delay-150',
-						]}
-					>
-						I’m a product designer focused on crafting high-quality software. Currently leading
-						product design on Composer at <Link href="https://piano.io" external>Piano</Link>.
-					</p>
-				</div>
-				<IconLinks />
-			</div>
+			<Intro />
 		</div>
 
 		<!-- Projects -->

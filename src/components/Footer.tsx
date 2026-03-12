@@ -51,7 +51,7 @@ export function Footer({ breakpoint }: { breakpoint: 'desktop' | 'mobile' }) {
 								'before:absolute before:-inset-y-0.5 before:-inset-s-0.75 before:-inset-e-1.5 before:-z-1 before:rounded-[3px] before:bg-black/8 before:opacity-0',
 								'before:transition-opacity before:duration-150 before:ease-out',
 								'group-data-popup-open:decoration-transparent group-data-popup-open:before:opacity-100',
-								'group-focus-visible:decoration-transparent group-focus-visible:before:bg-acid-lime group-focus-visible:before:opacity-100',
+								'group-focus-visible:decoration-transparent group-focus-visible:before:bg-electric-lime group-focus-visible:before:opacity-100',
 							)}
 						>
 							Scheveningen
