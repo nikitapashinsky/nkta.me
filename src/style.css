@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/InterVariable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-feature-settings: "case", "calt", "ss07", "ss08";
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/GeistMono[wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+
+  --color-electric-lime: oklch(94.3% 0.256 118);
+  --color-neutral-450: oklch(63.2% 0 0);
+
+  --text-sm: 0.75rem;
+  --text-base: 0.875rem;
+  --text-lg: 1rem;
+  --text-xl: 1.125rem;
+  --text-2xl: 1.25rem;
+
+  --tracking-tight: -0.0125em;
+
+  --width-sidebar: 400px;
+  --max-width-container: 1280px;
+
+  --ease-ionic: cubic-bezier(0.32, 0.72, 0, 1);
+
+  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+  --transition-duration-spring: 418.65ms;
+  /* prettier-ignore */
+  --ease-spring: linear(0 0%, 0.00929 1%, 0.034502 2%, 0.072039 3%, 0.118796 4%, 0.172113 5%, 0.229738 6%, 0.28979 7%, 0.350711 8%, 0.411239 9%, 0.470365 10%, 0.527309 11%, 0.581478 12%, 0.632452 13%, 0.679947 14%, 0.723799 15%, 0.763941 16%, 0.800386 17%, 0.833213 18%, 0.862545 19%, 0.888549 20%, 0.911415 21%, 0.931353 22%, 0.948584 23%, 0.963334 24%, 0.975828 25%, 0.986288 26%, 0.994928 27%, 1.001953 28%, 1.007556 29%, 1.011916 30%, 1.015202 31%, 1.017567 32%, 1.01915 33%, 1.020077 34%, 1.020461 35%, 1.020402 36%, 1.01999 37%, 1.0193 38%, 1.018401 39%, 1.01735 40%, 1.016195 41%, 1.014978 42%, 1.013733 43%, 1.012488 44%, 1.011264 45%, 1.010081 46%, 1.00895 47%, 1.007883 48%, 1.006885 49%, 1.00596 50%, 1.005112 51%, 1.004339 52%, 1.003641 53%, 1.003016 54%, 1.00246 55%, 1.00197 56%, 1.001541 57%, 1.001169 58%, 1.00085 59%, 1.000579 60%, 1.000351 61%, 1.000161 62%, 1.000006 63%);
+
+  --default-transition-timing-function: var(--ease-out-quart);
+
+  --animate-blink: blink 2s step-end infinite;
+  --animate-fade-in-slide: fade-in-slide 600ms ease both;
+  --animate-fade-in: fade-in 600ms ease both;
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in-slide {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@layer base {
+  html {
+    background-color: white;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: white;
+
+    @apply text-base antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-electric-lime);
+    color: #000;
+  }
+}
+
+@utility animation-delay-* {
+  animation-delay: calc(--value(integer) * 1ms);
+  animation-delay: --value([*]);
+}
+
+@utility corner-smooth {
+  corner-shape: superellipse(1.25);
+}
