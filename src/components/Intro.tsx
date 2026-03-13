@@ -1,5 +1,5 @@
-import { Link } from "./Link";
-import { SocialLinks } from "./SocialLinks";
+import { Link } from "@/components/Link";
+import { SocialLinks } from "@/components/SocialLinks";
 
 export function Intro() {
   return (

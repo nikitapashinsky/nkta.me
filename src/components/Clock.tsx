@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 
 export function Clock() {
-  const { hours, minutes } = useTime("Europe/Amsterdam");
+  const [{ hours, minutes }, setTime] = useState(() => formatTime("Europe/Amsterdam"));
+
+  useEffect(() => {
+    const id = setInterval(() => setTime(formatTime("Europe/Amsterdam")), 10_000);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <div className={"flex items-center select-none"}>
@@ -10,17 +15,6 @@ export function Clock() {
       <div className={"tabular-nums"}>{minutes}</div>
     </div>
   );
-}
-
-function useTime(timeZone: string) {
-  const [{ hours, minutes }, setTime] = useState(() => formatTime(timeZone));
-
-  useEffect(() => {
-    const id = setInterval(() => setTime(formatTime(timeZone)), 10_000);
-    return () => clearInterval(id);
-  }, [timeZone]);
-
-  return { hours, minutes };
 }
 
 function formatTime(timeZone: string) {

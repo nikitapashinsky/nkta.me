@@ -1,5 +1,5 @@
-import { twMerge } from "tailwind-merge";
-import { ArenaIcon, BlueskyIcon, EmailIcon, GithubIcon, TwitterIcon } from "./icons";
+import { twJoin, twMerge } from "tailwind-merge";
+import { ArenaIcon, BlueskyIcon, EmailIcon, GithubIcon, TwitterIcon } from "@/components/icons";
 
 const links = [
   { label: "Email", url: "mailto:n@nkta.me", icon: EmailIcon },
@@ -39,7 +39,7 @@ export function SocialLinks() {
             aria-label={label}
             target="_blank"
             rel="noopener noreferrer"
-            className={twMerge(
+            className={twJoin(
               "group relative flex items-center justify-center px-3 py-2 md:px-2.5",
               "transition-transform will-change-transform active:scale-95",
               "outline-none",

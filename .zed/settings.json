@@ -1,36 +1,45 @@
 {
+  "lsp": {
+    "css-variables": {
+      "settings": {
+        "cssVariables": {
+          "lookupFiles": ["**/*.css", "**/**/*.css"],
+          "blacklistFolders": [
+            "**/.cache/**",
+            "**/.DS_Store",
+            "**/.git/**",
+            "**/.hg/**",
+            "**/.next/**",
+            "**/.svn/**",
+            "**/bower_components/**",
+            "**/CVS/**",
+            "**/dist/**",
+            "**/node_modules/**",
+            "**/tests/**",
+            "**/tmp/**",
+          ],
+          "undefinedVarFallback": "info",
+        },
+      },
+    },
+  },
   "languages": {
     "TSX": {
       "format_on_save": "on",
       "prettier": { "allowed": false },
       "formatter": [{ "language_server": { "name": "oxfmt" } }],
-      "language_servers": [
-        "vtsls",
-        "!typescript-language-server",
-        "!eslint",
-        "...",
-      ],
+      "language_servers": ["vtsls", "!typescript-language-server", "!eslint", "..."],
     },
     "TypeScript": {
       "format_on_save": "on",
       "prettier": { "allowed": false },
       "formatter": [{ "language_server": { "name": "oxfmt" } }],
-      "language_servers": [
-        "vtsls",
-        "!typescript-language-server",
-        "!eslint",
-        "...",
-      ],
+      "language_servers": ["vtsls", "!typescript-language-server", "!eslint", "..."],
     },
     "JavaScript": {
       "format_on_save": "on",
       "prettier": { "allowed": false },
-      "language_servers": [
-        "vtsls",
-        "!typescript-language-server",
-        "!eslint",
-        "...",
-      ],
+      "language_servers": ["vtsls", "!typescript-language-server", "!eslint", "..."],
     },
     "CSS": {
       "format_on_save": "on",

@@ -1,5 +1,5 @@
 import { twJoin } from "tailwind-merge";
-import type { Project } from "../data/projects";
+import type { Project } from "@/data/projects";
 
 interface ProjectItemProps {
   project: Project;

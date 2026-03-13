@@ -1,0 +1,98 @@
+@import "tailwindcss";
+@import "./easings.css";
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/InterVariable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-feature-settings: "case", "calt", "ss07", "ss08";
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/GeistMono[wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+
+  --color-electric-lime: oklch(94.3% 0.256 118);
+  --color-neutral-450: oklch(63.2% 0 0);
+
+  --text-sm: 0.75rem;
+  --text-base: 0.875rem;
+  --text-lg: 1rem;
+  --text-xl: 1.125rem;
+  --text-2xl: 1.25rem;
+
+  --tracking-tight: -0.0125em;
+
+  --max-width-container: 1280px;
+
+  --animate-blink: blink 2s step-end infinite;
+  --animate-fade-in-slide: fade-in-slide 600ms ease both;
+  --animate-fade-in: fade-in 600ms ease both;
+
+  --default-transition-timing-function: var(--ease-out-quart);
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in-slide {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@layer base {
+  html {
+    background-color: white;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: white;
+
+    @apply text-base antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-electric-lime);
+    color: #000;
+  }
+}
+
+@utility animation-delay-* {
+  animation-delay: calc(--value(integer) * 1ms);
+  animation-delay: --value([*]);
+}
+
+@utility corner-smooth {
+  corner-shape: superellipse(1.25);
+}

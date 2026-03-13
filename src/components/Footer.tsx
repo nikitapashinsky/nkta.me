@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Popover } from "@base-ui/react";
 import { twJoin, twMerge } from "tailwind-merge";
-import { Clock } from "./Clock";
+import { Clock } from "@/components/Clock";
 
 const popoverImages = [
   "/images/scheveningen_2.webp",
