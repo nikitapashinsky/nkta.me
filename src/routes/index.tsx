@@ -1,22 +1,29 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Intro } from "@/components/Intro";
-import { ProjectItem } from "@/components/ProjectItem";
-import { projects } from "@/data/projects";
+import { Link } from '@/components/Link';
+import { ProjectItem } from '@/components/ProjectItem';
+import { projects } from '@/data/projects';
+import { createFileRoute } from '@tanstack/react-router';
 
-export const Route = createFileRoute("/")({
+import { twJoin } from 'tailwind-merge';
+
+export const Route = createFileRoute('/')({
   component: Home,
 });
 
 function Home() {
   return (
-    <div className="mx-auto grid max-w-container grid-cols-2 gap-4 p-4 md:grid-cols-12 md:p-6">
-      {/* Sidebar */}
-      <div className="col-span-full flex h-[75svh] flex-col items-center justify-center gap-6 md:sticky md:top-6 md:col-span-4 md:h-[calc(100svh-3rem)] md:items-start md:justify-start">
-        <Intro />
-      </div>
-
-      {/* Projects */}
-      <div className="col-span-full col-start-1 flex flex-col items-center gap-4 md:col-start-6 md:gap-6 lg:col-start-5 xl:col-start-5">
+    <div className={'col-span-full grid grid-cols-subgrid'}>
+      <p
+        className={twJoin(
+          'py-16 md:pt-0',
+          'font-normal text-balance',
+          'text-xl xl:text-2xl',
+          'col-span-full md:col-span-6 lg:col-span-5',
+        )}
+      >
+        I’m a product designer focused on crafting high-quality software. Currently leading product
+        design on Composer at <Link to="https://piano.io">Piano</Link>.
+      </p>
+      <div className={'col-span-full flex flex-col gap-4 md:gap-6'}>
         {projects.map((project) => (
           <ProjectItem key={project.id} project={project} />
         ))}

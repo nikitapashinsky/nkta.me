@@ -1,4 +1,4 @@
-import { twJoin } from "tailwind-merge";
+import { twJoin } from 'tailwind-merge';
 
 export function TailwindBreakpoint() {
   if (!import.meta.env.DEV) return null;
@@ -6,11 +6,11 @@ export function TailwindBreakpoint() {
   return (
     <div
       className={twJoin(
-        "hidden sm:flex",
-        "fixed right-3 bottom-3 z-100",
-        "min-w-fit items-center justify-center rounded-full px-4 py-1 select-none",
-        "bg-black/60 shadow-lg shadow-black/4 backdrop-blur-sm corner-smooth",
-        "font-mono font-[550] text-white",
+        'hidden sm:flex',
+        'fixed right-3 bottom-3 z-100',
+        'min-w-fit items-center justify-center rounded-full px-4 py-1 select-none',
+        'bg-black/60 shadow-lg shadow-black/4 backdrop-blur-sm corner-smooth',
+        'font-mono font-[550] text-white',
       )}
     >
       <div className="md:hidden">sm</div>

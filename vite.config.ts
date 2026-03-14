@@ -1,30 +1,31 @@
-import { defineConfig } from "vite-plus";
-import path from "path";
-import react from "@vitejs/plugin-react";
-import { tanstackRouter } from "@tanstack/router-plugin/vite";
-import tailwindcss from "@tailwindcss/vite";
-
-const root = path.resolve(__dirname, "src");
+import { defineConfig } from 'vite-plus';
+import { cloudflare } from '@cloudflare/vite-plugin';
+import { tanstackStart } from '@tanstack/react-start/plugin/vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   plugins: [
-    tanstackRouter({
-      target: "react",
-      autoCodeSplitting: true,
-    }),
-    react(),
     tailwindcss(),
+    cloudflare({ viteEnvironment: { name: 'ssr' } }),
+    tanstackStart(),
+    react(),
   ],
+
   resolve: {
     alias: {
-      "@": root,
+      '@': `${import.meta.dirname}/src`,
     },
   },
+
   fmt: {
     sortTailwindcss: {
-      stylesheet: "./src/style.css",
+      functions: ['cn', 'clsx', 'twJoin', 'twMerge'],
+      stylesheet: './src/styles/style.css',
     },
+    singleQuote: true,
   },
+
   lint: {
     options: { typeAware: true, typeCheck: true },
   },

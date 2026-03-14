@@ -1,4 +1,4 @@
-:root {
+@theme {
   --ease-ionic: cubic-bezier(0.32, 0.72, 0, 1);
 
   --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);

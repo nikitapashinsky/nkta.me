@@ -1,34 +1,47 @@
-import type { AnchorHTMLAttributes, ReactNode } from "react";
-import { twJoin, twMerge } from "tailwind-merge";
+import { twJoin, twMerge } from 'tailwind-merge';
+import { Link as RouterLink, type LinkComponentProps } from '@tanstack/react-router';
+import type { FileRouteTypes } from '@/routeTree.gen';
 
-interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  href: string;
-  external?: boolean;
-  children: ReactNode;
+type InternalPath = FileRouteTypes['to'];
+
+type InternalLinkProps = Omit<LinkComponentProps, 'to'> & {
+  to: InternalPath;
+};
+
+type ExternalLinkProps = Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> & {
+  to: `http${string}`;
+  children?: React.ReactNode;
+};
+
+type LinkProps = InternalLinkProps | ExternalLinkProps;
+
+export function Link(props: LinkProps) {
+  const { to, className, ...rest } = props;
+  const classNames = twMerge(linkStyles, className);
+
+  if (to.startsWith('http')) {
+    const { children, ...anchorRest } = rest as ExternalLinkProps;
+    return (
+      <a href={to} target="_blank" rel="noopener noreferrer" className={classNames} {...anchorRest}>
+        {children}
+      </a>
+    );
+  }
+  return <RouterLink to={to as InternalPath} className={classNames} {...rest} />;
 }
 
-const linkStyles = twJoin(
-  "relative outline-none",
-  "transition-colors duration-125 hover:duration-75",
-  "hover:text-black focus-visible:text-black active:text-black",
-  "before:absolute before:inset-x-0 before:-bottom-px before:-z-1 before:h-px before:bg-black/12",
-  "before:transition-all before:duration-125 hover:before:duration-75 focus-visible:before:duration-75 active:duration-75",
-  "hover:before:-inset-s-0.5 hover:before:-inset-e-0.75 hover:before:h-[calc(100%+2px)]",
-  "hover:before:rounded hover:before:bg-black/8",
-  "focus-visible:before:-inset-s-0.5 focus-visible:before:-inset-e-0.75 focus-visible:before:h-[calc(100%+2px)] focus-visible:before:rounded focus-visible:before:bg-black/8",
-  "active:before:-inset-s-0.5 active:before:-inset-e-0.75 active:before:h-[calc(100%+2px)] active:before:rounded active:before:bg-black/8",
+const linkStyles = twMerge(
+  'relative inline-block outline-none',
+  'transition-colors duration-125 hover:duration-75',
+  'text-current hover:text-primary focus-visible:text-primary active:text-primary',
+  'underline decoration-black/16 underline-offset-[0.15em]',
+  'hover:decoration-black/40',
+  'current:pointer-events-none current:cursor-default current:text-primary current:no-underline',
+  'aria-disabled:cursor-not-allowed aria-disabled:text-tertiary aria-disabled:no-underline',
+  // 'before:pointer-events-none before:absolute before:-z-1',
+  // 'before:-inset-x-[0.375em] before:h-[calc(1lh+0.25em)]',
+  // 'before:top-1/2 before:-translate-y-1/2',
+  // 'before:rounded before:bg-neutral-100 before:opacity-0',
+  // 'before:transition-opacity before:duration-200 before:will-change-transform',
+  // 'current:before:opacity-100 current:before:duration-125',
 );
-
-export function Link({ href, external = false, className, children, ...rest }: LinkProps) {
-  return (
-    <a
-      href={href}
-      target={external ? "_blank" : undefined}
-      rel={external ? "noopener noreferrer" : undefined}
-      className={twMerge(linkStyles, className)}
-      {...rest}
-    >
-      {children}
-    </a>
-  );
-}
