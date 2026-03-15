@@ -1,0 +1,18 @@
+import { twMerge } from 'tailwind-merge';
+
+export function BaseUILogo(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="48"
+      height="48"
+      viewBox="0 0 48 48"
+      className={twMerge(
+        'fill-neutral-450 group-hover:fill-[#03060D] group-active:fill-[#03060D]',
+        props.className,
+      )}
+    >
+      <path d="M9.833 5.667c7.364 0 13.333 6.566 13.333 14.667v22c-7.363 0-13.333-6.567-13.333-14.667v-22Zm15.833 10.025c6.976.43 12.5 6.224 12.5 13.308 0 7.364-5.969 13.334-13.333 13.334V16.5c0-.46.374-.836.833-.808Z" />
+    </svg>
+  );
+}

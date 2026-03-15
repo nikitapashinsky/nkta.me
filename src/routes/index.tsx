@@ -15,8 +15,8 @@ function Home() {
     <div className={'col-span-full grid grid-cols-subgrid'}>
       <p
         className={twJoin(
-          'max-w-[32ch] pt-16 md:pt-0 md:pb-16',
-          'font-normal text-balance',
+          'max-w-[48ch] pt-16 md:pt-0 md:pb-16',
+          'text-balance',
           'text-xl xl:text-2xl',
           'col-span-full md:col-span-6 lg:col-span-5',
         )}

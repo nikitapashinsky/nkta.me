@@ -1,10 +1,25 @@
 @import 'tailwindcss';
-@import './fonts.css';
 @import './easings.css';
 
 @custom-variant current (&:where([data-status="active"]));
 
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/InterVariable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/fonts/GeistMono[wght].woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
 @theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'Geist Mono', monospace;
   --color-electric-lime: oklch(94.3% 0.256 118);
   --color-neutral-450: oklch(63.2% 0 0);
 
@@ -29,7 +44,6 @@
   --text-xl--letter-spacing: -0.025em;
 
   --font-weight-450: 450;
-  --font-weight-medium: 550;
 
   --max-width-container: 1280px;
 
@@ -71,6 +85,10 @@
 }
 
 @layer base {
+  html {
+    font-feature-settings: 'calt', 'ss07', 'ss08';
+  }
+
   ::selection {
     background-color: var(--color-electric-lime);
     color: #000;

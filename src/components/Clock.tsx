@@ -9,10 +9,10 @@ export function Clock() {
   }, []);
 
   return (
-    <div className={'flex items-center select-none'}>
-      <div className={'tabular-nums'}>{hours}</div>
-      <div className={'animate-blink'}>:</div>
-      <div className={'tabular-nums'}>{minutes}</div>
+    <div className={'tabular-nums'}>
+      {hours}
+      <span className={'animate-blink'}>:</span>
+      {minutes}
     </div>
   );
 }

@@ -13,7 +13,7 @@ type ExternalLinkProps = Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'hr
   children?: React.ReactNode;
 };
 
-type LinkProps = InternalLinkProps | ExternalLinkProps;
+export type LinkProps = InternalLinkProps | ExternalLinkProps;
 
 export function Link(props: LinkProps) {
   const { to, className, ...rest } = props;
