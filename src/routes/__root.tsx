@@ -6,6 +6,7 @@ import { twJoin } from 'tailwind-merge';
 import { Link } from '@/components/Link';
 import { SocialLinks } from '@/components/SocialLinks';
 import { Footer } from '@/components/Footer';
+import { Nav } from '@/components/Nav';
 
 export const Route = createRootRoute({
   head: () => ({
@@ -48,31 +49,7 @@ export const Route = createRootRoute({
             </p>
           </div>
 
-          {/* Navigation */}
-          <nav className={'hidden md:block'}>
-            <ul className={twJoin('flex flex-col gap-3 text-secondary')}>
-              <li>
-                <Link to="/" activeOptions={{ exact: true }} className={navLinkStyles}>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/projects" className={navLinkStyles} disabled>
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link to="/notes" className={navLinkStyles} disabled>
-                  Notes
-                </Link>
-              </li>
-              <li>
-                <Link to="/lists" className={navLinkStyles} disabled>
-                  Collections
-                </Link>
-              </li>
-            </ul>
-          </nav>
+          <Nav className={'hidden md:block'} />
 
           <div className={'flex flex-col gap-6 max-md:hidden'}>
             <SocialLinks />
@@ -118,9 +95,3 @@ function RootDocument({ children }: { children: ReactNode }) {
     </html>
   );
 }
-
-const navLinkStyles = twJoin(
-  'before:absolute before:inset-y-full before:-left-3 before:w-0.5 before:rounded-full before:bg-neutral-950',
-  'current:before:inset-y-0.75',
-  'ease-ionic before:transition-all before:duration-400',
-);

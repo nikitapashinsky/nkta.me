@@ -1,0 +1,37 @@
+import { twJoin } from 'tailwind-merge';
+import { Link } from './Link';
+
+const navLinkStyles = twJoin(
+  'before:absolute before:inset-y-full before:-left-3 before:w-0.5 before:rounded-full before:bg-neutral-950',
+  'current:before:inset-y-0.75',
+  'ease-ionic before:transition-all before:duration-400',
+);
+
+export function Nav({ className }: { className?: string }) {
+  return (
+    <nav className={className}>
+      <ul className={twJoin('flex flex-col gap-3 text-secondary')}>
+        <li className={'flex items-center gap-1'}>
+          <Link to="/" activeOptions={{ exact: true }} className={navLinkStyles}>
+            Home
+          </Link>
+        </li>
+        <li className={'flex items-center gap-1'}>
+          <Link to="/projects" className={navLinkStyles} disabled>
+            Projects
+          </Link>
+        </li>
+        <li className={'flex items-center gap-1'}>
+          <Link to="/notes" className={navLinkStyles} disabled>
+            Notes
+          </Link>
+        </li>
+        <li className={'flex items-center gap-1'}>
+          <Link to="/lists" className={navLinkStyles} disabled>
+            Collections
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  );
+}
