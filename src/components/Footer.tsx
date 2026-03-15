@@ -21,11 +21,11 @@ export function Footer({ className, ...rest }: React.ComponentProps<'div'>) {
 
   return (
     <div className={twMerge('flex h-fit min-h-0 flex-col gap-3', className)} {...rest}>
-      <div className={'flex items-center gap-3 text-sm text-tertiary'}>
+      <div className={'flex items-center gap-3 text-tertiary md:text-sm'}>
         {/*<Link to="/credits">Credits</Link>*/}
         <Link to="https://github.com/nikitapashinsky/nkta.me">Source code</Link>
       </div>
-      <div className={twJoin('flex items-center gap-1 text-sm text-tertiary')}>
+      <div className={twJoin('flex items-center gap-1 text-tertiary md:text-sm')}>
         <Clock />
         <span className={'shrink-0'}>here in</span>
         <Popover.Root>

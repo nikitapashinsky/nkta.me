@@ -25,9 +25,9 @@ const links = [
   },
 ];
 
-export function SocialLinks() {
+export function SocialLinks({ className }: { className?: string }) {
   return (
-    <ul className="-ml-3 flex md:-ml-2.5">
+    <ul className={twMerge('-ml-3 flex md:-ml-2.5', className)}>
       {links.map(({ icon: Icon, label, url }, index) => (
         <li
           key={label}
@@ -52,7 +52,7 @@ export function SocialLinks() {
           >
             <Icon
               className={twMerge(
-                'size-4 shrink-0 fill-neutral-450 transition-colors',
+                'size-5 shrink-0 fill-neutral-450 transition-colors md:size-4',
                 'duration-125 group-hover:duration-75 group-focus-visible:duration-75 group-active:duration-75',
                 'group-hover:fill-black group-focus-visible:fill-black group-active:fill-black',
                 Icon === TwitterIcon &&
