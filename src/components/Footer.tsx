@@ -57,7 +57,7 @@ export function Footer({ className, ...rest }: React.ComponentProps<'div'>) {
                 )}
               >
                 <ImageCarousel />
-                <Popover.Description className={'p-3 text-sm lg:text-xs'}>
+                <Popover.Description className={'p-3 md:text-sm'}>
                   A seaside district in The Hague, Netherlands.
                 </Popover.Description>
               </Popover.Popup>
