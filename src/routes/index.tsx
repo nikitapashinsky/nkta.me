@@ -16,8 +16,7 @@ function Home() {
       <p
         className={twJoin(
           'max-w-[48ch] pt-16 md:pt-0 md:pb-16',
-          'text-balance',
-          'text-xl xl:text-2xl',
+          'text-xl font-normal text-balance lg:text-2xl',
           'col-span-full md:col-span-6 lg:col-span-5',
         )}
       >
