@@ -15,13 +15,13 @@ function Home() {
     <div className={'col-span-full grid grid-cols-subgrid'}>
       <p
         className={twJoin(
-          'max-w-[48ch] pt-16 md:pt-0 md:pb-16',
-          'text-xl font-normal text-balance lg:text-2xl',
-          'col-span-full md:col-span-6 lg:col-span-5',
+          'pt-16 md:pt-0 md:pb-16',
+          'text-xl text-balance lg:text-2xl',
+          'col-span-full md:col-span-6 lg:col-span-6',
         )}
       >
-        I’m a product designer focused on crafting high-quality software. Currently leading product
-        design on Composer at <Link to="https://piano.io">Piano</Link>.
+        I’m a designer focused on crafting high-quality software. Currently leading product design
+        on Composer at <Link to="https://piano.io">Piano</Link>.
       </p>
       <SocialLinks className={'mt-6 mb-24 md:hidden'} />
       <div className={'col-span-full flex flex-col gap-4 md:gap-6'}>
