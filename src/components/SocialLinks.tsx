@@ -44,7 +44,7 @@ export function SocialLinks({ className }: { className?: string }) {
               'transition-transform will-change-transform active:scale-95',
               'outline-none',
               'before:pointer-events-none before:absolute before:inset-x-1 before:inset-y-0 before:-z-1 md:before:inset-x-0.5',
-              'before:rounded before:bg-neutral-100/0',
+              'before:rounded-md before:bg-neutral-100/0',
               'before:transition-colors before:duration-125 before:will-change-transform',
               'hover:before:bg-neutral-100 hover:before:duration-75 active:before:bg-neutral-100 active:before:duration-75',
               'before:outline-neutral-300 focus-visible:before:outline',
@@ -52,7 +52,7 @@ export function SocialLinks({ className }: { className?: string }) {
           >
             <Icon
               className={twMerge(
-                'size-5 shrink-0 fill-neutral-450 transition-colors md:size-4',
+                'size-5 shrink-0 fill-neutral-450 transition-colors',
                 'duration-125 group-hover:duration-75 group-focus-visible:duration-75 group-active:duration-75',
                 'group-hover:fill-black group-focus-visible:fill-black group-active:fill-black',
                 Icon === TwitterIcon &&
