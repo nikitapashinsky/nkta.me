@@ -10,7 +10,7 @@ export function TailwindBreakpoint() {
         'fixed right-3 bottom-3 z-100',
         'min-w-fit items-center justify-center rounded-full px-4 py-1 select-none',
         'bg-black/60 shadow-lg shadow-black/4 backdrop-blur-sm corner-smooth',
-        'font-mono font-[550] text-white',
+        'font-mono font-medium text-white',
       )}
     >
       <div className="md:hidden">sm</div>
