@@ -7,6 +7,7 @@ import { Link } from '@/components/Link';
 import { SocialLinks } from '@/components/SocialLinks';
 import { Footer } from '@/components/Footer';
 import { Nav } from '@/components/Nav';
+import interFont from '@/assets/fonts/InterVariable.woff2?url';
 
 export const Route = createRootRoute({
   head: () => ({
@@ -20,7 +21,7 @@ export const Route = createRootRoute({
       { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
       {
         rel: 'preload',
-        href: '/fonts/InterVariable.woff2',
+        href: interFont,
         as: 'font',
         type: 'font/woff2',
         crossOrigin: 'anonymous',
