@@ -11,7 +11,7 @@ export function ProjectItem({ project }: ProjectItemProps) {
       className={twJoin(
         'flex aspect-16/10 w-full flex-1 items-center justify-center',
         'bg-neutral-50',
-        'p-0 sm:p-6 lg:p-10 xl:p-12',
+        'p-0 sm:p-6 lg:p-12',
       )}
     >
       <div
