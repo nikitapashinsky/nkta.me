@@ -20,8 +20,8 @@ export function Footer({ className, ...rest }: React.ComponentProps<'div'>) {
   }, []);
 
   return (
-    <div className={twMerge('flex h-fit min-h-0 flex-col gap-3', className)} {...rest}>
-      <div className={'flex items-center gap-3 text-tertiary md:text-sm'}>
+    <div className={twMerge('flex h-fit min-h-0 flex-col gap-3 text-sm', className)} {...rest}>
+      <div className={'flex items-center gap-3 text-tertiary'}>
         <Link to="/credits" className="shrink-0">
           Credits
         </Link>
@@ -29,7 +29,7 @@ export function Footer({ className, ...rest }: React.ComponentProps<'div'>) {
           Source code
         </Link>
       </div>
-      <div className={twJoin('flex items-center gap-1 text-tertiary md:text-sm')}>
+      <div className={twJoin('flex items-center gap-1 text-tertiary')}>
         <Clock />
         <span className={'shrink-0'}>here in</span>
         <Popover.Root>
@@ -61,7 +61,7 @@ export function Footer({ className, ...rest }: React.ComponentProps<'div'>) {
                 )}
               >
                 <ImageCarousel />
-                <Popover.Description className={'p-3 md:text-sm'}>
+                <Popover.Description className={'p-3 text-sm'}>
                   A seaside district in The Hague, Netherlands.
                 </Popover.Description>
               </Popover.Popup>
