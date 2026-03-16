@@ -11,15 +11,22 @@
 }
 
 @font-face {
-  font-family: 'Geist Mono';
-  src: url('/fonts/GeistMono[wght].woff2') format('woff2');
-  font-weight: 100 900;
+  font-family: 'IBM Plex Mono';
+  src: url('@/assets/fonts/IBMPlexMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('@/assets/fonts/IBMPlexMono-Medium.woff2') format('woff2');
+  font-weight: 500;
   font-style: normal;
 }
 
 @theme {
   --font-sans: 'Inter', sans-serif;
-  --font-mono: 'Geist Mono', monospace;
+  --font-mono: 'IBM Plex Mono', monospace;
   --color-electric-lime: oklch(94.3% 0.256 118);
   --color-neutral-450: oklch(63.2% 0 0);
 
