@@ -18,6 +18,9 @@ import WarpLogo from '@/assets/images/logos/warp.svg?react';
 import ZedLogo from '@/assets/images/logos/zed.svg?react';
 
 export const Route = createFileRoute('/credits')({
+  head: () => ({
+    meta: [{ title: 'About this site · Nikita Pashinsky' }],
+  }),
   component: RouteComponent,
 });
 
