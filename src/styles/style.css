@@ -34,21 +34,36 @@
   --text-color-secondary: var(--color-neutral-600);
   --text-color-tertiary: var(--color-neutral-450);
 
-  --text-sm: 0.6875rem;
+  --text-xs: 0.625rem;
   --text-sm--line-height: 1rem;
 
-  --text-base: 0.8125rem;
+  --text-sm: 0.75rem;
+  --text-sm--line-height: 1rem;
+
+  --text-base: 0.875rem;
   --text-base--line-height: 1.25rem;
   --text-base--letter-spacing: -0.0125em;
 
-  --text-lg: 0.9375rem;
+  --text-lg: 1rem;
   --text-lg--letter-spacing: -0.015em;
 
   --text-xl: 1.125rem;
   --text-xl--letter-spacing: -0.02em;
 
   --text-2xl: 1.25rem;
-  --text-xl--letter-spacing: -0.025em;
+  --text-3xl--line-height: 1.5rem;
+  --text-2xl--letter-spacing: -0.025em;
+
+  --text-3xl: 1.5rem;
+  --text-3xl--line-height: 1.875rem;
+  --text-3xl--letter-spacing: -0.04em;
+
+  --text-4xl: 1.875rem;
+  --text-5xl: 2.25rem;
+  --text-6xl: 3rem;
+  --text-7xl: 3.75rem;
+  --text-8xl: 4.5rem;
+  --text-9xl: 6rem;
 
   --font-weight-450: 450;
 
