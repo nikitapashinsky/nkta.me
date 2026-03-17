@@ -15,7 +15,7 @@ function Home() {
     <div
       className={twJoin(
         'col-span-full row-start-2',
-        'grid grid-cols-subgrid gap-y-20 md:gap-y-[calc(6rem+1.5rem)]',
+        'grid grid-cols-subgrid gap-y-20 md:gap-y-[calc(var(--top-offset)+1.5rem)]',
       )}
     >
       <div className={'col-span-full flex flex-col gap-6'}>

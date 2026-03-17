@@ -27,6 +27,7 @@
 @theme {
   --font-sans: 'Inter', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
+
   --color-electric-lime: oklch(94.3% 0.256 118);
   --color-neutral-450: oklch(63.2% 0 0);
 
@@ -96,6 +97,10 @@
 }
 
 @layer base {
+  :root {
+    --top-offset: 6rem;
+  }
+
   html {
     font-feature-settings: 'calt', 'ss07', 'ss08';
   }

@@ -21,7 +21,7 @@ export function RootLayout({ children }: { children: React.ReactNode }) {
           'md:sticky md:top-6 md:col-span-4 md:h-[calc(100svh-3rem)]',
         )}
       >
-        <div className={'flex h-[6rem] shrink-0 flex-col'}>
+        <div className={'flex h-(--top-offset) shrink-0 flex-col'}>
           <h1 className="font-medium will-change-transform animation-delay-100">
             <Link to="/" className={'no-underline'}>
               Nikita Pashinsky
@@ -48,7 +48,7 @@ export function RootLayout({ children }: { children: React.ReactNode }) {
           'grid grid-cols-subgrid',
           'col-span-full content-start gap-4',
           'col-start-1 md:col-start-5 lg:col-start-6',
-          'md:grid-rows-[6rem_1fr]',
+          'md:grid-rows-[var(--top-offset)_1fr]',
         )}
       >
         {children}
