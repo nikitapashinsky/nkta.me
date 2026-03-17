@@ -55,7 +55,7 @@ export function RootLayout({ children }: { children: React.ReactNode }) {
       </div>
 
       {/* Mobile footer */}
-      <Footer className={'pt-12 pb-6 md:hidden'} />
+      <Footer className={'pt-20 pb-6 md:hidden'} />
     </div>
   );
 }

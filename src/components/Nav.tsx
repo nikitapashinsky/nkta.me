@@ -17,7 +17,7 @@ export function Nav({ className }: { className?: string }) {
           </Link>
         </li>
         <li className={'flex items-center gap-1'}>
-          <Link to="/projects" className={navLinkStyles} disabled>
+          <Link to="/projects" className={navLinkStyles}>
             Projects
           </Link>
         </li>

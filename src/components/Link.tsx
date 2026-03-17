@@ -9,7 +9,7 @@ type InternalLinkProps = Omit<LinkComponentProps, 'to'> & {
 };
 
 type ExternalLinkProps = Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> & {
-  to: `http${string}`;
+  to: `http${string}` | `zed://${string}`;
   children?: React.ReactNode;
 };
 
@@ -19,7 +19,7 @@ export function Link(props: LinkProps) {
   const { to, className, ...rest } = props;
   const classNames = twMerge(linkStyles, className);
 
-  if (to.startsWith('http')) {
+  if (to.startsWith('http') || to.startsWith('zed://')) {
     const { children, ...anchorRest } = rest as ExternalLinkProps;
     return (
       <a href={to} target="_blank" rel="noopener noreferrer" className={classNames} {...anchorRest}>

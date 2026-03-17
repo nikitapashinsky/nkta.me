@@ -2,11 +2,6 @@ import { HeadContent, Outlet, Scripts, createRootRoute } from '@tanstack/react-r
 import type { ReactNode } from 'react';
 import { TailwindBreakpoint } from '@/components/TailwindBreakpoint';
 import appCss from '@/styles/style.css?url';
-import { twJoin } from 'tailwind-merge';
-import { Link } from '@/components/Link';
-import { SocialLinks } from '@/components/SocialLinks';
-import { Footer } from '@/components/Footer';
-import { Nav } from '@/components/Nav';
 import interFont from '@/assets/fonts/InterVariable.woff2?url';
 import { RootLayout } from '@/components/layouts/RootLayout';
 
