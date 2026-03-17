@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as NotesRouteImport } from './routes/notes'
-import { Route as ListsRouteImport } from './routes/lists'
 import { Route as CreditsRouteImport } from './routes/credits'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -31,11 +30,6 @@ const NotesRoute = NotesRouteImport.update({
   path: '/notes',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ListsRoute = ListsRouteImport.update({
-  id: '/lists',
-  path: '/lists',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CreditsRoute = CreditsRouteImport.update({
   id: '/credits',
   path: '/credits',
@@ -50,7 +44,6 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/credits': typeof CreditsRoute
-  '/lists': typeof ListsRoute
   '/notes': typeof NotesRoute
   '/projects': typeof ProjectsRoute
   '/work': typeof WorkRoute
@@ -58,7 +51,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/credits': typeof CreditsRoute
-  '/lists': typeof ListsRoute
   '/notes': typeof NotesRoute
   '/projects': typeof ProjectsRoute
   '/work': typeof WorkRoute
@@ -67,30 +59,21 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/credits': typeof CreditsRoute
-  '/lists': typeof ListsRoute
   '/notes': typeof NotesRoute
   '/projects': typeof ProjectsRoute
   '/work': typeof WorkRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/credits' | '/lists' | '/notes' | '/projects' | '/work'
+  fullPaths: '/' | '/credits' | '/notes' | '/projects' | '/work'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/credits' | '/lists' | '/notes' | '/projects' | '/work'
-  id:
-    | '__root__'
-    | '/'
-    | '/credits'
-    | '/lists'
-    | '/notes'
-    | '/projects'
-    | '/work'
+  to: '/' | '/credits' | '/notes' | '/projects' | '/work'
+  id: '__root__' | '/' | '/credits' | '/notes' | '/projects' | '/work'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CreditsRoute: typeof CreditsRoute
-  ListsRoute: typeof ListsRoute
   NotesRoute: typeof NotesRoute
   ProjectsRoute: typeof ProjectsRoute
   WorkRoute: typeof WorkRoute
@@ -119,13 +102,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NotesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/lists': {
-      id: '/lists'
-      path: '/lists'
-      fullPath: '/lists'
-      preLoaderRoute: typeof ListsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/credits': {
       id: '/credits'
       path: '/credits'
@@ -146,7 +122,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CreditsRoute: CreditsRoute,
-  ListsRoute: ListsRoute,
   NotesRoute: NotesRoute,
   ProjectsRoute: ProjectsRoute,
   WorkRoute: WorkRoute,

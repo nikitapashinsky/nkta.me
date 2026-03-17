@@ -26,11 +26,6 @@ export function Nav({ className }: { className?: string }) {
             Notes
           </Link>
         </li>
-        <li className={'flex items-center gap-1'}>
-          <Link to="/lists" className={navLinkStyles} disabled>
-            Collections
-          </Link>
-        </li>
       </ul>
     </nav>
   );
