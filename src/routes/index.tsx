@@ -12,18 +12,19 @@ export const Route = createFileRoute('/')({
 
 function Home() {
   return (
-    <div className={'col-span-full grid grid-cols-subgrid'}>
-      <p
-        className={twJoin(
-          'pt-16 md:pt-0 md:pb-16',
-          'text-xl text-balance lg:text-2xl',
-          'col-span-full md:col-span-6 lg:col-span-6',
-        )}
-      >
-        I’m a designer focused on crafting high-quality software. Currently leading product design
-        on Composer at <Link to="https://piano.io">Piano</Link>.
-      </p>
-      <SocialLinks className={'mt-6 mb-24 md:hidden'} />
+    <div
+      className={twJoin(
+        'col-span-full row-start-2',
+        'grid grid-cols-subgrid gap-y-20 md:gap-y-[calc(6rem+1.5rem)]',
+      )}
+    >
+      <div className={'col-span-full flex flex-col gap-6'}>
+        <p className={twJoin('text-xl text-balance md:text-2xl')}>
+          I’m a designer focused on crafting high-quality software. Currently leading product design
+          on Composer at <Link to="https://piano.io">Piano</Link>.
+        </p>
+        <SocialLinks className={'md:hidden'} />
+      </div>
       <div className={'col-span-full flex flex-col gap-4 md:gap-6'}>
         {projects.map((project) => (
           <ProjectItem key={project.id} project={project} />

@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { twMerge } from 'tailwind-merge';
+import { twJoin, twMerge } from 'tailwind-merge';
 
 import { Link, type LinkProps } from '@/components/Link';
 import BaseUILogo from '@/assets/images/logos/base-ui.svg?react';
@@ -26,99 +26,114 @@ export const Route = createFileRoute('/credits')({
 
 function RouteComponent() {
   return (
-    <>
-      <div className={'col-span-full pt-16 md:pt-0'}>
-        <div className={'flex max-w-prose flex-col gap-6'}>
-          <div className={'mb-10 flex flex-col gap-4'}>
-            <h1 className={'text-xl text-balance lg:text-2xl'}>Credits</h1>
-            <p className={'text-balance text-secondary'}>
-              This website was made possible thanks to incredible open source projects and all the
-              generous people who contributed to them.
-            </p>
-          </div>
+    <div
+      className={twJoin(
+        'col-span-full row-start-2',
+        'grid grid-cols-subgrid content-start gap-x-4 gap-y-12',
+      )}
+    >
+      <div className={'col-span-full flex flex-col gap-2'}>
+        <h1 className={'text-xl text-balance md:text-2xl'}>Credits</h1>
+        <p className={'max-w-prose text-balance text-secondary'}>
+          This website was made possible thanks to many incredible open source projects and the
+          amazing people who contributed to them.
+        </p>
+      </div>
 
-          <div className={'flex flex-col gap-2'}>
-            <h2 className={'text-secondary'}>Tech stack</h2>
-            <ul className={'flex flex-col'}>
-              <Credit
-                name="Base UI"
-                url="https://base-ui.com"
-                icon={BaseUILogo}
-                brandColor="#03060D"
-              />
-              <Credit
-                name="tailwind-merge"
-                icon={NpmLogo}
-                brandColor="#cb3837"
-                url="https://www.npmjs.com/package/tailwind-merge"
-              />
-              <Credit
-                name="Tailwind CSS"
-                url="https://tailwindcss.com"
-                icon={TailwindCSSLogo}
-                brandColor="#38BDF8"
-              />
-              <Credit
-                name="Tanstack Start"
-                icon={TanstackLogo}
-                url="https://tanstack.com/start/latest"
-              />
-              <Credit name="React" url="https://react.dev" icon={ReactLogo} brandColor="#087ea4" />
-              <Credit
-                name="Vite Plus"
-                icon={VitePlusLogo}
-                hoverIcon={VitePlusColorLogo}
-                url="https://viteplus.dev"
-              />
-              <Credit
-                name="TypeScript"
-                url="https://www.typescriptlang.org/"
-                icon={TypeScriptLogo}
-                brandColor="#3178C6"
-              />
-              <Credit
-                name="Cloudflare Workers"
-                url="https://workers.cloudflare.com/product/workers/"
-                icon={CloudflareLogo}
-                brandColor="#FF4801"
-              />
-            </ul>
-          </div>
+      <div
+        className={
+          'col-span-full grid grid-cols-subgrid gap-8 md:grid-rows-2 md:content-start md:items-start md:gap-4'
+        }
+      >
+        {/* Tech stack */}
+        <div
+          className={twJoin(
+            'flex flex-col gap-2',
+            'col-span-full md:col-span-4 md:row-span-2 lg:col-span-3',
+          )}
+        >
+          <h2 className={'text-secondary'}>Tech stack</h2>
+          <ul className={'flex flex-col'}>
+            <Credit
+              name="Base UI"
+              url="https://base-ui.com"
+              icon={BaseUILogo}
+              brandColor="#03060D"
+            />
+            <Credit
+              name="tailwind-merge"
+              icon={NpmLogo}
+              brandColor="#cb3837"
+              url="https://www.npmjs.com/package/tailwind-merge"
+            />
+            <Credit
+              name="Tailwind CSS"
+              url="https://tailwindcss.com"
+              icon={TailwindCSSLogo}
+              brandColor="#38BDF8"
+            />
+            <Credit
+              name="Tanstack Start"
+              icon={TanstackLogo}
+              url="https://tanstack.com/start/latest"
+            />
+            <Credit name="React" url="https://react.dev" icon={ReactLogo} brandColor="#087ea4" />
+            <Credit
+              name="Vite Plus"
+              icon={VitePlusLogo}
+              hoverIcon={VitePlusColorLogo}
+              url="https://viteplus.dev"
+            />
+            <Credit
+              name="TypeScript"
+              url="https://www.typescriptlang.org/"
+              icon={TypeScriptLogo}
+              brandColor="#3178C6"
+            />
+            <Credit
+              name="Cloudflare Workers"
+              url="https://workers.cloudflare.com/product/workers/"
+              icon={CloudflareLogo}
+              brandColor="#FF4801"
+            />
+          </ul>
+        </div>
 
-          <div className={'flex flex-col gap-2'}>
-            <h2 className={'text-secondary'}>Tools</h2>
-            <ul className={'flex flex-col'}>
-              <Credit name="Zed" url="https://zed.dev" icon={ZedLogo} brandColor="#1348DC" />
-              <Credit name="Warp" url="https://www.warp.dev/" icon={WarpLogo} />
-              <Credit
-                name="Claude Code"
-                url="https://claude.com/product/claude-code"
-                icon={ClaudeLogo}
-                brandColor="#D97757"
-              />
-            </ul>
-          </div>
+        {/* Tools */}
+        <div className={twJoin('flex flex-col gap-2', 'col-span-full md:col-span-4 lg:col-span-3')}>
+          <h2 className={'text-secondary'}>Tools</h2>
+          <ul className={'flex flex-col'}>
+            <Credit name="Zed" url="https://zed.dev" icon={ZedLogo} brandColor="#1348DC" />
+            <Credit name="Warp" url="https://www.warp.dev/" icon={WarpLogo} />
+            <Credit
+              name="Claude Code"
+              url="https://claude.com/product/claude-code"
+              icon={ClaudeLogo}
+              brandColor="#D97757"
+            />
+          </ul>
+        </div>
 
-          <div className={'flex flex-col gap-2'}>
-            <h2 className={'text-secondary'}>Typography</h2>
-            <ul className={'flex flex-col'}>
-              <Credit
-                name="Inter"
-                url="https://rsms.me/inter"
-                icon={InterLogo}
-                brandColor="color(display-p3 1.0 0.36 0.0)"
-              />
-              <Credit
-                name="IBM Plex Mono"
-                url="https://www.ibm.com/plex/"
-                icon={IBMPlexLogo}
-                brandColor="#054ada"
-              />
-            </ul>
-          </div>
+        {/* Typography */}
+        <div className={twJoin('flex flex-col gap-2', 'col-span-full md:col-span-4 lg:col-span-3')}>
+          <h2 className={'text-secondary'}>Typography</h2>
+          <ul className={'flex flex-col'}>
+            <Credit
+              name="Inter"
+              url="https://rsms.me/inter"
+              icon={InterLogo}
+              brandColor="color(display-p3 1.0 0.36 0.0)"
+            />
+            <Credit
+              name="IBM Plex Mono"
+              url="https://www.ibm.com/plex/"
+              icon={IBMPlexLogo}
+              brandColor="#054ada"
+            />
+          </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
