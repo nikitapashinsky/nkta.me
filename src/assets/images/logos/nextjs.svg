@@ -1,0 +1,59 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="48"
+  height="48"
+  viewBox="0 0 48 48"
+>
+  <g clip-path="url(#a)">
+    <mask
+      id="b"
+      width="40"
+      height="40"
+      x="4"
+      y="4"
+      maskUnits="userSpaceOnUse"
+      style="mask-type: alpha"
+    >
+      <path
+        d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z"
+      />
+    </mask>
+    <g mask="url(#b)">
+      <path
+        d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z"
+      />
+      <path
+        fill="url(#c)"
+        d="M37.224 39.004 19.364 16H16v15.993h2.692V19.42L35.11 40.632c.74-.496 1.447-1.04 2.113-1.628Z"
+      />
+      <path fill="url(#d)" d="M32.222 16h-2.666v16h2.666V16Z" />
+    </g>
+  </g>
+  <defs>
+    <linearGradient
+      id="c"
+      x1="28.222"
+      x2="36.111"
+      y1="29.889"
+      y2="39.667"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="#fff" />
+      <stop offset="1" stop-color="#fff" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient
+      id="d"
+      x1="30.889"
+      x2="30.844"
+      y1="16"
+      y2="27.75"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="#fff" />
+      <stop offset="1" stop-color="#fff" stop-opacity="0" />
+    </linearGradient>
+    <clipPath id="a">
+      <path fill="#fff" d="M4 4h40v40H4z" />
+    </clipPath>
+  </defs>
+</svg>

@@ -5,7 +5,7 @@ import {
   EmailIcon,
   GithubIcon,
   TwitterIcon,
-} from "@/components/react/icons";
+} from "@/components/icons";
 
 const links = [
   { label: "Email", url: "mailto:n@nkta.me", icon: EmailIcon },
@@ -37,7 +37,9 @@ export function SocialLinks({ className }: { className?: string }) {
       {links.map(({ icon: Icon, label, url }, index) => (
         <li
           key={label}
-          style={{ "--delay": `${index * 50 + 250}ms` } as React.CSSProperties}
+          style={
+            { "--delay": `${index * 50 + 250}ms` } as React.CSSProperties
+          }
           className="animation-delay-(--delay)"
         >
           <a
