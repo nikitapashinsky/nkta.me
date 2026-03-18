@@ -14,8 +14,7 @@ export default defineConfig({
   integrations: [react()],
 
   prefetch: true,
-  image: {
-    service: passthroughImageService(),
-  },
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: "cloudflare-binding",
+  }),
 });
