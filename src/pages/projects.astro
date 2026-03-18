@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import { twJoin } from "tailwind-merge";
 import { GithubIcon } from "@/components/react/icons";
@@ -20,8 +19,8 @@ import zoegiDarkScreenshot from "@/assets/images/projects/zoegi-dark-base-ui.web
     </div>
 
     <div class={"col-span-full flex flex-col gap-6 md:col-span-5"}>
-      <Image
-        src={zoegiDarkScreenshot}
+      <img
+        src={zoegiDarkScreenshot.src}
         alt="Zoegi Dark theme for Zed code editor"
         width={980}
         height={615}

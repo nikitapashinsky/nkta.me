@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, passthroughImageService } from "astro/config";
+import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
 import react from "@astrojs/react";
@@ -12,8 +12,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [react()],
-
-  adapter: cloudflare({
-    imageService: "compile",
-  }),
+  adapter: cloudflare(),
 });
