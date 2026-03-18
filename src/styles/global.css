@@ -1,32 +1,43 @@
-@import 'tailwindcss';
-@import './easings.css';
+@import "tailwindcss";
+@import "./easings.css";
 
-@custom-variant current (&:where([data-status="active"]));
+@custom-variant active {
+  &:active:not([data-disabled]) {
+    @slot;
+  }
+}
+
+@custom-variant focus-visible {
+  &:focus-visible:not([data-disabled], [data-current]) {
+    @slot;
+  }
+}
+
+@custom-variant hover {
+  @media (hover: hover) {
+    &:hover:not([data-disabled]) {
+      @slot;
+    }
+  }
+}
 
 @font-face {
-  font-family: 'Inter';
-  src: url('@/assets/fonts/InterVariable.woff2') format('woff2');
+  font-family: "Inter";
+  src: url("@/assets/fonts/InterVariable.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'IBM Plex Mono';
-  src: url('@/assets/fonts/IBMPlexMono-Regular.woff2') format('woff2');
+  font-family: "IBM Plex Mono";
+  src: url("@/assets/fonts/IBMPlexMono-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'IBM Plex Mono';
-  src: url('@/assets/fonts/IBMPlexMono-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-}
-
 @theme {
-  --font-sans: 'Inter', sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
 
   --color-electric-lime: oklch(94.3% 0.256 118);
   --color-neutral-450: oklch(63.2% 0 0);
@@ -102,13 +113,36 @@
   }
 
   html {
-    font-feature-settings: 'calt', 'ss07', 'ss08';
+    font-feature-settings: "calt", "ss07", "ss08";
   }
 
   ::selection {
     background-color: var(--color-electric-lime);
     color: #000;
   }
+
+  /*a {
+    position: relative;
+    display: inline-block;
+    outline: none;
+    color: currentColor;
+    text-decoration: underline;
+    text-decoration-color: --alpha(black / 16%);
+    text-underline-offset: 0.15em;
+
+    &:hover {
+      color: var(--text-color-primary);
+      text-decoration-color: --alpha(black / 32%);
+    }
+
+    &:focus-visible {
+      color: var(--text-color-primary);
+    }
+
+    &:active {
+      color: var(--text-color-primary);
+    }
+  }*/
 }
 
 @utility animation-delay-* {

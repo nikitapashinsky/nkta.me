@@ -1,0 +1,26 @@
+---
+import { twJoin } from "tailwind-merge";
+import Link from "./Link.astro";
+
+const navLinkStyles = twJoin(
+  "before:absolute before:inset-y-full before:-left-3 before:w-0.5 before:rounded-full before:bg-neutral-950",
+  "data-current:before:inset-y-0.75",
+  "before:transition-all before:duration-400",
+);
+
+const { ...attrs } = Astro.props;
+---
+
+<nav {...attrs}>
+  <ul class={twJoin("flex flex-col gap-3 text-secondary")}>
+    <li class={"flex items-center gap-1"}>
+      <Link href="/" class={navLinkStyles}>Home</Link>
+    </li>
+    <li class={"flex items-center gap-1"}>
+      <Link href="/projects" class={navLinkStyles}>Projects</Link>
+    </li>
+    <li class={"flex items-center gap-1"}>
+      <Link href="/notes" class={navLinkStyles} disabled>Notes</Link>
+    </li>
+  </ul>
+</nav>
