@@ -26,6 +26,9 @@
     "tailwindcss": "^4.2.1",
     "wrangler": "^4.75.0"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild", "sharp"]
+  },
   "devDependencies": {
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "0.14.1",
