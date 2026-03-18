@@ -18,7 +18,7 @@ const {
 } = Astro.props;
 const { pathname } = Astro.url;
 const subpath = pathname.match(/[^\/]+/g);
-const isActive = href === pathname || href === "/ " + subpath?.[0];
+const isActive = href === pathname || href === "/" + subpath?.[0];
 ---
 
 <a
@@ -36,5 +36,7 @@ const isActive = href === pathname || href === "/ " + subpath?.[0];
   target={href.includes("://") ? "_blank" : undefined}
   rel={href.includes("://") ? "noopener noreferrer" : undefined}
   data-disabled={disabled || undefined}
-  data-current={isActive || undefined}><slot /></a
+  data-current={isActive || undefined}
 >
+  <slot />
+</a>
