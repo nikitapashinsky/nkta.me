@@ -14,6 +14,12 @@ export default defineConfig({
   integrations: [react()],
 
   prefetch: true,
+  image: {
+    endpoint: {
+      route: "/_image",
+      entrypoint: "@astrojs/cloudflare/image-endpoint",
+    },
+  },
   adapter: cloudflare({
     imageService: "cloudflare-binding",
   }),
