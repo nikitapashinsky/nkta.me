@@ -22,9 +22,11 @@ const { class: className, ...attrs } = Astro.props;
     </Link>
   </div>
   <div class={twJoin("flex items-center gap-1 text-tertiary")}>
-    <Clock client:load />
+    <div class="tabular-nums">
+      <Clock client:load transition:persist />
+    </div>
     <span class={"shrink-0"}>here in</span>
-    <CarouselPopover client:load>
+    <CarouselPopover client:load transition:persist>
       <Carousel />
     </CarouselPopover>
   </div>
