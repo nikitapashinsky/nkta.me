@@ -11,7 +11,7 @@ import NextjsLogo from "@/assets/images/logos/nextjs.svg";
 import NpmLogo from "@/assets/images/logos/npm.svg";
 import TailwindCSSLogo from "@/assets/images/logos/tailwindcss.svg";
 import WarpLogo from "@/assets/images/logos/warp.svg";
-import ZedAppLogo from "@/assets/images/logos/zed-app.svg";
+import ZedLogo from "@/assets/images/logos/zed.svg";
 import VercelLogo from "@/assets/images/logos/vercel.svg";
 
 export const metadata: Metadata = {
@@ -93,7 +93,7 @@ export default function Credits() {
             <Credit
               name="Zed"
               url="https://zed.dev"
-              icon={ZedAppLogo}
+              icon={ZedLogo}
               brandColor="#1348DC"
             />
             <Credit name="Warp" url="https://www.warp.dev/" icon={WarpLogo} />
