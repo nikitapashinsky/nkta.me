@@ -1,0 +1,42 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
+
+type Props = {
+  href: string;
+  class?: string;
+  disabled?: boolean;
+  navLink?: boolean;
+} & HTMLAttributes<"a">;
+
+const {
+  href,
+  class: className,
+  disabled = false,
+  navLink = false,
+  ...props
+} = Astro.props;
+const { pathname } = Astro.url;
+const subpath = pathname.match(/[^\/]+/g);
+const isActive = href === pathname || href === "/" + subpath?.[0];
+---
+
+<a
+  href={!disabled ? href : undefined}
+  class={twMerge(
+    "relative inline-block outline-none",
+    "transition-colors duration-125 hover:duration-75",
+    "text-current hover:text-primary focus-visible:text-primary active:text-primary",
+    "underline decoration-black/16 underline-offset-[0.15em]",
+    "hover:not-data-disabled:decoration-black/40",
+    isActive && "pointer-events-none cursor-default text-primary no-underline",
+    disabled && "cursor-not-allowed text-tertiary no-underline",
+    className,
+  )}
+  target={href.includes("://") ? "_blank" : undefined}
+  rel={href.includes("://") ? "noopener noreferrer" : undefined}
+  data-disabled={disabled || undefined}
+  data-current={isActive || undefined}
+>
+  <slot />
+</a>

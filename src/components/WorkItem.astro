@@ -1,0 +1,44 @@
+---
+import { twJoin } from "tailwind-merge";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"work">["data"];
+}
+
+const { project } = Astro.props;
+---
+
+<div
+  class={twJoin(
+    "flex aspect-16/10 w-full flex-1 items-center justify-center",
+    "bg-neutral-50",
+    "p-0 sm:p-6 lg:p-12",
+  )}
+>
+  <div
+    class={twJoin(
+      "relative h-fit w-fit [--small:480px]",
+      project.title === "Animated sidebar icon" && "md:p-px lg:max-w-(--small)",
+      project.title === "Branch menu interaction" && "lg:max-w-(--small)",
+    )}
+  >
+    <div
+      class={twJoin(
+        "absolute inset-0 rounded-xs ring-[0.5px] ring-black/8 ring-inset",
+        "md:ring-1 md:ring-black/5",
+      )}
+    >
+    </div>
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="metadata"
+      width={project.width}
+      height={project.height}
+      src={project.src}
+      class="rounded-xs"></video>
+  </div>
+</div>

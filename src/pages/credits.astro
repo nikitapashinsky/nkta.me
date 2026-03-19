@@ -1,0 +1,139 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Credit from "@/components/Credit.astro";
+import { twJoin } from "tailwind-merge";
+import AstroLogo from "@/assets/images/logos/astro.svg";
+import AstroColorLogo from "@/assets/images/logos/astro-color.svg";
+import BaseUILogo from "@/assets/images/logos/base-ui.svg";
+import ClaudeLogo from "@/assets/images/logos/claude.svg";
+import CloudflareLogo from "@/assets/images/logos/cloudflare.svg";
+import IBMPlexLogo from "@/assets/images/logos/ibm-plex.svg";
+import InterLogo from "@/assets/images/logos/inter.svg";
+import NpmLogo from "@/assets/images/logos/npm.svg";
+import ReactLogo from "@/assets/images/logos/react.svg";
+import TailwindCSSLogo from "@/assets/images/logos/tailwindcss.svg";
+import TanstackLogo from "@/assets/images/logos/tanstack.svg";
+import TypeScriptLogo from "@/assets/images/logos/typescript.svg";
+import VitePlusLogo from "@/assets/images/logos/viteplus.svg";
+import VitePlusColorLogo from "@/assets/images/logos/viteplus-color.svg";
+import WarpLogo from "@/assets/images/logos/warp.svg";
+import ZedAppLogo from "@/assets/images/logos/zed-app.svg";
+---
+
+<Layout title="About this site · Nikita Pashinsky">
+  <div
+    class={twJoin(
+      "col-span-full row-start-2",
+      "grid grid-cols-subgrid content-start gap-x-4 gap-y-12",
+    )}
+  >
+    <div class={"col-span-full flex flex-col gap-2"}>
+      <h1 class={"text-xl text-balance md:text-2xl"}>Credits</h1>
+      <p class={"max-w-prose text-balance text-secondary"}>
+        This website was made possible thanks to many incredible open source
+        projects and the amazing people who contributed to them.
+      </p>
+    </div>
+
+    <div
+      class={"col-span-full grid grid-cols-subgrid gap-8 md:grid-rows-2 md:content-start md:items-start md:gap-4"}
+    >
+      {/* Tech stack */}
+      <div
+        class={twJoin(
+          "flex flex-col gap-2",
+          "col-span-full md:col-span-4 md:row-span-2 lg:col-span-3",
+        )}
+      >
+        <h2 class={"text-secondary"}>Tech stack</h2>
+        <ul class={"flex flex-col"}>
+          <Credit
+            name="Astro"
+            url="https://astro.build"
+            icon={AstroLogo}
+            hoverIcon={AstroColorLogo}
+          />
+          <Credit
+            name="React"
+            url="https://react.dev"
+            icon={ReactLogo}
+            brandColor="#087ea4"
+          />
+          <Credit
+            name="Tailwind CSS"
+            url="https://tailwindcss.com"
+            icon={TailwindCSSLogo}
+            brandColor="#38BDF8"
+          />
+          <Credit
+            name="tailwind-merge"
+            icon={NpmLogo}
+            brandColor="#cb3837"
+            url="https://www.npmjs.com/package/tailwind-merge"
+          />
+          <Credit
+            name="Base UI"
+            url="https://base-ui.com"
+            icon={BaseUILogo}
+            brandColor="#03060D"
+          />
+          <Credit
+            name="Cloudflare Workers"
+            url="https://workers.cloudflare.com/product/workers/"
+            icon={CloudflareLogo}
+            brandColor="#FF4801"
+          />
+        </ul>
+      </div>
+
+      {/* Tools */}
+      <div
+        class={twJoin(
+          "flex flex-col gap-2",
+          "col-span-full md:col-span-4 lg:col-span-3",
+        )}
+      >
+        <h2 class={"text-secondary"}>Tools</h2>
+        <ul class={"flex flex-col"}>
+          <Credit
+            name="Zed"
+            url="https://zed.dev"
+            icon={ZedAppLogo}
+            brandColor="#1348DC"
+          />
+          <Credit name="Warp" url="https://www.warp.dev/" icon={WarpLogo} />
+          <Credit
+            name="Claude Code"
+            url="https://claude.com/product/claude-code"
+            icon={ClaudeLogo}
+            brandColor="#D97757"
+          />
+        </ul>
+      </div>
+
+      {/* Typography */}
+      <div
+        class={twJoin(
+          "flex flex-col gap-2",
+          "col-span-full md:col-span-4 lg:col-span-3",
+        )}
+      >
+        <h2 class={"text-secondary"}>Typography</h2>
+        <ul class={"flex flex-col"}>
+          <Credit
+            name="Inter"
+            url="https://rsms.me/inter"
+            icon={InterLogo}
+            brandColor="color(display-p3 1.0 0.36 0.0)"
+          />
+          <Credit
+            name="IBM Plex Mono"
+            url="https://www.ibm.com/plex/"
+            icon={IBMPlexLogo}
+            brandColor="#054ada"
+          />
+        </ul>
+      </div>
+    </div>
+  </div>
+</Layout>

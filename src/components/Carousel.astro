@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import scheveningen1Image from "@/assets/images/scheveningen_1.webp";
+import scheveningen2Image from "@/assets/images/scheveningen_2.webp";
+import scheveningen3Image from "@/assets/images/scheveningen_3.webp";
+---
+
+<div
+  class={"flex w-full snap-x snap-mandatory scroll-px-1 gap-1 overflow-x-auto px-1 pt-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"}
+>
+  <Image
+    src={scheveningen2Image}
+    alt="A rocky shoreline in the foreground with a seaside pier, large Ferris wheel, and bungee tower extending over the sea under a clear blue sky."
+    class={"aspect-4/3 w-[calc(100%-16px)] shrink-0 snap-start snap-always rounded-xs object-cover select-none"}
+  />
+  <Image
+    src={scheveningen1Image}
+    alt="A wide sandy beach with dark, algae-covered rocks in the foreground and gentle waves rolling in under a clear blue sky."
+    class={"aspect-4/3 w-[calc(100%-16px)] shrink-0 snap-center snap-always rounded-xs object-cover object-[center_calc(50%-10px)] select-none"}
+  />
+  <Image
+    src={scheveningen3Image}
+    alt="An empty sandy beach with tire tracks in the foreground and a seaside pier with a Ferris wheel and bungee tower silhouetted against a soft pink sunset sky."
+    class={"aspect-4/3 w-[calc(100%-16px)] shrink-0 snap-end snap-always rounded-xs object-cover select-none"}
+  />
+</div>
