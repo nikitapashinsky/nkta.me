@@ -1,11 +1,9 @@
 import { defineCollection } from "astro:content";
-
 import { file } from "astro/loaders";
-
 import { z } from "astro/zod";
 
 const work = defineCollection({
-  loader: file("src/data/work.json"),
+  loader: file("./src/data/work.json"),
   schema: z.object({
     id: z.string(),
     title: z.string(),
