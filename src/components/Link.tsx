@@ -1,5 +1,6 @@
-import { twMerge } from 'tailwind-merge';
 import { Link as RouterLink, type LinkComponentProps } from '@tanstack/react-router';
+import { twMerge } from 'tailwind-merge';
+
 import type { FileRouteTypes } from '@/routeTree.gen';
 
 type InternalPath = FileRouteTypes['to'];

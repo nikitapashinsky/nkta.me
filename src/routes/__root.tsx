@@ -1,9 +1,11 @@
 import { HeadContent, Outlet, Scripts, createRootRoute } from '@tanstack/react-router';
 import type { ReactNode } from 'react';
-import { TailwindBreakpoint } from '@/components/TailwindBreakpoint';
-import appCss from '@/styles/style.css?url';
+
 import interFont from '@/assets/fonts/InterVariable.woff2?url';
 import { RootLayout } from '@/components/layouts/RootLayout';
+import { TailwindBreakpoint } from '@/components/TailwindBreakpoint';
+
+import appCss from '@/styles/style.css?url';
 
 export const Route = createRootRoute({
   head: () => ({

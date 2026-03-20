@@ -1,7 +1,9 @@
-import { useEffect } from 'react';
 import { Popover } from '@base-ui/react';
+import { useEffect } from 'react';
 import { twJoin, twMerge } from 'tailwind-merge';
+
 import { Clock } from '@/components/Clock';
+
 import { Link } from './Link';
 
 const popoverImages = [

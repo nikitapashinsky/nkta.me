@@ -1,9 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { twJoin } from 'tailwind-merge';
-import zoegiDarkScreenshot from '@/assets/images/projects/zoegi-dark-base-ui.webp';
-import { Link } from '@/components/Link';
+
 import ZedLogo from '@/assets/images/logos/zed.svg?react';
+import zoegiDarkScreenshot from '@/assets/images/projects/zoegi-dark-base-ui.webp';
 import { GithubIcon } from '@/components/icons';
+import { Link } from '@/components/Link';
 
 export const Route = createFileRoute('/projects')({
   head: () => ({
@@ -27,6 +28,8 @@ function RouteComponent() {
       <div className={'col-span-full flex flex-col gap-6 md:col-span-5'}>
         <img
           src={zoegiDarkScreenshot}
+          width={2940}
+          height={1846}
           alt="Zoegi Dark theme for Zed code editor"
           className={'col-span-full rounded-xs shadow-lg'}
         />

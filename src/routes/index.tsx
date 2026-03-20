@@ -1,10 +1,10 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { twJoin } from 'tailwind-merge';
+
 import { Link } from '@/components/Link';
 import { ProjectItem } from '@/components/ProjectItem';
 import { SocialLinks } from '@/components/SocialLinks';
 import { projects } from '@/data/projects';
-import { createFileRoute } from '@tanstack/react-router';
-
-import { twJoin } from 'tailwind-merge';
 
 export const Route = createFileRoute('/')({
   component: Home,

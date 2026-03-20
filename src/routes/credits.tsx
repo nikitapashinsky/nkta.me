@@ -1,7 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { twJoin, twMerge } from 'tailwind-merge';
 
-import { Link, type LinkProps } from '@/components/Link';
 import BaseUILogo from '@/assets/images/logos/base-ui.svg?react';
 import ClaudeLogo from '@/assets/images/logos/claude.svg?react';
 import CloudflareLogo from '@/assets/images/logos/cloudflare.svg?react';
@@ -12,10 +11,11 @@ import ReactLogo from '@/assets/images/logos/react.svg?react';
 import TailwindCSSLogo from '@/assets/images/logos/tailwindcss.svg?react';
 import TanstackLogo from '@/assets/images/logos/tanstack.svg?react';
 import TypeScriptLogo from '@/assets/images/logos/typescript.svg?react';
-import VitePlusLogo from '@/assets/images/logos/viteplus.svg?react';
 import VitePlusColorLogo from '@/assets/images/logos/viteplus-color.svg?react';
+import VitePlusLogo from '@/assets/images/logos/viteplus.svg?react';
 import WarpLogo from '@/assets/images/logos/warp.svg?react';
 import ZedLogo from '@/assets/images/logos/zed.svg?react';
+import { Link, type LinkProps } from '@/components/Link';
 
 export const Route = createFileRoute('/credits')({
   head: () => ({

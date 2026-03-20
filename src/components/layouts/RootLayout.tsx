@@ -1,8 +1,9 @@
 import { twJoin } from 'tailwind-merge';
+
+import { Footer } from '@/components/Footer';
 import { Link } from '@/components/Link';
 import { Nav } from '@/components/Nav';
 import { SocialLinks } from '@/components/SocialLinks';
-import { Footer } from '@/components/Footer';
 
 export function RootLayout({ children }: { children: React.ReactNode }) {
   return (
