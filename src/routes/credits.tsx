@@ -14,7 +14,7 @@ import TypeScriptLogo from '@/assets/images/logos/typescript.svg?react';
 import VitePlusColorLogo from '@/assets/images/logos/viteplus-color.svg?react';
 import VitePlusLogo from '@/assets/images/logos/viteplus.svg?react';
 import WarpLogo from '@/assets/images/logos/warp.svg?react';
-import ZedLogo from '@/assets/images/logos/zed.svg?react';
+import ZedAppLogo from '@/assets/images/logos/zed-app.svg?react';
 import { Link, type LinkProps } from '@/components/Link';
 
 export const Route = createFileRoute('/credits')({
@@ -103,7 +103,7 @@ function RouteComponent() {
         <div className={twJoin('flex flex-col gap-2', 'col-span-full md:col-span-4 lg:col-span-3')}>
           <h2 className={'text-secondary'}>Tools</h2>
           <ul className={'flex flex-col'}>
-            <Credit name="Zed" url="https://zed.dev" icon={ZedLogo} brandColor="#1348DC" />
+            <Credit name="Zed" url="https://zed.dev" icon={ZedAppLogo} brandColor="#1348DC" />
             <Credit name="Warp" url="https://www.warp.dev/" icon={WarpLogo} />
             <Credit
               name="Claude Code"

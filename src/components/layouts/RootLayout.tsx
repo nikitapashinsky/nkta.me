@@ -46,6 +46,7 @@ export function RootLayout({ children }: { children: React.ReactNode }) {
       {/* Main content */}
       <div
         className={twJoin(
+          '[view-transition-name:content]',
           'grid grid-cols-subgrid',
           'col-span-full content-start gap-4',
           'col-start-1 md:col-start-5 lg:col-start-6',
