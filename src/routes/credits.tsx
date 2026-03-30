@@ -10,7 +10,6 @@ import NpmLogo from '@/assets/images/logos/npm.svg?react';
 import ReactLogo from '@/assets/images/logos/react.svg?react';
 import TailwindCSSLogo from '@/assets/images/logos/tailwindcss.svg?react';
 import TanstackLogo from '@/assets/images/logos/tanstack.svg?react';
-import TypeScriptLogo from '@/assets/images/logos/typescript.svg?react';
 import VitePlusColorLogo from '@/assets/images/logos/viteplus-color.svg?react';
 import VitePlusLogo from '@/assets/images/logos/viteplus.svg?react';
 import WarpLogo from '@/assets/images/logos/warp.svg?react';
@@ -73,9 +72,9 @@ function RouteComponent() {
               brandColor="#38BDF8"
             />
             <Credit
-              name="Tanstack Start"
+              name="Tanstack Router"
               icon={TanstackLogo}
-              url="https://tanstack.com/start/latest"
+              url="https://tanstack.com/router/latest"
             />
             <Credit name="React" url="https://react.dev" icon={ReactLogo} brandColor="#087ea4" />
             <Credit
@@ -83,12 +82,6 @@ function RouteComponent() {
               icon={VitePlusLogo}
               hoverIcon={VitePlusColorLogo}
               url="https://viteplus.dev"
-            />
-            <Credit
-              name="TypeScript"
-              url="https://www.typescriptlang.org/"
-              icon={TypeScriptLogo}
-              brandColor="#3178C6"
             />
             <Credit
               name="Cloudflare Workers"
