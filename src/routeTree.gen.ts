@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as NowRouteImport } from './routes/now'
 import { Route as NotesRouteImport } from './routes/notes'
 import { Route as CreditsRouteImport } from './routes/credits'
 import { Route as IndexRouteImport } from './routes/index'
@@ -17,6 +18,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NowRoute = NowRouteImport.update({
+  id: '/now',
+  path: '/now',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NotesRoute = NotesRouteImport.update({
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/credits': typeof CreditsRoute
   '/notes': typeof NotesRoute
+  '/now': typeof NowRoute
   '/projects': typeof ProjectsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/credits': typeof CreditsRoute
   '/notes': typeof NotesRoute
+  '/now': typeof NowRoute
   '/projects': typeof ProjectsRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/credits': typeof CreditsRoute
   '/notes': typeof NotesRoute
+  '/now': typeof NowRoute
   '/projects': typeof ProjectsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/credits' | '/notes' | '/projects'
+  fullPaths: '/' | '/credits' | '/notes' | '/now' | '/projects'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/credits' | '/notes' | '/projects'
-  id: '__root__' | '/' | '/credits' | '/notes' | '/projects'
+  to: '/' | '/credits' | '/notes' | '/now' | '/projects'
+  id: '__root__' | '/' | '/credits' | '/notes' | '/now' | '/projects'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CreditsRoute: typeof CreditsRoute
   NotesRoute: typeof NotesRoute
+  NowRoute: typeof NowRoute
   ProjectsRoute: typeof ProjectsRoute
 }
 
@@ -76,6 +86,13 @@ declare module '@tanstack/react-router' {
       path: '/projects'
       fullPath: '/projects'
       preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/now': {
+      id: '/now'
+      path: '/now'
+      fullPath: '/now'
+      preLoaderRoute: typeof NowRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/notes': {
@@ -106,6 +123,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CreditsRoute: CreditsRoute,
   NotesRoute: NotesRoute,
+  NowRoute: NowRoute,
   ProjectsRoute: ProjectsRoute,
 }
 export const routeTree = rootRouteImport

@@ -24,6 +24,9 @@ export function Footer({ className, ...rest }: React.ComponentProps<'div'>) {
   return (
     <div className={twMerge('flex h-fit min-h-0 flex-col gap-3 text-sm', className)} {...rest}>
       <div className={'flex items-center gap-3 text-tertiary'}>
+        <Link to="/now" className="shrink-0">
+          Now
+        </Link>
         <Link to="/credits" className="shrink-0">
           Credits
         </Link>
