@@ -35,7 +35,7 @@ function RouteComponent() {
         <h1 className={'text-xl text-balance md:text-2xl'}>Credits</h1>
         <p className={'max-w-prose text-balance text-secondary'}>
           This website was made possible thanks to many incredible open source projects and the
-          amazing people who contributed to them.
+          amazing people who contributed to them:
         </p>
       </div>
 
@@ -60,11 +60,12 @@ function RouteComponent() {
               brandColor="#03060D"
             />
             <Credit
-              name="tailwind-merge"
-              icon={NpmLogo}
-              brandColor="#cb3837"
-              url="https://www.npmjs.com/package/tailwind-merge"
+              name="Cloudflare Workers"
+              url="https://workers.cloudflare.com/product/workers/"
+              icon={CloudflareLogo}
+              brandColor="#FF4801"
             />
+            <Credit name="React" url="https://react.dev" icon={ReactLogo} brandColor="#087ea4" />
             <Credit
               name="Tailwind CSS"
               url="https://tailwindcss.com"
@@ -72,22 +73,21 @@ function RouteComponent() {
               brandColor="#38BDF8"
             />
             <Credit
+              name="tailwind-merge"
+              icon={NpmLogo}
+              brandColor="#cb3837"
+              url="https://www.npmjs.com/package/tailwind-merge"
+            />
+            <Credit
               name="Tanstack Router"
               icon={TanstackLogo}
               url="https://tanstack.com/router/latest"
             />
-            <Credit name="React" url="https://react.dev" icon={ReactLogo} brandColor="#087ea4" />
             <Credit
               name="Vite Plus"
               icon={VitePlusLogo}
               hoverIcon={VitePlusColorLogo}
               url="https://viteplus.dev"
-            />
-            <Credit
-              name="Cloudflare Workers"
-              url="https://workers.cloudflare.com/product/workers/"
-              icon={CloudflareLogo}
-              brandColor="#FF4801"
             />
           </ul>
         </div>
@@ -96,14 +96,14 @@ function RouteComponent() {
         <div className={twJoin('flex flex-col gap-2', 'col-span-full md:col-span-4 lg:col-span-3')}>
           <h2 className={'text-secondary'}>Tools</h2>
           <ul className={'flex flex-col'}>
-            <Credit name="Zed" url="https://zed.dev" icon={ZedAppLogo} brandColor="#1348DC" />
-            <Credit name="Warp" url="https://www.warp.dev/" icon={WarpLogo} />
             <Credit
               name="Claude Code"
               url="https://claude.com/product/claude-code"
               icon={ClaudeLogo}
               brandColor="#D97757"
             />
+            <Credit name="Warp" url="https://www.warp.dev/" icon={WarpLogo} />
+            <Credit name="Zed" url="https://zed.dev" icon={ZedAppLogo} brandColor="#1348DC" />
           </ul>
         </div>
 
@@ -112,16 +112,16 @@ function RouteComponent() {
           <h2 className={'text-secondary'}>Typography</h2>
           <ul className={'flex flex-col'}>
             <Credit
-              name="Inter"
-              url="https://rsms.me/inter"
-              icon={InterLogo}
-              brandColor="color(display-p3 1.0 0.36 0.0)"
-            />
-            <Credit
               name="IBM Plex Mono"
               url="https://www.ibm.com/plex/"
               icon={IBMPlexLogo}
               brandColor="#054ada"
+            />
+            <Credit
+              name="Inter"
+              url="https://rsms.me/inter"
+              icon={InterLogo}
+              brandColor="color(display-p3 1.0 0.36 0.0)"
             />
           </ul>
         </div>

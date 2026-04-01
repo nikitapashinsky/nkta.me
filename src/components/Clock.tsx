@@ -9,7 +9,7 @@ export function Clock() {
   }, []);
 
   return (
-    <div className={'tabular-nums'}>
+    <div className={"font-features-['case',var(--font-features)] tabular-nums"}>
       {hours}
       <span className={'animate-blink'}>:</span>
       {minutes}

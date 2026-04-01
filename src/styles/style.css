@@ -117,10 +117,11 @@
 @layer base {
   :root {
     --top-offset: 6rem;
+    --font-features: 'calt', 'ss07', 'ss08';
   }
 
   html {
-    font-feature-settings: 'calt', 'ss07', 'ss08';
+    font-feature-settings: var(--font-features);
   }
 
   ::selection {
