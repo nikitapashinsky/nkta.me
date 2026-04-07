@@ -40,19 +40,19 @@
   /*--text-sm--line-height: 1rem;*/
 
   --text-base: 0.9375rem;
-  --text-base--letter-spacing: -0.01em;
+  --text-base--letter-spacing: -0.0075em;
   /*--text-base--line-height: 1.25rem;*/
 
   --text-lg: 1.125rem;
-  --text-lg--letter-spacing: -0.015em;
+  --text-lg--letter-spacing: -0.0075em;
   /*--text-lg--line-height: 1.375rem;*/
 
   --text-xl: 1.25rem;
-  --text-xl--letter-spacing: -0.02em;
+  --text-xl--letter-spacing: -0.01em;
   /*--text-xl--line-height: 1.5rem;*/
 
   --text-2xl: 1.5rem;
-  --text-2xl--letter-spacing: -0.025em;
+  --text-2xl--letter-spacing: -0.015em;
   /*--text-2xl--line-height: 1.75rem;*/
 
   --color-electric-lime: oklch(94.3% 0.256 118);
@@ -142,20 +142,29 @@
 
 @utility text-sm {
   font-variation-settings: 'opsz' 18;
+  --link-decoration-thickness: 1px;
+  --link-decoration-offset: 2.5px;
 }
 
 @utility text-base {
   font-variation-settings: 'opsz' 24;
+  --link-decoration-thickness: 1px;
+  --link-decoration-offset: 3px;
 }
 
 @utility text-lg {
   font-variation-settings: 'opsz' 28;
+  --link-decoration-thickness: 1.25px;
 }
 
 @utility text-xl {
   font-variation-settings: 'opsz' 32;
+  --link-decoration-thickness: 1.5px;
+  --link-decoration-offset: 4px;
 }
 
 @utility text-2xl {
   font-variation-settings: 'opsz' 32;
+  --link-decoration-thickness: 1.75px;
+  --link-decoration-offset: 5px;
 }
