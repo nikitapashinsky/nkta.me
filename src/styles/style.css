@@ -28,34 +28,40 @@
   --font-sans: 'Inter', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
+  --font-weight-medium: 450;
+
+  --font-sans--font-feature-settings: var(--font-features);
+  --font-sans--font-variation-settings: 'opsz' var(--opsz, 16);
+
+  --text-xs: 0.75rem;
+  --text-xs--letter-spacing: 0.0012em;
+
+  --text-sm: 0.8125rem;
+  --text-sm--letter-spacing: 0.0012em;
+  /*--text-sm--line-height: 1rem;*/
+
+  --text-base: 0.9375rem;
+  --text-base--letter-spacing: -0.01em;
+  /*--text-base--line-height: 1.25rem;*/
+
+  --text-lg: 1.125rem;
+  --text-lg--letter-spacing: -0.015em;
+  /*--text-lg--line-height: 1.375rem;*/
+
+  --text-xl: 1.25rem;
+  --text-xl--letter-spacing: -0.02em;
+  /*--text-xl--line-height: 1.5rem;*/
+
+  --text-2xl: 1.5rem;
+  --text-2xl--letter-spacing: -0.025em;
+  /*--text-2xl--line-height: 1.75rem;*/
+
   --color-electric-lime: oklch(94.3% 0.256 118);
   --color-neutral-450: oklch(63.2% 0 0);
 
   --text-color-primary: var(--color-neutral-950);
   --text-color-secondary: var(--color-neutral-600);
   --text-color-tertiary: var(--color-neutral-450);
-
-  --text-sm: 0.6875rem;
-  --text-sm--letter-spacing: 0.0012em;
-  --text-sm--line-height: 1rem;
-
-  --text-base: 0.8125rem;
-  --text-base--letter-spacing: -0.0125em;
-  --text-base--line-height: 1.25rem;
-
-  --text-lg: 0.9375rem;
-  --text-lg--letter-spacing: -0.015em;
-  --text-lg--line-height: 1.375rem;
-
-  --text-xl: 1.125rem;
-  --text-xl--letter-spacing: -0.02em;
-  --text-xl--line-height: 1.5rem;
-
-  --text-2xl: 1.25rem;
-  --text-2xl--letter-spacing: -0.025em;
-  --text-2xl--line-height: 1.75rem;
-
-  --font-weight-450: 450;
 
   --max-width-container: 1280px;
 
@@ -120,10 +126,6 @@
     --font-features: 'calt', 'ss07', 'ss08';
   }
 
-  html {
-    font-feature-settings: var(--font-features);
-  }
-
   ::selection {
     background-color: var(--color-electric-lime);
     color: #000;
@@ -139,15 +141,22 @@
   corner-shape: superellipse(1.25);
 }
 
-::view-transition-old(content) {
-  animation: var(--animate-fade-out-slide);
+@utility text-sm {
+  --opsz: 18;
 }
 
-::view-transition-new(content) {
-  animation: var(--animate-fade-in-slide);
+@utility text-base {
+  --opsz: 24;
 }
 
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
+@utility text-lg {
+  --opsz: 28;
+}
+
+@utility text-xl {
+  --opsz: 32;
+}
+
+@utility text-2xl {
+  --opsz: 32;
 }
