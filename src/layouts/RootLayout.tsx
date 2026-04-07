@@ -29,7 +29,7 @@ export function RootLayout({ children }: { children: React.ReactNode }) {
             </Link>
           </h1>
           <p className={'text-secondary will-change-transform animation-delay-150'}>
-            Interface designer
+            Software designer
           </p>
         </div>
 
