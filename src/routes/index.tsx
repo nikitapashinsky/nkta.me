@@ -19,7 +19,7 @@ function Home() {
       )}
     >
       <div className={'col-span-full flex flex-col gap-6'}>
-        <p className={twJoin('text-xl text-balance md:text-2xl')}>
+        <p className={twJoin('text-xl font-medium text-balance md:text-2xl')}>
           I’m a designer focused on crafting high-quality software. Currently leading product design
           on Composer at <Link to="https://piano.io">Piano</Link>.
         </p>

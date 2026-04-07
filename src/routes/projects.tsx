@@ -22,7 +22,7 @@ function RouteComponent() {
       )}
     >
       <div className={'col-span-full flex flex-col gap-2'}>
-        <h1 className={'text-xl md:text-2xl'}>Projects</h1>
+        <h1 className={'text-xl font-medium md:text-2xl'}>Projects</h1>
       </div>
 
       <div className={'col-span-full flex flex-col gap-6 md:col-span-5'}>
@@ -35,7 +35,7 @@ function RouteComponent() {
         />
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-2">
-            <h3>Zoegi theme</h3>
+            <h3 className="font-medium">Zoegi theme</h3>
             <p className="text-balance text-secondary">
               A visually pleasing and polished theme for Zed based on the beautiful Moegi theme for
               VS Code.

@@ -33,7 +33,7 @@ function RouteComponent() {
       )}
     >
       <div className={'col-span-full flex flex-col gap-2'}>
-        <h1 className={'text-xl text-balance md:text-2xl'}>Credits</h1>
+        <h1 className={'text-xl font-medium text-balance md:text-2xl'}>Credits</h1>
         <p className={'max-w-prose text-balance text-secondary'}>
           This website was made possible thanks to many incredible open source projects and the
           amazing people who contributed to them:

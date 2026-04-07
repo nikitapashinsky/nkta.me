@@ -14,7 +14,7 @@ function RouteComponent() {
       )}
     >
       <div className={'col-span-full flex flex-col gap-2'}>
-        <h1 className={'text-xl md:text-2xl'}>Now</h1>
+        <h1 className={'text-xl font-medium md:text-2xl'}>Now</h1>
       </div>
       <div className={'col-span-full flex flex-col gap-6 md:col-span-5'}>
         <div className={'flex flex-col gap-2'}>
