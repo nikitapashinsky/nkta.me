@@ -1,7 +1,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import { cloudflare } from '@cloudflare/vite-plugin';
+import netlify from '@netlify/vite-plugin-tanstack-start';
 import tailwindcss from '@tailwindcss/vite';
 import { tanstackStart } from '@tanstack/react-start/plugin/vite';
 import react from '@vitejs/plugin-react';
@@ -14,13 +14,13 @@ const __dirname = path.dirname(__filename);
 export default defineConfig({
   plugins: [
     tailwindcss(),
-    cloudflare({ viteEnvironment: { name: 'ssr' } }),
     svgr(),
     tanstackStart({
       spa: {
         enabled: true,
       },
     }),
+    netlify(),
     react(),
   ],
 
