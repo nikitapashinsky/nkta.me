@@ -31,7 +31,6 @@
   --font-weight-medium: 450;
 
   --font-sans--font-feature-settings: var(--font-features);
-  --font-sans--font-variation-settings: 'opsz' var(--opsz, 16);
 
   --text-xs: 0.75rem;
   --text-xs--letter-spacing: 0.0012em;
@@ -142,21 +141,21 @@
 }
 
 @utility text-sm {
-  --opsz: 18;
+  font-variation-settings: 'opsz' 18;
 }
 
 @utility text-base {
-  --opsz: 24;
+  font-variation-settings: 'opsz' 24;
 }
 
 @utility text-lg {
-  --opsz: 28;
+  font-variation-settings: 'opsz' 28;
 }
 
 @utility text-xl {
-  --opsz: 32;
+  font-variation-settings: 'opsz' 32;
 }
 
 @utility text-2xl {
-  --opsz: 32;
+  font-variation-settings: 'opsz' 32;
 }
