@@ -24,7 +24,7 @@
   font-style: normal;
 }
 
-@theme {
+@theme inline {
   --font-sans: 'Inter', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
