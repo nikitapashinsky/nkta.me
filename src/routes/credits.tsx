@@ -3,9 +3,10 @@ import { twJoin, twMerge } from 'tailwind-merge';
 
 import BaseUILogo from '@/assets/images/logos/base-ui.svg?react';
 import ClaudeLogo from '@/assets/images/logos/claude.svg?react';
-import CloudflareLogo from '@/assets/images/logos/cloudflare.svg?react';
 import IBMPlexLogo from '@/assets/images/logos/ibm-plex.svg?react';
 import InterLogo from '@/assets/images/logos/inter.svg?react';
+import NetlifyColorLogo from '@/assets/images/logos/netlify-color.svg?react';
+import NetlifyLogo from '@/assets/images/logos/netlify.svg?react';
 import NpmLogo from '@/assets/images/logos/npm.svg?react';
 import ReactLogo from '@/assets/images/logos/react.svg?react';
 import TailwindCSSLogo from '@/assets/images/logos/tailwindcss.svg?react';
@@ -60,10 +61,10 @@ function RouteComponent() {
               brandColor="#03060D"
             />
             <Credit
-              name="Cloudflare Workers"
-              url="https://workers.cloudflare.com/product/workers/"
-              icon={CloudflareLogo}
-              brandColor="#FF4801"
+              name="Netlify"
+              url="https://netlify.app"
+              icon={NetlifyLogo}
+              hoverIcon={NetlifyColorLogo}
             />
             <Credit name="React" url="https://react.dev" icon={ReactLogo} brandColor="#087ea4" />
             <Credit
