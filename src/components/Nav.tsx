@@ -21,7 +21,7 @@ export function Nav({ className }: { className?: string }) {
           </Link>
         </li>
         <li className={'flex items-center gap-1'}>
-          <Link to="/projects" className={navLinkStyles}>
+          <Link to="/projects" className={navLinkStyles} disabled={!import.meta.env.DEV}>
             Projects
           </Link>
         </li>
