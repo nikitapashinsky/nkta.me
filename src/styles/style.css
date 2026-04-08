@@ -3,6 +3,12 @@
 
 @custom-variant current (&:where([data-status="active"]));
 
+@custom-variant supports-corner-shape {
+  @supports (corner-shape: squircle) {
+    @slot;
+  }
+}
+
 @font-face {
   font-family: 'Inter';
   src: url('@/assets/fonts/InterVariable.woff2') format('woff2');
