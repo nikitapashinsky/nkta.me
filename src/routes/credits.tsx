@@ -1,7 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { twJoin, twMerge } from 'tailwind-merge';
 
-import { Link, type LinkProps } from '@/components/Link';
 import { credits } from '@/data/credits';
 
 export const Route = createFileRoute('/credits')({
@@ -31,58 +30,55 @@ function RouteComponent() {
         </p>
       </div>
 
-      <div
-        className={
-          'col-span-full grid grid-cols-subgrid gap-8 md:grid-rows-2 md:content-start md:items-start md:gap-4'
-        }
-      >
+      <div className={'col-span-full grid grid-cols-subgrid gap-8'}>
         {/* Tech stack */}
-        <div
-          className={twJoin(
-            'flex flex-col gap-2',
-            'col-span-full md:col-span-4 md:row-span-2 lg:col-span-3',
-          )}
-        >
-          <h2 className={'text-secondary'}>Tech stack</h2>
-          <ul className={'flex flex-col'}>
-            {tech.map(({ name, icon, brandColor, hoverIcon, url }) => (
+        <div className={twJoin('col-span-full grid grid-cols-subgrid gap-2')}>
+          <h2 className={'col-span-full text-secondary'}>Tech stack</h2>
+          <ul className={'col-span-full grid grid-cols-subgrid gap-x-4 gap-y-2'}>
+            {tech.map(({ name, icon, url }) => (
               <Credit
                 key={name}
                 name={name}
                 icon={icon}
-                brandColor={brandColor}
-                hoverIcon={hoverIcon}
                 url={url}
+                className="col-span-1 md:col-span-4"
+                iconClassName={twJoin(
+                  'rounded-full bg-white p-2.5 shadow-md shadow-black/4 outline-[0.5px] outline-black/8',
+                  'group-hover:shadow-black/8 group-hover:outline-black/10',
+                  'transition-all duration-125 group-hover:duration-75',
+                )}
               />
             ))}
           </ul>
         </div>
 
         {/* Tools */}
-        <div className={twJoin('flex flex-col gap-2', 'col-span-full md:col-span-4 lg:col-span-3')}>
-          <h2 className={'text-secondary'}>Tools</h2>
-          <ul className={'flex flex-col'}>
-            {tools.map(({ name, icon, brandColor, hoverIcon, url }) => (
+        <div className={twJoin('col-span-full grid grid-cols-subgrid gap-2')}>
+          <h2 className={'col-span-full text-secondary'}>Tools</h2>
+          <ul className={'col-span-full grid grid-cols-subgrid gap-x-4 gap-y-2'}>
+            {tools.map(({ name, description, icon, url }) => (
               <Credit
                 key={name}
                 name={name}
+                description={description}
                 icon={icon}
-                brandColor={brandColor}
-                hoverIcon={hoverIcon}
                 url={url}
+                className="col-span-1 md:col-span-4"
+                iconClassName="overflow-clip rounded-xl"
               />
             ))}
           </ul>
         </div>
 
         {/* Typography */}
-        <div className={twJoin('flex flex-col gap-2', 'col-span-full md:col-span-4 lg:col-span-3')}>
+        {/*<div className={twJoin('flex flex-col gap-2', 'col-span-full md:col-span-4 lg:col-span-3')}>
           <h2 className={'text-secondary'}>Typography</h2>
-          <ul className={'flex flex-col'}>
-            {typography.map(({ name, icon, brandColor, hoverIcon, url }) => (
+          <ul className={'flex flex-col gap-1'}>
+            {typography.map(({ name, description, icon, brandColor, hoverIcon, url }) => (
               <Credit
                 key={name}
                 name={name}
+                description={description}
                 icon={icon}
                 brandColor={brandColor}
                 hoverIcon={hoverIcon}
@@ -90,7 +86,7 @@ function RouteComponent() {
               />
             ))}
           </ul>
-        </div>
+        </div>*/}
       </div>
     </div>
   );
@@ -98,43 +94,40 @@ function RouteComponent() {
 
 function Credit({
   icon: Icon,
-  hoverIcon: HoverIcon,
-  brandColor,
   name,
+  description,
   url,
+  className,
+  iconClassName,
 }: {
   icon: React.FC<React.SVGProps<SVGSVGElement>> | string;
   hoverIcon?: React.FC<React.SVGProps<SVGSVGElement>>;
   brandColor?: string;
   name: string;
-  url: LinkProps['to'];
+  description?: string;
+  url: string;
+  className?: string;
+  iconClassName?: string;
 }) {
   return (
-    <li>
-      <Link to={url} className="group flex items-center gap-2 py-1.5">
-        <div className="flex size-6 items-center justify-center">
-          {typeof Icon === 'string' ? (
-            <img src={Icon} alt={name} className="size-full" />
-          ) : (
-            <Icon
-              style={
-                {
-                  '--credit-color': brandColor ?? 'var(--color-neutral-950)',
-                } as React.CSSProperties
-              }
-              className={twMerge(
-                'size-full fill-neutral-400 group-hover:fill-(--credit-color) group-active:fill-(--credit-color)',
-                HoverIcon && 'group-hover:hidden group-active:hidden',
-              )}
-            />
-          )}
-
-          {HoverIcon && (
-            <HoverIcon className="hidden size-full group-hover:block group-active:block" />
-          )}
+    <li className={className}>
+      <a
+        href={url}
+        className={twJoin(
+          'group -ml-2 flex items-center gap-3 rounded-xl p-2',
+          'transition-colors duration-125 hover:bg-neutral-100 hover:duration-75',
+        )}
+      >
+        <div
+          className={twMerge('flex size-12 shrink-0 items-center justify-center', iconClassName)}
+        >
+          <Icon className={'size-full shrink-0'} />
         </div>
-        {name}
-      </Link>
+        <div className="flex flex-col gap-1">
+          <h4 className="font-medium">{name}</h4>
+          {description && <p className="text-sm text-secondary">{description}</p>}
+        </div>
+      </a>
     </li>
   );
 }
