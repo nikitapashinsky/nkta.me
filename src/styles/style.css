@@ -24,36 +24,13 @@
   font-style: normal;
 }
 
-@theme inline {
+@theme {
   --font-sans: 'Inter', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
   --font-weight-medium: 450;
 
   --font-sans--font-feature-settings: var(--font-features);
-
-  --text-xs: 0.75rem;
-  --text-xs--letter-spacing: 0.0012em;
-
-  --text-sm: 0.8125rem;
-  --text-sm--letter-spacing: 0.0012em;
-  /*--text-sm--line-height: 1rem;*/
-
-  --text-base: 0.9375rem;
-  --text-base--letter-spacing: -0.0075em;
-  /*--text-base--line-height: 1.25rem;*/
-
-  --text-lg: 1.125rem;
-  --text-lg--letter-spacing: -0.0075em;
-  /*--text-lg--line-height: 1.375rem;*/
-
-  --text-xl: 1.25rem;
-  --text-xl--letter-spacing: -0.015em;
-  /*--text-xl--line-height: 1.5rem;*/
-
-  --text-2xl: 1.5rem;
-  --text-2xl--letter-spacing: -0.02em;
-  /*--text-2xl--line-height: 1.75rem;*/
 
   --color-electric-lime: oklch(94.3% 0.256 118);
   --color-neutral-450: oklch(63.2% 0 0);
@@ -140,31 +117,47 @@
   corner-shape: superellipse(1.25);
 }
 
+@utility text-xs {
+  letter-spacing: 0.0012em;
+}
+
 @utility text-sm {
+  font-size: 0.8125rem;
   font-variation-settings: 'opsz' 18;
+  letter-spacing: 0.0012em;
   --link-decoration-thickness: 1px;
   --link-decoration-offset: 2.5px;
 }
 
 @utility text-base {
+  font-size: 0.9375rem;
   font-variation-settings: 'opsz' 24;
+  letter-spacing: -0.005em;
   --link-decoration-thickness: 1px;
   --link-decoration-offset: 3px;
 }
 
 @utility text-lg {
   font-variation-settings: 'opsz' 28;
+  letter-spacing: -0.005em;
+  line-height: calc(1.75 / 1.25);
   --link-decoration-thickness: 1.25px;
 }
 
 @utility text-xl {
-  font-variation-settings: 'opsz' 32;
+  font-variation-settings: 'opsz' 28;
+  letter-spacing: -0.015em;
   --link-decoration-thickness: 1.5px;
   --link-decoration-offset: 4px;
 }
 
 @utility text-2xl {
   font-variation-settings: 'opsz' 32;
+  letter-spacing: -0.02em;
   --link-decoration-thickness: 1.75px;
   --link-decoration-offset: 5px;
+}
+
+@utility text-3xl {
+  letter-spacing: -0.025em;
 }
