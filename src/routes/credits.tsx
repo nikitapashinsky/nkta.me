@@ -11,7 +11,6 @@ export const Route = createFileRoute('/credits')({
 });
 
 const tech = credits.TECH;
-const tools = credits.TOOLS;
 const typography = credits.TYPOGRAPHY;
 
 function RouteComponent() {
@@ -34,50 +33,21 @@ function RouteComponent() {
       <div className={'col-span-full grid grid-cols-subgrid gap-8'}>
         {/* Tech stack */}
         <div className={twJoin('col-span-full grid grid-cols-subgrid gap-4')}>
-          <h3 className={'col-span-full font-medium text-secondary'}>Tech stack</h3>
-          <ul className={'col-span-full grid grid-cols-subgrid gap-x-4 gap-y-1 md:gap-y-2'}>
+          <h3 className={'col-span-full font-medium text-primary'}>Tech stack</h3>
+          <ul className={'col-span-full grid grid-cols-subgrid gap-x-4 gap-y-2'}>
             {tech.map(({ name, icon, url }) => (
               <Credit
                 key={name}
                 name={name}
                 icon={icon}
                 url={url}
-                className="col-span-1 md:col-span-4"
+                className="col-span-full md:col-span-4"
                 iconClassName={twJoin(
-                  'rounded-full bg-white p-2.5 shadow-md shadow-black/4 outline-[0.5px] outline-black/8',
+                  'bg-white p-2.5 shadow-icon outline-[0.5px] outline-black/6',
+                  'rounded-[14px] corner-smooth not-supports-corner-shape:rounded-xl',
                   'group-hover:shadow-black/8 group-hover:outline-black/10',
                   'group-active:shadow-black/8 group-active:outline-black/10',
                   'transition-all duration-125 group-hover:duration-75',
-                )}
-              />
-            ))}
-          </ul>
-        </div>
-
-        {/* Tools */}
-        <div className={twJoin('col-span-full grid grid-cols-subgrid gap-4')}>
-          <h2 className={'col-span-full font-medium text-secondary'}>Tools</h2>
-          <ul className={'col-span-full grid grid-cols-subgrid gap-x-4 gap-y-1 md:gap-y-2'}>
-            {tools.map(({ name, description, icon, url }) => (
-              <Credit
-                key={name}
-                name={name}
-                description={description}
-                icon={icon}
-                url={url}
-                className="col-span-1 md:col-span-4"
-                containerClassName={twJoin(
-                  'rounded-[18px] supports-corner-shape:rounded-[19px] supports-corner-shape:corner-smooth',
-                  'md:rounded-[20.5px] md:supports-corner-shape:rounded-[22px]',
-                )}
-                iconClassName={twMerge(
-                  'relative size-9.5 place-self-center overflow-clip rounded-[10px] supports-corner-shape:rounded-[11px] supports-corner-shape:corner-smooth',
-                  'shadow outline-[0.5px] outline-black/8',
-                  'md:size-11.5 md:rounded-[12.5px] md:supports-corner-shape:rounded-[14px]',
-                  'group-hover:shadow-md group-hover:shadow-black/12 group-hover:outline-black/10',
-                  'after:absolute after:inset-[0.5px] after:bg-linear-to-b after:from-white/15 after:from-4% after:to-white/0 after:to-70%',
-                  'after:rounded-[9.5px] md:after:rounded-[12px] after:supports-corner-shape:rounded-[10.5px] after:supports-corner-shape:corner-smooth md:after:supports-corner-shape:rounded-[13.5px]',
-                  name !== 'Codex' && '-outline-offset-[0.5px]',
                 )}
               />
             ))}
@@ -130,21 +100,24 @@ function Credit({
       <a
         href={url}
         className={twMerge(
-          'group -ml-2 grid items-center gap-3 rounded-xl p-2',
-          'grid-cols-[40px_1fr] md:grid-cols-[48px_1fr]',
-          'hover:bg-neutral-100 active:bg-neutral-100',
-          'transition-colors duration-125 hover:duration-75',
+          'group relative -ml-1 grid items-center gap-3 p-1',
+          'grid-cols-[48px_1fr]',
+          'before:absolute before:inset-0 before:-z-1 before:scale-95 before:bg-neutral-100 before:opacity-0',
+          'hover:before:scale-100 hover:before:opacity-100 active:before:scale-100 active:before:opacity-100',
+          'before:rounded-[18px] before:corner-smooth before:not-supports-corner-shape:rounded-2xl',
+          'before:transition-all before:duration-250 hover:before:duration-125',
           containerClassName,
         )}
       >
         <div
           className={twMerge(
-            'flex size-10 shrink-0 items-center justify-center md:size-12',
+            'flex size-12 shrink-0 items-center justify-center md:size-12',
             iconClassName,
           )}
         >
           <Icon className={'size-full shrink-0'} />
         </div>
+
         <div className="flex flex-col gap-1">
           <h4 className="font-medium">{name}</h4>
           {description && <p className="text-sm text-secondary">{description}</p>}
