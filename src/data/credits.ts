@@ -1,5 +1,6 @@
 import BaseUILogo from '@/assets/images/logos/base-ui.svg?react';
 import CloudflareLogo from '@/assets/images/logos/cloudflare.svg?react';
+import InterIcon from '@/assets/images/logos/inter.svg?react';
 import NpmLogo from '@/assets/images/logos/npm.svg?react';
 import ReactLogo from '@/assets/images/logos/react.svg?react';
 import TailwindCSSLogo from '@/assets/images/logos/tailwindcss.svg?react';
@@ -57,11 +58,10 @@ export const credits: Record<Group, Credit[]> = {
     },
   ],
   TYPOGRAPHY: [
-    // {
-    //   name: 'Inter',
-    //   description: 'Inter is hard to beat.',
-    //   icon: InterIconFill,
-    //   url: 'https://rsms.me/inter',
-    // },
+    {
+      name: 'Inter',
+      icon: InterIcon,
+      url: 'https://rsms.me/inter',
+    },
   ],
 };

@@ -30,7 +30,7 @@ function RouteComponent() {
         </p>
       </div>
 
-      <div className={'col-span-full grid grid-cols-subgrid gap-8'}>
+      <div className={'col-span-full grid grid-cols-subgrid gap-16'}>
         {/* Tech stack */}
         <div className={twJoin('col-span-full grid grid-cols-subgrid gap-4')}>
           <h3 className={'col-span-full font-medium text-primary'}>Tech stack</h3>
@@ -54,23 +54,29 @@ function RouteComponent() {
           </ul>
         </div>
 
-        {/* Typography */}
-        {/*<div className={twJoin('flex flex-col gap-2', 'col-span-full md:col-span-4 lg:col-span-3')}>
-          <h2 className={'text-secondary'}>Typography</h2>
-          <ul className={'flex flex-col gap-1'}>
-            {typography.map(({ name, description, icon, brandColor, hoverIcon, url }) => (
+        {/*Typography*/}
+        <div className={twJoin('col-span-full grid grid-cols-subgrid gap-4')}>
+          <h3 className={'col-span-full font-medium text-primary'}>Typography</h3>
+          <ul className={'col-span-full grid grid-cols-subgrid gap-x-4 gap-y-2'}>
+            {typography.map(({ name, description, icon, url }) => (
               <Credit
                 key={name}
                 name={name}
                 description={description}
                 icon={icon}
-                brandColor={brandColor}
-                hoverIcon={hoverIcon}
                 url={url}
+                className="col-span-full md:col-span-4"
+                iconClassName={twJoin(
+                  'bg-white p-1.75 shadow-icon outline-[0.5px] outline-black/6',
+                  'rounded-[14px] corner-smooth not-supports-corner-shape:rounded-xl',
+                  'group-hover:shadow-black/8 group-hover:outline-black/10',
+                  'group-active:shadow-black/8 group-active:outline-black/10',
+                  'transition-all duration-125 group-hover:duration-75',
+                )}
               />
             ))}
           </ul>
-        </div>*/}
+        </div>
       </div>
     </div>
   );
@@ -99,6 +105,8 @@ function Credit({
     <li className={className}>
       <a
         href={url}
+        target="_blank"
+        rel="noopener noreferrer"
         className={twMerge(
           'group relative -ml-1 grid items-center gap-3 p-1',
           'grid-cols-[48px_1fr]',
