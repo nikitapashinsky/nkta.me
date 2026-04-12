@@ -110,10 +110,12 @@ function Credit({
         className={twMerge(
           'group relative -ml-1 grid items-center gap-3 p-1',
           'grid-cols-[48px_1fr]',
-          'before:absolute before:inset-0 before:-z-1 before:scale-95 before:bg-neutral-100 before:opacity-0',
-          'hover:before:scale-100 hover:before:opacity-100 active:before:scale-100 active:before:opacity-100',
+          'before:absolute before:inset-0 before:-z-1 before:scale-95 before:bg-neutral-100 before:opacity-0 before:blur-md',
+          'hover:before:scale-100 hover:before:opacity-100 hover:before:blur-none active:before:scale-100 active:before:opacity-100 active:before:blur-none',
           'before:rounded-[18px] before:corner-smooth before:not-supports-corner-shape:rounded-2xl',
-          'before:transition-all before:duration-250 hover:before:duration-125',
+          'before:transition-all before:duration-400 hover:before:duration-0',
+          'rounded-[18px] corner-smooth not-supports-corner-shape:rounded-2xl',
+          'outline-offset-0 outline-neutral-300 focus-visible:outline',
           containerClassName,
         )}
       >
