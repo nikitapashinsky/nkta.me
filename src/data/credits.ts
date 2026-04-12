@@ -21,6 +21,16 @@ export interface Credit {
 export const credits: Record<Group, Credit[]> = {
   TECH: [
     {
+      name: 'Base UI',
+      icon: BaseUILogo,
+      url: 'https://base-ui.com',
+    },
+    {
+      name: 'Cloudflare Workers',
+      icon: CloudflareLogo,
+      url: 'https://workers.cloudflare.com',
+    },
+    {
       name: 'React',
       icon: ReactLogo,
       url: 'https://react.dev',
@@ -31,30 +41,19 @@ export const credits: Record<Group, Credit[]> = {
       url: 'https://tailwindcss.com',
     },
     {
-      icon: VitePlusLogo,
-      name: 'Vite Plus',
-      url: 'https://viteplus.dev',
+      name: 'tailwind-merge',
+      icon: NpmLogo,
+      url: 'https://www.npmjs.com/package/tailwind-merge',
     },
     {
       icon: TanstackLogo,
       name: 'Tanstack Router',
       url: 'https://tanstack.com/router/latest',
     },
-
     {
-      name: 'Base UI',
-      icon: BaseUILogo,
-      url: 'https://base-ui.com',
-    },
-    {
-      name: 'tailwind-merge',
-      icon: NpmLogo,
-      url: 'https://www.npmjs.com/package/tailwind-merge',
-    },
-    {
-      name: 'Cloudflare Workers',
-      icon: CloudflareLogo,
-      url: 'https://workers.cloudflare.com',
+      icon: VitePlusLogo,
+      name: 'Vite Plus',
+      url: 'https://viteplus.dev',
     },
   ],
   TYPOGRAPHY: [

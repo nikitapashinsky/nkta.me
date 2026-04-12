@@ -143,21 +143,21 @@
 
 @utility text-base {
   font-size: 0.9375rem;
-  font-variation-settings: 'opsz' 24;
-  letter-spacing: -0.005em;
+  font-variation-settings: 'opsz' 20;
+  letter-spacing: -0.01em;
   --link-decoration-thickness: 1px;
   --link-decoration-offset: 3px;
 }
 
 @utility text-lg {
-  font-variation-settings: 'opsz' 28;
-  letter-spacing: -0.005em;
+  font-variation-settings: 'opsz' 24;
+  letter-spacing: -0.01em;
   line-height: calc(1.75 / 1.25);
   --link-decoration-thickness: 1.25px;
 }
 
 @utility text-xl {
-  font-variation-settings: 'opsz' 28;
+  font-variation-settings: 'opsz' 24;
   letter-spacing: -0.015em;
   --link-decoration-thickness: 1.5px;
   --link-decoration-offset: 4px;
