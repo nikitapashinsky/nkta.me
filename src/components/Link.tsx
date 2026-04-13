@@ -35,7 +35,7 @@ const linkStyles = twMerge(
   'relative inline-block outline-none',
   'transition-colors duration-125 hover:duration-75',
   'text-current hover:text-primary focus-visible:text-primary active:text-primary',
-  'underline decoration-black/16 [text-decoration-thickness:var(--link-decoration-thickness)] underline-offset-(--link-decoration-offset)',
+  'underline decoration-black/12 [text-decoration-thickness:var(--link-decoration-thickness)] underline-offset-(--link-decoration-offset)',
   'hover:decoration-black/40',
   'current:pointer-events-none current:cursor-default current:text-primary current:no-underline',
   'aria-disabled:cursor-not-allowed aria-disabled:text-tertiary aria-disabled:no-underline',
