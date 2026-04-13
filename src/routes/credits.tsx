@@ -34,16 +34,16 @@ function RouteComponent() {
         {/* Tech stack */}
         <div className={twJoin('col-span-full grid grid-cols-subgrid gap-4')}>
           <h3 className={'col-span-full font-medium text-secondary'}>Tech stack</h3>
-          <ul className={'col-span-full grid grid-cols-subgrid gap-x-4 gap-y-2 md:gap-y-3'}>
-            {tech.map(({ name, icon, brandColor, url }) => (
+          <ul className={'col-span-full grid grid-cols-subgrid gap-y-2'}>
+            {tech.map(({ name, icon, hoverIcon, brandColor, url }) => (
               <Credit
                 key={name}
                 name={name}
                 icon={icon}
+                hoverIcon={hoverIcon}
                 brandColor={brandColor}
                 url={url}
                 className="col-span-full md:col-span-4"
-                iconClassName="p-2.5"
               />
             ))}
           </ul>
@@ -53,15 +53,15 @@ function RouteComponent() {
         <div className={twJoin('col-span-full grid grid-cols-subgrid gap-4')}>
           <h3 className={'col-span-full font-medium text-secondary'}>Typography</h3>
           <ul className={'col-span-full grid grid-cols-subgrid gap-x-4 gap-y-2'}>
-            {typography.map(({ name, description, icon, url }) => (
+            {typography.map(({ name, description, icon, brandColor, url }) => (
               <Credit
                 key={name}
                 name={name}
                 description={description}
                 icon={icon}
+                brandColor={brandColor}
                 url={url}
                 className="col-span-full md:col-span-4"
-                iconClassName="p-2.5"
               />
             ))}
           </ul>
@@ -73,6 +73,7 @@ function RouteComponent() {
 
 function Credit({
   icon: Icon,
+  hoverIcon: HoverIcon,
   brandColor,
   name,
   description,
@@ -91,7 +92,7 @@ function Credit({
 }) {
   return (
     <li
-      style={{ '--brand-color': brandColor ?? 'var(--color-neutral-100)' } as React.CSSProperties}
+      style={{ '--brand-color': brandColor ?? '#000' } as React.CSSProperties}
       className={className}
     >
       <a
@@ -104,31 +105,39 @@ function Credit({
           // 'hover:bg-neutral-100 active:bg-neutral-100',
           'outline-offset-0 outline-neutral-300 focus-visible:outline',
           'before:absolute before:inset-0 before:-z-1 before:scale-95 before:opacity-0 before:blur-xs',
-          'before:bg-neutral-100',
-          // 'before:bg-linear-to-r before:from-(--brand-color)/40 before:via-(--brand-color)/10 before:via-20% before:to-neutral-100 before:to-30%',
-          'hover:before:scale-100 hover:before:opacity-100 hover:before:blur-none active:before:scale-100 active:before:opacity-100 active:before:blur-none',
+          'before:bg-linear-to-r before:from-(--brand-color)/8 before:to-(--brand-color)/6',
           'before:rounded-[20px] before:corner-smooth before:not-supports-corner-shape:rounded-2xl',
-          'before:transition-all before:duration-200 hover:before:duration-100 active:before:duration-0',
-          // 'after:absolute after:inset-0 after:-z-10 after:scale-95 after:bg-neutral-100 after:opacity-0 after:blur-md',
-          // 'hover:after:scale-100 hover:after:opacity-100 hover:after:blur-none active:after:scale-100 active:after:opacity-100 active:after:blur-none',
-          // 'after:rounded-[20px] after:corner-smooth after:not-supports-corner-shape:rounded-2xl',
-          // 'after:transition-all after:duration-400 hover:after:duration-0 active:after:duration-0',
-          'transition-all duration-300 active:scale-98 sm:duration-150',
+          'before:transition-all before:duration-400 hover:before:duration-200 active:before:duration-100 md:before:duration-200 md:hover:before:duration-100',
+          'hover:before:scale-100 hover:before:opacity-100 hover:before:blur-none active:before:scale-100 active:before:opacity-100 active:before:blur-none',
+          'transition-all duration-500 active:scale-99 sm:duration-150 md:active:scale-98',
         )}
       >
         <div
           className={twMerge(
             'flex size-12 shrink-0 items-center justify-center md:size-13',
-            'bg-white shadow-icon outline-[0.5px] outline-black/6',
+            'bg-white shadow-icon outline-[0.5px] outline-black/8',
             'rounded-2xl corner-smooth not-supports-corner-shape:rounded-xl',
-            'group-hover:shadow-black/8 group-hover:outline-black/10',
-            'group-active:shadow-black/8 group-active:outline-black/10',
+            'group-hover:shadow-lg group-hover:shadow-[oklch(from_var(--brand-color)_15%_c_h)]/20 group-hover:outline-[oklch(from_var(--brand-color)_20%_c_h)]/14',
+            'group-active:shadow-lg group-active:shadow-[oklch(from_var(--brand-color)_15%_c_h)]/20 group-active:outline-[oklch(from_var(--brand-color)_20%_c_h)]/14',
             'transition-all duration-200 group-hover:duration-100',
             'md:scale-97 md:group-hover:scale-100',
             iconClassName,
           )}
         >
-          <Icon className={'size-full shrink-0'} />
+          <Icon
+            className={twJoin(
+              'size-8 shrink-0 fill-(--text-color-secondary)',
+              'transition-colors duration-200 group-hover:duration-0 group-active:duration-0',
+              'group-hover:fill-(--brand-color) group-active:fill-(--brand-color)',
+            )}
+          />
+          {HoverIcon && (
+            <HoverIcon
+              className={
+                'absolute size-8 shrink-0 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-hover:duration-0 group-active:opacity-100 group-active:duration-0'
+              }
+            />
+          )}
         </div>
 
         <div className="flex flex-1 flex-col gap-1">
@@ -138,6 +147,7 @@ function Credit({
               'underline decoration-black/12 [text-decoration-thickness:var(--link-decoration-thickness)] underline-offset-(--link-decoration-offset)',
               'transition-all duration-300 group-hover:duration-100 sm:duration-200',
               'group-hover:decoration-transparent group-active:decoration-transparent',
+              'group-hover:text-[oklch(from_var(--brand-color)_30%_c_h)] group-active:text-[oklch(from_var(--brand-color)_30%_c_h)]',
             )}
           >
             {name}
@@ -147,11 +157,11 @@ function Credit({
 
         <span
           className={twJoin(
-            `font-features-['case'] text-[16px] font-medium text-secondary`,
-            'transition-all duration-300 sm:duration-150',
+            `font-features-['case'] text-lg text-[oklch(from_var(--brand-color)_60%_c_h)]`,
+            'transition-all duration-100 group-hover:duration-200 group-active:duration-200',
             '-translate-x-1 scale-90 opacity-0',
-            'group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100',
-            'group-active:translate-x-0 group-active:scale-100 group-active:opacity-100',
+            'group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100 group-hover:brightness-60',
+            'group-active:translate-x-0 group-active:scale-100 group-active:opacity-100 group-active:brightness-60',
           )}
         >
           &#8599;

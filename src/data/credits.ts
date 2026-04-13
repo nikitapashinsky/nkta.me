@@ -4,7 +4,8 @@ import InterIcon from '@/assets/images/logos/inter.svg?react';
 import ReactLogo from '@/assets/images/logos/react.svg?react';
 import TailwindCSSLogo from '@/assets/images/logos/tailwindcss.svg?react';
 import TanstackLogo from '@/assets/images/logos/tanstack.svg?react';
-import VitePlusLogo from '@/assets/images/logos/viteplus-color.svg?react';
+import VitePlusColorLogo from '@/assets/images/logos/viteplus-color.svg?react';
+import VitePlusLogo from '@/assets/images/logos/viteplus.svg?react';
 import type { LinkProps } from '@/components/Link';
 
 type Group = 'TECH' | 'TYPOGRAPHY';
@@ -23,6 +24,7 @@ export const credits: Record<Group, Credit[]> = {
     {
       name: 'Base UI',
       icon: BaseUILogo,
+      brandColor: '#03060D',
       url: 'https://base-ui.com',
     },
     {
@@ -52,6 +54,7 @@ export const credits: Record<Group, Credit[]> = {
     {
       name: 'Vite+',
       icon: VitePlusLogo,
+      hoverIcon: VitePlusColorLogo,
       brandColor: 'oklch(56.6% 0.261 279.1)',
       url: 'https://viteplus.dev',
     },
