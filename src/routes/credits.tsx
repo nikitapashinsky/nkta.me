@@ -33,22 +33,17 @@ function RouteComponent() {
       <div className={'col-span-full grid grid-cols-subgrid gap-16'}>
         {/* Tech stack */}
         <div className={twJoin('col-span-full grid grid-cols-subgrid gap-4')}>
-          <h3 className={'col-span-full font-medium text-primary'}>Tech stack</h3>
-          <ul className={'col-span-full grid grid-cols-subgrid gap-x-4 gap-y-2'}>
-            {tech.map(({ name, icon, url }) => (
+          <h3 className={'col-span-full font-medium text-secondary'}>Tech stack</h3>
+          <ul className={'col-span-full grid grid-cols-subgrid gap-x-4 gap-y-2 md:gap-y-3'}>
+            {tech.map(({ name, icon, brandColor, url }) => (
               <Credit
                 key={name}
                 name={name}
                 icon={icon}
+                brandColor={brandColor}
                 url={url}
                 className="col-span-full md:col-span-4"
-                iconClassName={twJoin(
-                  'bg-white p-2.5 shadow-icon outline-[0.5px] outline-black/6',
-                  'rounded-[14px] corner-smooth not-supports-corner-shape:rounded-xl',
-                  'group-hover:shadow-black/8 group-hover:outline-black/10',
-                  'group-active:shadow-black/8 group-active:outline-black/10',
-                  'transition-all duration-125 group-hover:duration-75',
-                )}
+                iconClassName="p-2.5"
               />
             ))}
           </ul>
@@ -56,7 +51,7 @@ function RouteComponent() {
 
         {/*Typography*/}
         <div className={twJoin('col-span-full grid grid-cols-subgrid gap-4')}>
-          <h3 className={'col-span-full font-medium text-primary'}>Typography</h3>
+          <h3 className={'col-span-full font-medium text-secondary'}>Typography</h3>
           <ul className={'col-span-full grid grid-cols-subgrid gap-x-4 gap-y-2'}>
             {typography.map(({ name, description, icon, url }) => (
               <Credit
@@ -66,13 +61,7 @@ function RouteComponent() {
                 icon={icon}
                 url={url}
                 className="col-span-full md:col-span-4"
-                iconClassName={twJoin(
-                  'bg-white p-1.75 shadow-icon outline-[0.5px] outline-black/6',
-                  'rounded-[14px] corner-smooth not-supports-corner-shape:rounded-xl',
-                  'group-hover:shadow-black/8 group-hover:outline-black/10',
-                  'group-active:shadow-black/8 group-active:outline-black/10',
-                  'transition-all duration-125 group-hover:duration-75',
-                )}
+                iconClassName="p-2.5"
               />
             ))}
           </ul>
@@ -84,6 +73,7 @@ function RouteComponent() {
 
 function Credit({
   icon: Icon,
+  brandColor,
   name,
   description,
   url,
@@ -102,26 +92,39 @@ function Credit({
   iconClassName?: string;
 }) {
   return (
-    <li className={className}>
+    <li
+      style={{ '--brand-color': brandColor ?? 'var(--color-neutral-100)' } as React.CSSProperties}
+      className={className}
+    >
       <a
         href={url}
         target="_blank"
         rel="noopener noreferrer"
         className={twMerge(
-          'group relative -ml-1 grid items-center gap-3 p-1',
-          'grid-cols-[48px_1fr]',
-          'before:absolute before:inset-0 before:-z-1 before:scale-95 before:bg-neutral-100 before:opacity-0 before:blur-md',
-          'hover:before:scale-100 hover:before:opacity-100 hover:before:blur-none active:before:scale-100 active:before:opacity-100 active:before:blur-none',
-          'before:rounded-[18px] before:corner-smooth before:not-supports-corner-shape:rounded-2xl',
-          'before:transition-all before:duration-400 hover:before:duration-0',
-          'rounded-[18px] corner-smooth not-supports-corner-shape:rounded-2xl',
+          'group relative -ml-1 flex items-center gap-3 p-1 md:gap-4',
+          'rounded-[20px] corner-smooth not-supports-corner-shape:rounded-2xl',
+          'hover:bg-neutral-100',
           'outline-offset-0 outline-neutral-300 focus-visible:outline',
+          // 'before:absolute before:inset-0 before:-z-1 before:scale-95 before:opacity-0 before:blur-md',
+          // 'before:bg-linear-to-r before:from-(--brand-color)/40 before:via-(--brand-color)/10 before:via-20% before:to-neutral-100 before:to-30%',
+          // 'hover:before:scale-100 hover:before:opacity-100 hover:before:blur-none active:before:scale-100 active:before:opacity-100 active:before:blur-none',
+          // 'before:rounded-[20px] before:corner-smooth before:not-supports-corner-shape:rounded-2xl',
+          // 'before:transition-all before:duration-400 hover:before:duration-0 active:before:duration-0',
+          // 'after:absolute after:inset-0 after:-z-10 after:scale-95 after:bg-neutral-100 after:opacity-0 after:blur-md',
+          // 'hover:after:scale-100 hover:after:opacity-100 hover:after:blur-none active:after:scale-100 active:after:opacity-100 active:after:blur-none',
+          // 'after:rounded-[20px] after:corner-smooth after:not-supports-corner-shape:rounded-2xl',
+          // 'after:transition-all after:duration-400 hover:after:duration-0 active:after:duration-0',
           containerClassName,
         )}
       >
         <div
           className={twMerge(
-            'flex size-12 shrink-0 items-center justify-center md:size-12',
+            'flex size-12 shrink-0 items-center justify-center md:size-13',
+            'bg-white shadow-icon outline-[0.5px] outline-black/6',
+            'rounded-2xl corner-smooth not-supports-corner-shape:rounded-xl',
+            'group-hover:shadow-black/8 group-hover:outline-black/10',
+            'group-active:shadow-black/8 group-active:outline-black/10',
+            'transition-all duration-125 group-hover:duration-75',
             iconClassName,
           )}
         >

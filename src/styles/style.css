@@ -134,42 +134,50 @@
 }
 
 @utility text-sm {
+  --link-decoration-thickness: 1px;
+  --link-decoration-offset: 2.5px;
+
   font-size: 0.8125rem;
   font-variation-settings: 'opsz' 18;
   letter-spacing: 0.0012em;
-  --link-decoration-thickness: 1px;
-  --link-decoration-offset: 2.5px;
 }
 
 @utility text-base {
+  --link-decoration-thickness: 1px;
+  --link-decoration-offset: 3px;
+
   font-size: 0.9375rem;
   font-variation-settings: 'opsz' 20;
   letter-spacing: -0.01em;
-  --link-decoration-thickness: 1px;
-  --link-decoration-offset: 3px;
 }
 
 @utility text-lg {
+  --link-decoration-thickness: 1.25px;
+
   font-variation-settings: 'opsz' 24;
   letter-spacing: -0.01em;
   line-height: calc(1.75 / 1.25);
-  --link-decoration-thickness: 1.25px;
 }
 
 @utility text-xl {
-  font-variation-settings: 'opsz' 24;
-  letter-spacing: -0.015em;
   --link-decoration-thickness: 1.5px;
   --link-decoration-offset: 4px;
+
+  font-variation-settings: 'opsz' 24;
+  letter-spacing: -0.015em;
 }
 
 @utility text-2xl {
-  font-variation-settings: 'opsz' 32;
-  letter-spacing: -0.02em;
+  --font-weight-medium: 475;
   --link-decoration-thickness: 1.75px;
   --link-decoration-offset: 5px;
+
+  font-variation-settings: 'opsz' 32;
+  letter-spacing: -0.02em;
 }
 
 @utility text-3xl {
+  --font-weight-medium: 475;
+
   letter-spacing: -0.025em;
 }

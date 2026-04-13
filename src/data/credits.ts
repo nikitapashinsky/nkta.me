@@ -1,7 +1,6 @@
 import BaseUILogo from '@/assets/images/logos/base-ui.svg?react';
 import CloudflareLogo from '@/assets/images/logos/cloudflare.svg?react';
 import InterIcon from '@/assets/images/logos/inter.svg?react';
-import NpmLogo from '@/assets/images/logos/npm.svg?react';
 import ReactLogo from '@/assets/images/logos/react.svg?react';
 import TailwindCSSLogo from '@/assets/images/logos/tailwindcss.svg?react';
 import TanstackLogo from '@/assets/images/logos/tanstack.svg?react';
@@ -29,31 +28,31 @@ export const credits: Record<Group, Credit[]> = {
     {
       name: 'Cloudflare Workers',
       icon: CloudflareLogo,
+      brandColor: 'oklch(63.8% 0.243 36.4)',
       url: 'https://workers.cloudflare.com',
     },
     {
       name: 'React',
       icon: ReactLogo,
+      brandColor: '#087ea4',
       url: 'https://react.dev',
     },
     {
       name: 'Tailwind CSS',
       icon: TailwindCSSLogo,
+      brandColor: 'var(--color-sky-400)',
       url: 'https://tailwindcss.com',
     },
     {
-      name: 'tailwind-merge',
-      icon: NpmLogo,
-      url: 'https://www.npmjs.com/package/tailwind-merge',
-    },
-    {
-      icon: TanstackLogo,
       name: 'Tanstack Router',
+      icon: TanstackLogo,
+      brandColor: 'oklch(59.6% 0.176 163.2)',
       url: 'https://tanstack.com/router/latest',
     },
     {
+      name: 'Vite+',
       icon: VitePlusLogo,
-      name: 'Vite Plus',
+      brandColor: 'oklch(56.6% 0.261 279.1)',
       url: 'https://viteplus.dev',
     },
   ],
