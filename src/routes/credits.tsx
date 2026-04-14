@@ -119,7 +119,7 @@ function Credit({
             'group-hover:bg-white group-hover:outline-[oklch(from_var(--brand-color)_20%_c_h)]/14 group-active:bg-white group-active:outline-[oklch(from_var(--brand-color)_20%_c_h)]/14',
             'group-hover:shadow-icon-hover group-hover:shadow-darken-(--brand-color)/20',
             // 'group-hover:shadow-lg group-hover:shadow-[oklch(from_var(--brand-color)_15%_c_h)]/20 group-hover:outline-[oklch(from_var(--brand-color)_20%_c_h)]/14',
-            'group-active:shadow-lg group-active:shadow-[oklch(from_var(--brand-color)_15%_c_h)]/20 group-active:outline-[oklch(from_var(--brand-color)_20%_c_h)]/14',
+            'group-active:shadow-icon-hover group-active:shadow-[oklch(from_var(--brand-color)_15%_c_h)]/20 group-active:outline-[oklch(from_var(--brand-color)_20%_c_h)]/14',
             'transition duration-200 group-hover:duration-100',
             'md:scale-97 md:group-hover:scale-100',
           )}
