@@ -134,8 +134,8 @@
 }
 
 @utility text-sm {
-  --link-decoration-thickness: 1px;
-  --link-decoration-offset: 2.5px;
+  --link-decoration-thickness: 1.5px;
+  --link-decoration-offset: 3px;
 
   font-size: 0.8125rem;
   font-variation-settings: 'opsz' 18;
@@ -143,8 +143,8 @@
 }
 
 @utility text-base {
-  --link-decoration-thickness: 1px;
-  --link-decoration-offset: 3px;
+  --link-decoration-thickness: 1.5px;
+  --link-decoration-offset: 4px;
 
   font-size: 0.9375rem;
   font-variation-settings: 'opsz' 20;
@@ -180,4 +180,18 @@
   --font-weight-medium: 475;
 
   letter-spacing: -0.025em;
+}
+
+@utility shadow-darken-* {
+  /* prettier-ignore */
+  --tw-shadow-color: oklch(from --value([*]) 15% calc(c * 0.5) h / calc(--modifier(integer) * 1%));
+}
+
+@utility shadow-icon-hover {
+  --tw-shadow:
+    0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1)),
+    0 8px 10px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+  box-shadow:
+    var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow),
+    var(--tw-ring-shadow), var(--tw-shadow);
 }

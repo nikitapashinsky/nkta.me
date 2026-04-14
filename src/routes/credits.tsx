@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { twJoin, twMerge } from 'tailwind-merge';
+import { twJoin } from 'tailwind-merge';
 
 import { credits } from '@/data/credits';
 
@@ -79,7 +79,6 @@ function Credit({
   description,
   url,
   className,
-  iconClassName,
 }: {
   icon: React.FC<React.SVGProps<SVGSVGElement>> | string;
   hoverIcon?: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -88,7 +87,6 @@ function Credit({
   description?: string;
   url: string;
   className?: string;
-  iconClassName?: string;
 }) {
   return (
     <li
@@ -99,42 +97,44 @@ function Credit({
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className={twMerge(
+        className={twJoin(
           'group relative -ml-1 flex items-center gap-3 p-1 pr-5 md:gap-4',
           'rounded-[20px] corner-smooth not-supports-corner-shape:rounded-2xl',
-          // 'hover:bg-neutral-100 active:bg-neutral-100',
           'outline-offset-0 outline-neutral-300 focus-visible:outline',
           'before:absolute before:inset-0 before:-z-1 before:scale-95 before:opacity-0 before:blur-xs',
           'before:bg-linear-to-r before:from-(--brand-color)/8 before:to-(--brand-color)/6',
           'before:rounded-[20px] before:corner-smooth before:not-supports-corner-shape:rounded-2xl',
           'before:transition-all before:duration-400 hover:before:duration-200 active:before:duration-100 md:before:duration-200 md:hover:before:duration-100',
           'hover:before:scale-100 hover:before:opacity-100 hover:before:blur-none active:before:scale-100 active:before:opacity-100 active:before:blur-none',
-          'transition-all duration-500 active:scale-99 sm:duration-150 md:active:scale-98',
+          'transition-all duration-150 md:active:scale-98',
         )}
       >
         <div
-          className={twMerge(
-            'flex size-12 shrink-0 items-center justify-center md:size-13',
-            'bg-white shadow-icon outline-[0.5px] outline-black/8',
+          className={twJoin(
+            'flex size-12 shrink-0 items-center justify-center outline-[0.5px] md:size-13',
+            'outline-[oklch(from_var(--brand-color)_20%_c_h)]/0',
+            // 'bg-white shadow-icon outline-black/8',
+            'bg-neutral-100',
             'rounded-2xl corner-smooth not-supports-corner-shape:rounded-xl',
-            'group-hover:shadow-lg group-hover:shadow-[oklch(from_var(--brand-color)_15%_c_h)]/20 group-hover:outline-[oklch(from_var(--brand-color)_20%_c_h)]/14',
+            'group-hover:bg-white group-hover:outline-[oklch(from_var(--brand-color)_20%_c_h)]/14 group-active:bg-white group-active:outline-[oklch(from_var(--brand-color)_20%_c_h)]/14',
+            'group-hover:shadow-icon-hover group-hover:shadow-darken-(--brand-color)/20',
+            // 'group-hover:shadow-lg group-hover:shadow-[oklch(from_var(--brand-color)_15%_c_h)]/20 group-hover:outline-[oklch(from_var(--brand-color)_20%_c_h)]/14',
             'group-active:shadow-lg group-active:shadow-[oklch(from_var(--brand-color)_15%_c_h)]/20 group-active:outline-[oklch(from_var(--brand-color)_20%_c_h)]/14',
-            'transition-all duration-200 group-hover:duration-100',
+            'transition duration-200 group-hover:duration-100',
             'md:scale-97 md:group-hover:scale-100',
-            iconClassName,
           )}
         >
           <Icon
             className={twJoin(
-              'size-8 shrink-0 fill-(--text-color-secondary)',
-              'transition-colors duration-200 group-hover:duration-0 group-active:duration-0',
+              'size-8 shrink-0 fill-neutral-500',
+              'transition-colors duration-200 group-hover:duration-100 group-active:duration-100',
               'group-hover:fill-(--brand-color) group-active:fill-(--brand-color)',
             )}
           />
           {HoverIcon && (
             <HoverIcon
               className={
-                'absolute size-8 shrink-0 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-hover:duration-0 group-active:opacity-100 group-active:duration-0'
+                'absolute size-8 shrink-0 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-hover:duration-100 group-active:opacity-100 group-active:duration-100'
               }
             />
           )}
@@ -143,9 +143,9 @@ function Credit({
         <div className="flex flex-1 flex-col gap-1">
           <h4
             className={twJoin(
-              'font-medium will-change-transform',
-              'underline decoration-black/12 [text-decoration-thickness:var(--link-decoration-thickness)] underline-offset-(--link-decoration-offset)',
-              'transition-all duration-300 group-hover:duration-100 sm:duration-200',
+              'font-medium',
+              'underline decoration-black/8 [text-decoration-thickness:var(--link-decoration-thickness)] underline-offset-(--link-decoration-offset)',
+              'transition-all duration-300 group-hover:duration-100 group-active:duration-100 md:duration-200',
               'group-hover:decoration-transparent group-active:decoration-transparent',
               'group-hover:text-[oklch(from_var(--brand-color)_30%_c_h)] group-active:text-[oklch(from_var(--brand-color)_30%_c_h)]',
             )}
@@ -158,8 +158,8 @@ function Credit({
         <span
           className={twJoin(
             `font-features-['case'] text-lg text-[oklch(from_var(--brand-color)_60%_c_h)]`,
-            'transition-all duration-100 group-hover:duration-200 group-active:duration-200',
-            '-translate-x-1 scale-90 opacity-0',
+            'transition-all duration-200 group-hover:duration-100 group-active:duration-100',
+            '-translate-x-1.5 scale-85 opacity-0',
             'group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100 group-hover:brightness-60',
             'group-active:translate-x-0 group-active:scale-100 group-active:opacity-100 group-active:brightness-60',
           )}

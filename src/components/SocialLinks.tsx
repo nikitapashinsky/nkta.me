@@ -45,7 +45,7 @@ export function SocialLinks({ className }: { className?: string }) {
               'transition-transform will-change-transform active:scale-95',
               'outline-none',
               'before:pointer-events-none before:absolute before:inset-x-1 before:inset-y-0 before:-z-1 md:before:inset-x-0.5',
-              'before:rounded-md before:bg-neutral-100/0',
+              'before:rounded-[10px] before:bg-neutral-100/0 before:corner-smooth not-supports-corner-shape:before:rounded-lg',
               'before:transition-colors before:duration-125 before:will-change-transform',
               'hover:before:bg-neutral-100 hover:before:duration-75 active:before:bg-neutral-100 active:before:duration-75',
               'before:outline-neutral-300 focus-visible:before:outline',

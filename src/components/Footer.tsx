@@ -30,9 +30,6 @@ export function Footer({ className, ...rest }: React.ComponentProps<'div'>) {
         <Link to="/credits" className="shrink-0">
           Credits
         </Link>
-        <Link to="https://github.com/nikitapashinsky/nkta.me" className="shrink-0">
-          Source code
-        </Link>
       </div>
       <div className={twJoin('flex items-center gap-1 text-tertiary')}>
         <Clock />
@@ -42,7 +39,7 @@ export function Footer({ className, ...rest }: React.ComponentProps<'div'>) {
             <span
               className={twJoin(
                 'relative',
-                'underline decoration-black/30 decoration-dotted decoration-1 underline-offset-[3px]',
+                'underline decoration-black/16 decoration-dotted decoration-[1.5px] underline-offset-[3px]',
                 'group-hover:text-black group-focus-visible:text-black group-data-popup-open:text-black',
                 'transition-colors duration-125 group-hover:duration-75',
                 'before:absolute before:-inset-y-0.5 before:-inset-s-0.75 before:-inset-e-1.5 before:-z-1 before:rounded-[3px] before:bg-black/8 before:opacity-0',
