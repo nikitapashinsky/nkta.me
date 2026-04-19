@@ -46,7 +46,7 @@ export const credits: Record<Group, Credit[]> = {
       url: 'https://tailwindcss.com',
     },
     {
-      name: 'Tanstack Router',
+      name: 'TanStack Router',
       icon: TanstackLogo,
       brandColor: 'oklch(59.6% 0.176 163.2)',
       url: 'https://tanstack.com/router/latest',
