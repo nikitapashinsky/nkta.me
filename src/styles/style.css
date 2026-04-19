@@ -182,9 +182,22 @@
   letter-spacing: -0.025em;
 }
 
-@utility shadow-darken-* {
+@utility text-tint-* {
+  --lightness: calc(--modifier(integer) * 1%);
   /* prettier-ignore */
-  --tw-shadow-color: oklch(from --value([*]) 15% calc(c * 0.5) h / calc(--modifier(integer) * 1%));
+  color: oklch(from --value([*]) calc(l * var(--lightness, 100)) c h);
+}
+
+@utility shadow-tint-* {
+  --shadow-opacity: calc(--modifier(integer) * 1%);
+  /* prettier-ignore */
+  --tw-shadow-color: oklch(from --value([*]) calc(l * 0.2) calc(c * 0.5) h / var(--shadow-opacity, 100%));
+}
+
+@utility outline-tint-* {
+  --outline-opacity: calc(--modifier(integer) * 1%);
+  /* prettier-ignore */
+  outline-color: oklch(from --value([*]) calc(l * 0.5) c h / var(--outline-opacity, 100%));
 }
 
 @utility shadow-icon-hover {

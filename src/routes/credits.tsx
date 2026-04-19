@@ -100,26 +100,25 @@ function Credit({
         className={twJoin(
           'group relative -ml-1 flex items-center gap-3 p-1 pr-5 md:gap-4',
           'rounded-[20px] corner-smooth not-supports-corner-shape:rounded-2xl',
-          'outline-offset-0 outline-neutral-300 focus-visible:outline',
+          'outline-offset-0 outline-neutral-300 focus-visible:outline-[1.5px]',
           'before:absolute before:inset-0 before:-z-1 before:scale-95 before:opacity-0 before:blur-xs',
           'before:bg-linear-to-r before:from-(--brand-color)/8 before:to-(--brand-color)/6',
           'before:rounded-[20px] before:corner-smooth before:not-supports-corner-shape:rounded-2xl',
           'before:transition-all before:duration-400 hover:before:duration-200 active:before:duration-100 md:before:duration-200 md:hover:before:duration-100',
           'hover:before:scale-100 hover:before:opacity-100 hover:before:blur-none active:before:scale-100 active:before:opacity-100 active:before:blur-none',
-          'transition-all duration-150 md:active:scale-98',
+          'transition-all duration-150 will-change-transform md:active:scale-98',
         )}
       >
         <div
           className={twJoin(
             'flex size-12 shrink-0 items-center justify-center outline-[0.5px] md:size-13',
-            'outline-[oklch(from_var(--brand-color)_20%_c_h)]/0',
-            // 'bg-white shadow-icon outline-black/8',
+            'outline-tint-(--brand-color)/0',
             'bg-neutral-100',
             'rounded-2xl corner-smooth not-supports-corner-shape:rounded-xl',
-            'group-hover:bg-white group-hover:outline-[oklch(from_var(--brand-color)_20%_c_h)]/14 group-active:bg-white group-active:outline-[oklch(from_var(--brand-color)_20%_c_h)]/14',
-            'group-hover:shadow-icon-hover group-hover:shadow-darken-(--brand-color)/20',
-            // 'group-hover:shadow-lg group-hover:shadow-[oklch(from_var(--brand-color)_15%_c_h)]/20 group-hover:outline-[oklch(from_var(--brand-color)_20%_c_h)]/14',
-            'group-active:shadow-icon-hover group-active:shadow-[oklch(from_var(--brand-color)_15%_c_h)]/20 group-active:outline-[oklch(from_var(--brand-color)_20%_c_h)]/14',
+            'group-hover:bg-white group-active:bg-white',
+            'group-hover:outline-tint-(--brand-color)/14 group-active:outline-tint-(--brand-color)/14',
+            'group-hover:shadow-icon-hover group-active:shadow-icon-hover',
+            'group-hover:shadow-tint-(--brand-color)/20 group-active:shadow-tint-(--brand-color)/20',
             'transition duration-200 group-hover:duration-100',
             'md:scale-97 md:group-hover:scale-100',
           )}
@@ -147,7 +146,7 @@ function Credit({
               'underline decoration-black/8 [text-decoration-thickness:var(--link-decoration-thickness)] underline-offset-(--link-decoration-offset)',
               'transition-all duration-300 group-hover:duration-100 group-active:duration-100 md:duration-200',
               'group-hover:decoration-transparent group-active:decoration-transparent',
-              'group-hover:text-[oklch(from_var(--brand-color)_30%_c_h)] group-active:text-[oklch(from_var(--brand-color)_30%_c_h)]',
+              'group-hover:text-tint-(--brand-color)/40 group-active:text-tint-(--brand-color)/40',
             )}
           >
             {name}
@@ -157,7 +156,7 @@ function Credit({
 
         <span
           className={twJoin(
-            `font-features-['case'] text-lg text-[oklch(from_var(--brand-color)_60%_c_h)]`,
+            `font-features-['case'] text-lg text-tint-(--brand-color)/80`,
             'transition-all duration-200 group-hover:duration-100 group-active:duration-100',
             '-translate-x-1.5 scale-85 opacity-0',
             'group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100 group-hover:brightness-60',
