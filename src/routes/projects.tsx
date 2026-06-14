@@ -17,8 +17,8 @@ function RouteComponent() {
   return (
     <div
       className={twJoin(
-        'col-span-full row-start-2',
-        'grid grid-cols-subgrid content-start gap-x-4 gap-y-16',
+        'grid w-full grid-cols-2 content-start gap-x-4 gap-y-16',
+        'md:grid-cols-12 lg:grid-cols-16',
       )}
     >
       <div className={'col-span-full flex flex-col gap-2'}>

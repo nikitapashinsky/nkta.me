@@ -1,3 +1,8 @@
+# Agent Instructions
+
+- Do not start preview or development servers unless the user explicitly asks for one.
+- Do not perform visual inspection or browser-based visual QA of changes unless the user explicitly asks for it. The user prefers to verify visual details directly.
+
 <!--VITE PLUS START-->
 
 # Using Vite+, the Unified Toolchain for the Web

@@ -45,7 +45,9 @@ function RootDocument({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body
-        className={'bg-white font-sans text-base text-primary antialiased'}
+        className={
+          'flex min-h-svh cursor-default flex-col items-center bg-white font-sans text-base text-primary antialiased'
+        }
         suppressHydrationWarning
       >
         {children}

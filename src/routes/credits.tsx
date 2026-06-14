@@ -15,14 +15,8 @@ const typography = credits.TYPOGRAPHY;
 
 function RouteComponent() {
   return (
-    <div
-      className={twJoin(
-        'col-span-full row-start-2',
-        'grid grid-cols-subgrid content-start gap-x-4 gap-y-16',
-        'md:pb-16',
-      )}
-    >
-      <div className={'col-span-full flex flex-col gap-4 lg:gap-6'}>
+    <>
+      <div className={'flex flex-col gap-4 lg:gap-6'}>
         <h1 className={'text-2xl font-medium text-balance lg:text-3xl'}>Credits</h1>
         <p className={'max-w-prose text-lg text-balance text-secondary lg:text-xl'}>
           This website was made possible thanks to many incredible open-source projects and the
@@ -30,7 +24,7 @@ function RouteComponent() {
         </p>
       </div>
 
-      <div className={'col-span-full grid grid-cols-subgrid gap-16'}>
+      <div className={'flex flex-col content-start gap-16 md:grid md:max-w-3xl md:grid-cols-2'}>
         {/* Tech stack */}
         <div className={twJoin('col-span-full grid grid-cols-subgrid gap-4')}>
           <h3 className={'col-span-full font-medium text-secondary'}>Tech stack</h3>
@@ -43,7 +37,7 @@ function RouteComponent() {
                 hoverIcon={hoverIcon}
                 brandColor={brandColor}
                 url={url}
-                className="col-span-full md:col-span-4"
+                className="col-span-1"
               />
             ))}
           </ul>
@@ -61,13 +55,13 @@ function RouteComponent() {
                 icon={icon}
                 brandColor={brandColor}
                 url={url}
-                className="col-span-full md:col-span-4"
+                className="col-span-1"
               />
             ))}
           </ul>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

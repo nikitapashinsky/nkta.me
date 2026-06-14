@@ -3,7 +3,6 @@ import { twJoin } from 'tailwind-merge';
 
 import { Link } from '@/components/Link';
 import { ProjectItem } from '@/components/ProjectItem';
-import { SocialLinks } from '@/components/SocialLinks';
 import { projects } from '@/data/projects';
 
 export const Route = createFileRoute('/')({
@@ -12,13 +11,8 @@ export const Route = createFileRoute('/')({
 
 function Home() {
   return (
-    <div
-      className={twJoin(
-        'col-span-full row-start-2',
-        'grid grid-cols-subgrid gap-y-20 md:gap-y-[calc(var(--top-offset)+1.5rem)]',
-      )}
-    >
-      <div className={'col-span-full flex flex-col gap-6'}>
+    <>
+      <div className={'flex flex-col gap-6'}>
         <h1
           className={twJoin(
             'max-w-[calc(100%-1.5rem)] text-2xl font-medium text-balance lg:text-3xl',
@@ -27,13 +21,12 @@ function Home() {
           I’m a designer focused on crafting high-quality software. Currently leading product design
           on Composer at <Link to="https://piano.io">Piano</Link>.
         </h1>
-        <SocialLinks className={'md:hidden'} />
       </div>
-      <div className={'col-span-full flex flex-col gap-4 md:gap-6'}>
+      <div className={'flex flex-col gap-4'}>
         {projects.map((project) => (
           <ProjectItem key={project.id} project={project} />
         ))}
       </div>
-    </div>
+    </>
   );
 }

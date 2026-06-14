@@ -10,7 +10,7 @@
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Inter Variable';
   src: url('@/assets/fonts/InterVariable.woff2') format('woff2');
   font-weight: 100 900;
   font-style: normal;
@@ -31,14 +31,14 @@
 }
 
 @theme {
-  --font-sans: 'Inter', sans-serif;
+  --font-sans: 'Inter Variable', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
   --font-weight-medium: 450;
 
   --font-sans--font-feature-settings: var(--font-features);
 
-  --color-electric-lime: oklch(94.3% 0.256 118);
+  --color-electric-lime: oklch(93% 0.234 125);
   --color-neutral-450: oklch(63.2% 0 0);
 
   --text-color-primary: var(--color-neutral-950);
@@ -134,7 +134,7 @@
 }
 
 @utility text-sm {
-  --link-decoration-thickness: 1.5px;
+  --link-decoration-thickness: 1px;
   --link-decoration-offset: 3px;
 
   font-size: 0.8125rem;
@@ -143,7 +143,7 @@
 }
 
 @utility text-base {
-  --link-decoration-thickness: 1.5px;
+  --link-decoration-thickness: 1.25px;
   --link-decoration-offset: 4px;
 
   font-size: 0.9375rem;

@@ -17,7 +17,7 @@ export function ProjectItem({ project }: ProjectItemProps) {
     >
       <div
         className={twJoin(
-          'relative h-fit w-fit [--small:480px]',
+          'relative h-fit w-fit [--small:800px]',
           project.title === 'Animated sidebar icon' && 'md:p-px lg:max-w-(--small)',
           project.title === 'Branch menu interaction' && 'lg:max-w-(--small)',
         )}

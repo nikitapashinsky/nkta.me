@@ -10,7 +10,7 @@ type InternalLinkProps = Omit<LinkComponentProps, 'to'> & {
 };
 
 type ExternalLinkProps = Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> & {
-  to: `http${string}` | `zed://${string}`;
+  to: `http${string}` | `zed://${string}` | `mailto:${string}`;
   children?: React.ReactNode;
 };
 

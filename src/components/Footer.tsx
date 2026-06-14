@@ -1,4 +1,5 @@
 import { Popover } from '@base-ui/react';
+import useEmblaCarousel from 'embla-carousel-react';
 import { useEffect } from 'react';
 import { twJoin, twMerge } from 'tailwind-merge';
 
@@ -7,15 +8,25 @@ import { Clock } from '@/components/Clock';
 import { Link } from './Link';
 
 const popoverImages = [
-  '/images/scheveningen_2.webp',
-  '/images/scheveningen_1.webp',
-  '/images/scheveningen_3.webp',
+  {
+    src: '/images/scheveningen_2.webp',
+    alt: 'A rocky shoreline in the foreground with a seaside pier, large Ferris wheel, and bungee tower extending over the sea under a clear blue sky.',
+  },
+  {
+    src: '/images/scheveningen_1.webp',
+    alt: 'A wide sandy beach with dark, algae-covered rocks in the foreground and gentle waves rolling in under a clear blue sky.',
+    className: 'object-[center_calc(50%-10px)]',
+  },
+  {
+    src: '/images/scheveningen_3.webp',
+    alt: 'An empty sandy beach with tire tracks in the foreground and a seaside pier with a Ferris wheel and bungee tower silhouetted against a soft pink sunset sky.',
+  },
 ];
 
 export function Footer({ className, ...rest }: React.ComponentProps<'div'>) {
   // Preload carousel images
   useEffect(() => {
-    popoverImages.forEach((src) => {
+    popoverImages.forEach(({ src }) => {
       const img = new Image();
       img.src = src;
     });
@@ -23,14 +34,13 @@ export function Footer({ className, ...rest }: React.ComponentProps<'div'>) {
 
   return (
     <div className={twMerge('flex h-fit min-h-0 flex-col gap-3 text-sm', className)} {...rest}>
-      <div className={'flex items-center gap-3 text-tertiary'}>
-        <Link to="/now" className="shrink-0">
-          Now
-        </Link>
-        <Link to="/credits" className="shrink-0">
-          Credits
-        </Link>
-      </div>
+      {import.meta.env.DEV && (
+        <div className={'flex items-center gap-3 text-tertiary'}>
+          <Link to="/credits" className="shrink-0">
+            Credits
+          </Link>
+        </div>
+      )}
       <div className={twJoin('flex items-center gap-1 text-tertiary')}>
         <Clock />
         <span className={'shrink-0'}>here in</span>
@@ -76,33 +86,27 @@ export function Footer({ className, ...rest }: React.ComponentProps<'div'>) {
 }
 
 function ImageCarousel() {
+  const [emblaRef] = useEmblaCarousel({ loop: true });
+
   return (
-    <div
-      className={
-        'flex w-full snap-x snap-mandatory scroll-px-1 gap-1 overflow-x-auto px-1 pt-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
-      }
-    >
-      <img
-        src="/images/scheveningen_2.webp"
-        alt="A rocky shoreline in the foreground with a seaside pier, large Ferris wheel, and bungee tower extending over the sea under a clear blue sky."
-        className={
-          'aspect-4/3 w-[calc(100%-16px)] shrink-0 snap-start snap-always rounded-xs object-cover select-none'
-        }
-      />
-      <img
-        src="/images/scheveningen_1.webp"
-        alt="A wide sandy beach with dark, algae-covered rocks in the foreground and gentle waves rolling in under a clear blue sky."
-        className={
-          'aspect-4/3 w-[calc(100%-16px)] shrink-0 snap-center snap-always rounded-xs object-cover object-[center_calc(50%-10px)] select-none'
-        }
-      />
-      <img
-        src="/images/scheveningen_3.webp"
-        alt="An empty sandy beach with tire tracks in the foreground and a seaside pier with a Ferris wheel and bungee tower silhouetted against a soft pink sunset sky."
-        className={
-          'aspect-4/3 w-[calc(100%-16px)] shrink-0 snap-end snap-always rounded-xs object-cover select-none'
-        }
-      />
+    <div ref={emblaRef} className={'w-full overflow-hidden px-1 pt-1'}>
+      <div className={'flex [touch-action:pan-y_pinch-zoom]'}>
+        {popoverImages.map(({ src, alt, className }) => (
+          <div key={src} className={'min-w-0 flex-[0_0_95.7142857%] pr-1'}>
+            <img
+              src={src}
+              alt={alt}
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              className={twMerge(
+                'aspect-4/3 w-full rounded-xs object-cover select-none',
+                className,
+              )}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
