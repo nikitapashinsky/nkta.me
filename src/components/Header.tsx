@@ -1,5 +1,4 @@
 import { Link } from '@/components/Link';
-import { SocialLinks } from '@/components/SocialLinks';
 
 export function Header() {
   return (
